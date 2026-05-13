@@ -1,5 +1,5 @@
 [project]
-name = "f1-pit-stop"
+name = "prediction-f1-pit-stops-kaggle-competition"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -10,7 +10,6 @@ dependencies = [
     "category-encoders>=2.9.0",
     "fastparquet>=2026.3.0",
     "feature-engine>=1.9.4",
-    "jupyter>=1.1.1",
     "jupyter-core>=5.9.1",
     "jupyterlab>=4.5.7",
     "lightgbm>=4.6.0",
@@ -20,7 +19,6 @@ dependencies = [
     "pyarrow>=24.0.0",
     "pytorch-tabnet>=4.1.0",
     "scikit-fuzzy>=0.5.0",
-    "scikit-learn==1.6.1",
-    "seaborn>=0.13.2",
+    "scikit-learn>=1.8.0",
     "xgboost>=3.2.0",
 ]
