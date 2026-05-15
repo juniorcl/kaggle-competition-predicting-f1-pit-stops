@@ -223,12 +223,12 @@ __marimo__/
 .streamlit/secrets.toml
 
 # data
-data/
-data/*
+data/*.csv
+data/*.parquet
 
 # catboost
 catboost_info
 
 # pickle file
-models/*
-*.pkl
+models/*.pkl
+models/*.pickle
