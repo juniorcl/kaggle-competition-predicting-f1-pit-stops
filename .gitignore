@@ -232,3 +232,5 @@ catboost_info
 # pickle file
 models/*.pkl
 models/*.pickle
+
+notebooks/models
