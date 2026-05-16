@@ -1,0 +1,4 @@
+2026-05-15 20:50:08,477 - INFO - ----- Fine Tuning -----
+2026-05-15 20:50:43,343 - INFO - ----- Fine Tuning -----
+2026-05-15 20:58:36,234 - INFO - Best AUC: 0.9758533655718302 | Best params: {'n_components': 0.9899641027985964, 'svd_solver': 'auto', 'whiten': True, 'iterated_power': 2, 'power_iteration_normalizer': 'auto'}
+2026-05-15 20:58:36,234 - INFO - ----- Saving Pipeline -----

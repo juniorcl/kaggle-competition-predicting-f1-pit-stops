@@ -223,8 +223,8 @@ __marimo__/
 .streamlit/secrets.toml
 
 # data
-data/*.csv
-data/*.parquet
+data/raw/*.csv
+data/processed/*.parquet
 
 # catboost
 catboost_info
@@ -234,3 +234,6 @@ models/*.pkl
 models/*.pickle
 
 notebooks/models
+
+# not ignore logging files from model tuning
+!src/logs/*.log
