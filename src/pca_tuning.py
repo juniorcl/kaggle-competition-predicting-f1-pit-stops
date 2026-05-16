@@ -1,6 +1,9 @@
 #%%
+import sys
 import optuna
 import pickle
+import logging
+
 import numpy as np
 import pandas as pd
 
@@ -14,6 +17,21 @@ from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
 from category_encoders import CatBoostEncoder
 
 
+#%%
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+file_handler = logging.FileHandler('logs/pca.log')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+
 set_config(transform_output="pandas")
 
 
@@ -22,7 +40,6 @@ def dump_pickle(file_obj, file_path):
         pickle.dump(file_obj, file)
 
 
-#%%
 column_transformer = ColumnTransformer([
     (
         'target_encoder', 
@@ -57,6 +74,8 @@ y_train = pd.read_parquet('../data/processed/y_train.parquet')
 
 
 #%%
+logger.info("----- Fine Tuning -----")
+
 def objective(trial):
 
     pipe = make_pipeline(
@@ -80,15 +99,12 @@ def objective(trial):
 study = optuna.create_study(direction="maximize")
 study.optimize(objective, n_trials=300, n_jobs=-1, show_progress_bar=True)
 
-
-print("Best Params:")
-print(study.best_trial.params)
-
-print("\nBest Score:")
-print(study.best_trial.value)
+logger.info(f"Best Explained Variance: {study.best_value} | Best params: {study.best_params}")
 
 
 #%%
+logger.info("----- Saving Pipeline -----")
+
 pipe_column_transformer_pca = make_pipeline(
     column_transformer,
     PCA(**study.best_trial.params)
@@ -96,4 +112,6 @@ pipe_column_transformer_pca = make_pipeline(
 
 
 dump_pickle(pipe_column_transformer_pca, '../models/pipe_column_transformer_pca.pkl')
+
+
 # %%

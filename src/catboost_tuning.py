@@ -107,15 +107,9 @@ def objective(trial, X, y):
 study = optuna.create_study(direction="maximize", pruner=optuna.pruners.MedianPruner(n_warmup_steps=2))
 study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
 
-
-print("\n==============================")
-print("Best trial")
-print("==============================")
-
 print(f"\nBest AUC: {study.best_trial.value:.6f}")
 
 print("\nBest Params:")
-
 for key, value in study.best_trial.params.items():
     print(f"{key}: {value}")
 

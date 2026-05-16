@@ -1,16 +1,45 @@
+#%%
+import sys
 import optuna
 import pickle
+import logging
 
 import numpy as np
 import pandas as pd
 
+from sklearn import set_config
+from category_encoders import CatBoostEncoder
+
 from sklearn.metrics import roc_auc_score
+from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_pipeline
-from sklearn.linear_model import LogisticRegression
 from sklearn.inspection import permutation_importance
-from sklearn.model_selection import StratifiedKFold
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
+from sklearn.model_selection import cross_val_score, StratifiedKFold
 
 from feature_engine.selection import DropFeatures
+
+
+#%%
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+file_handler = logging.FileHandler('logs/logistic_regression.log')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+optuna_logger = optuna.logging.get_logger("optuna")
+optuna_logger.handlers = []
+optuna_logger.addHandler(file_handler)
+optuna_logger.addHandler(stream_handler)
+optuna_logger.setLevel(logging.INFO)
 
 
 def dump_pickle(file_obj, file_path):
@@ -18,50 +47,63 @@ def dump_pickle(file_obj, file_path):
         pickle.dump(file_obj, file)
 
 
-X_train = pd.read_parquet('../data/X_train.parquet')
-y_train = pd.read_parquet('../data/y_train.parquet')
+column_transformer = ColumnTransformer([
+    (
+        'target_encoder', 
+        TargetEncoder(), 
+        ['driver', 'compound', 'race']
+    ),
+    (
+        'catboost_encoder', 
+        CatBoostEncoder(), 
+        ['driver', 'compound', 'race']
+    ),
+    (
+        'standard_scaler', 
+        StandardScaler(), 
+        ['lapnumber', 'position', 'raceprogress', 'year', 'position_norm', 'race_progress_sin', 'position_vs_mean']
+    ),
+    (
+        'robust_scaler', 
+        RobustScaler(), 
+        [
+            'position_change', 'cumulative_degradation', 'laptime_delta', 'laptime_s', 'stint', 'driver_mean_lap', 'tyrelife', 'delta_x_tyre_life', 
+            'compound_tyre_life', 'stint_progress', 'tyre_life_ratio', 'degradation_per_lap', 'position_change_cum', 'laps_since_pit', 'lap_time_inv',  
+            'lap_time_vs_race_mean', 'lap_time_x_tyre', 'position_x_progress', 'degradation_x_progress', 'race_progress_squared', 'driver_avg_position' 
+        ]
+    ),
+], remainder="passthrough")
 
 
-model = LogisticRegression(solver="lbfgs", max_iter=1000, class_weight="balanced").fit(X_train, y_train.PitNextLap)
+#%%
+X_train = pd.read_parquet('../data/processed/X_train.parquet')
+y_train = pd.read_parquet('../data/processed/y_train.parquet')
 
-perm_result = permutation_importance(
-    estimator=model, 
-    X=X_train, 
-    y=y_train.PitNextLap, 
-    n_jobs=-1, 
-    scoring='roc_auc'
-)
 
-importance_df = pd.DataFrame({
-    "feature": X_train.columns.tolist(),
-    "importance_mean": perm_result.importances_mean,
-    "importance_std": perm_result.importances_std
-}).sort_values(by="importance_mean", ascending=False)
-
-features_to_drop = importance_df.query("importance_mean <= 0").feature.tolist()
-
+#%%
+logger.info("----- Fine Tuning -----")
 
 def objective(trial, X, y):
-
+    
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
     aucs = []
 
     for fold, (train_idx, valid_idx) in enumerate(cv.split(X, y)):
-
+        
         X_train, X_valid = X.iloc[train_idx, :], X.iloc[valid_idx, :]
         y_train, y_valid = y.iloc[train_idx, 0], y.iloc[valid_idx, 0]
 
         model = make_pipeline(
-            DropFeatures(features_to_drop),
+            column_transformer,
             LogisticRegression(
                 C=trial.suggest_float("C", 1e-3, 10, log=True),
                 class_weight="balanced",
-                max_iter=5000,
+                max_iter=2000,
                 random_state=42
             )
         ).fit(X_train, y_train)
-        
+
         proba = model.predict_proba(X_valid)[:, 1]
 
         auc = roc_auc_score(y_valid, proba)
@@ -75,18 +117,23 @@ def objective(trial, X, y):
     return np.mean(aucs)
 
 study = optuna.create_study(direction="maximize", pruner=optuna.pruners.MedianPruner(n_warmup_steps=2))
-study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1)
+study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
 
+logger.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
+
+
+#%%
+logger.info("----- Saving Pipeline -----")
 
 pipe_tuned = make_pipeline(
-    DropFeatures(features_to_drop),
+    column_transformer,
     LogisticRegression(
+        **study.best_trial.params,
         class_weight="balanced",
-        max_iter=5000,
-        random_state=42,
-        **study.best_params
+        max_iter=2000,
+        random_state=42
     )
-)
+).fit(X_train, y_train)
 
 
 dump_pickle(pipe_tuned, '../models/model_logistic_regression.pkl')
