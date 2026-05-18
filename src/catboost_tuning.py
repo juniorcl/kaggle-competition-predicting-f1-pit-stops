@@ -1,6 +1,8 @@
 #%%
+import sys
 import optuna
 import pickle
+import logging
 
 import numpy as np
 import pandas as pd
@@ -17,17 +19,33 @@ from feature_engine.selection import DropFeatures
 
 
 #%%
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('logs/catboost.log'), 
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+
+optuna_logger = optuna.logging.get_logger("optuna")
+optuna_logger.handlers = logging.getLogger().handlers
+optuna_logger.setLevel(logging.INFO)
+
+
 def dump_pickle(file_obj, file_path):
     with open(file_path, 'bw') as file:
         pickle.dump(file_obj, file)
 
 
 #%%
-X_train = pd.read_parquet('../data/X_train.parquet')
-y_train = pd.read_parquet('../data/y_train.parquet')
+X_train = pd.read_parquet('../data/processed/X_train.parquet')
+y_train = pd.read_parquet('../data/processed/y_train.parquet')
 
 
 #%%
+logging.info("----- Feature Selection -----")
+
 model = make_pipeline(
     CatBoostEncoder(cols=['driver', 'compound', 'race']),
     CatBoostClassifier(random_state=42, verbose=0, auto_class_weights='Balanced')
@@ -37,7 +55,7 @@ perm_result = permutation_importance(
     estimator=model, 
     X=X_train, 
     y=y_train.PitNextLap, 
-    n_jobs=-1, 
+    n_jobs=2, 
     scoring='roc_auc'
 )
 
@@ -49,8 +67,12 @@ importance_df = pd.DataFrame({
 
 features_to_drop = importance_df.query("importance_mean <= 0").feature.tolist()
 
+logging.info(f"Features to drop: {features_to_drop}")
+
 
 #%%
+logging.info("----- Model Tuning -----")
+
 def objective(trial, X, y):
 
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
@@ -71,13 +93,12 @@ def objective(trial, X, y):
             CatBoostClassifier(
                 loss_function="Logloss",
                 eval_metric="AUC",
-                iterations=5000,
+                iterations=3000,
                 od_type="Iter",
-                od_wait=200,
+                od_wait=150,
                 random_state=42,
                 verbose=0,
-                thread_count=1,
-                boosting_type=trial.suggest_categorical("boosting_type", ["Ordered", "Plain"]),
+                boosting_type=trial.suggest_categorical("boosting_type", ["Plain"]),
                 depth=trial.suggest_int("depth", 4, 10),
                 min_data_in_leaf=trial.suggest_int("min_data_in_leaf", 1, 100),
                 learning_rate=trial.suggest_float("learning_rate", 1e-3, 0.2, log=True),
@@ -105,28 +126,25 @@ def objective(trial, X, y):
 
 
 study = optuna.create_study(direction="maximize", pruner=optuna.pruners.MedianPruner(n_warmup_steps=2))
-study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=2, show_progress_bar=True)
 
-print(f"\nBest AUC: {study.best_trial.value:.6f}")
-
-print("\nBest Params:")
-for key, value in study.best_trial.params.items():
-    print(f"{key}: {value}")
+logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 
 
 #%%
+logging.info("----- Saving Pipeline -----")
+
 pipe_tuned = make_pipeline(
     DropFeatures(features_to_drop),
     CatBoostEncoder(cols=['driver', 'compound', 'race']),
     CatBoostClassifier(
         loss_function="Logloss",
         eval_metric="AUC",
-        iterations=5000,
+        iterations=3000,
         od_type="Iter",
-        od_wait=200,
+        od_wait=150,
         random_state=42,
         verbose=0,
-        thread_count=1,
         **study.best_params
     )
 ).fit(X_train, y_train.PitNextLap)

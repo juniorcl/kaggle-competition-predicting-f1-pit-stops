@@ -1,29 +1,49 @@
+#%%
 import re
+import sys
 import optuna
 import pickle
+import logging
 
 import numpy as np
 import pandas as pd
-
-from sklearn import set_config
 from category_encoders import CatBoostEncoder
 
+from sklearn import set_config
+
 from sklearn.metrics import roc_auc_score
-from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_pipeline
-from sklearn.inspection import permutation_importance
+from sklearn.compose import ColumnTransformer
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
+from sklearn.inspection import permutation_importance
+from sklearn.decomposition import PCA
 from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
 
-from feature_engine.selection import DropFeatures
 
+#%%
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('logs/knn.log'), 
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+
+optuna_logger = optuna.logging.get_logger("optuna")
+optuna_logger.handlers = logging.getLogger().handlers
+optuna_logger.setLevel(logging.INFO)
 
 set_config(transform_output="pandas")
 
 def dump_pickle(file_obj, file_path):
     with open(file_path, 'bw') as file:
         pickle.dump(file_obj, file)
+
+def load_pickle(file_path):
+    with open(file_path, 'rb') as file:
+        return pickle.load(file)
 
 column_transformer = ColumnTransformer([
     (
@@ -53,32 +73,38 @@ column_transformer = ColumnTransformer([
 ], remainder="passthrough")
 
 
-X_train = pd.read_parquet('../data/X_train.parquet')
-y_train = pd.read_parquet('../data/y_train.parquet')
+#%%
+X_train = pd.read_parquet('../data/processed/X_train.parquet')
+y_train = pd.read_parquet('../data/processed/y_train.parquet')
 
 
-pipe_model = make_pipeline(
-    column_transformer,
-    KNeighborsClassifier(n_jobs=1)
-).fit(X_train, y_train.PitNextLap)
+#%%
+# logging.info("----- Feature Selection -----")
+
+# model = make_pipeline(
+#     column_transformer,
+#     KNeighborsClassifier(),
+# ).fit(X_train, y_train.PitNextLap)
+
+# perm_result = permutation_importance(
+#     estimator=model, 
+#     X=X_train, 
+#     y=y_train.PitNextLap, 
+#     n_jobs=-1, 
+#     scoring='roc_auc'
+# )
+
+# importance_df = pd.DataFrame({
+#     "feature": X_train.columns.tolist(),
+#     "importance_mean": perm_result.importances_mean,
+#     "importance_std": perm_result.importances_std
+# }).sort_values(by="importance_mean", ascending=False)
+
+# features_to_drop = importance_df.query("importance_mean <= 0").feature.tolist()
 
 
-perm_result = permutation_importance(
-    estimator=model, 
-    X=X_train, 
-    y=y_train.PitNextLap, 
-    n_jobs=3, 
-    scoring='roc_auc'
-)
-
-importance_df = pd.DataFrame({
-    "feature": X_train.columns.tolist(),
-    "importance_mean": perm_result.importances_mean,
-    "importance_std": perm_result.importances_std
-}).sort_values(by="importance_mean", ascending=False)
-
-features_to_drop = importance_df.query("importance_mean <= 0").feature.tolist()\
-
+#%%
+logging.info("----- Model Tuning -----")
 
 def objective(trial, X, y):
 
@@ -96,10 +122,12 @@ def objective(trial, X, y):
 
         model = make_pipeline(
             column_transformer,
-            DropFeatures(features_to_drop)
             PCA(
-                n_components=trial.suggest_categorical("use_pca", [True, False]),
-                random_state=42
+                n_components=trial.suggest_float("n_components", 0.80, 0.99),
+                svd_solver=trial.suggest_categorical("svd_solver", ["full"]),
+                whiten=trial.suggest_categorical("whiten", [True, False]),
+                iterated_power=trial.suggest_int("iterated_power", 1, 10),
+                power_iteration_normalizer=trial.suggest_categorical("power_iteration_normalizer", ["auto", "QR", "LU"]),
             ),
             KNeighborsClassifier(
                 n_neighbors=trial.suggest_int("n_neighbors", 3, 10),
@@ -107,7 +135,6 @@ def objective(trial, X, y):
                 metric=trial.suggest_categorical("metric", ["euclidean", "manhattan", "minkowski"]),
                 p=trial.suggest_int("p", 1, 2),
                 leaf_size=trial.suggest_int("leaf_size", 10, 100),
-                n_jobs=-1
             )
         ).fit(X_train_fold, y_train_fold)
 
@@ -124,30 +151,27 @@ def objective(trial, X, y):
     return np.mean(aucs)
 
 study = optuna.create_study(direction="maximize", pruner=optuna.pruners.MedianPruner(n_warmup_steps=2))
-study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+
+logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 
 
-print("\nBest trial:")
-print("AUC:", study.best_trial.value)
+#%%
+logging.info("----- Saving Pipeline -----")
 
-print("\nBest params:")
-print(study.best_trial.params)
+best_params = study.best_params
 
+pca_keys = ["n_components", "svd_solver", "whiten", "iterated_power", "power_iteration_normalizer"]
+best_pca_params = {k: best_params[k] for k in pca_keys if k in best_params}
+
+knn_keys = ["n_neighbors", "weights", "metric", "p", "leaf_size"]
+best_knn_params = {k: best_params[k] for k in knn_keys if k in best_params}
 
 model_tuned = make_pipeline(
     column_transformer,
-    DropFeatures(features_to_drop)
-    PCA(
-        n_components=trial.suggest_categorical("use_pca", [True, False]),
-        random_state=42
-    ),
-    KNeighborsClassifier(
-        n_neighbors=trial.suggest_int("n_neighbors", 3, 10),
-        weights=trial.suggest_categorical("weights", ["uniform", "distance"]),
-        metric=trial.suggest_categorical("metric", ["euclidean", "manhattan", "minkowski"]),
-        p=trial.suggest_int("p", 1, 2),
-                leaf_size=trial.suggest_int("leaf_size", 10, 100),
-                n_jobs=-1
-            )
-        )
+    PCA(**best_pca_params),
+    KNeighborsClassifier(**best_knn_params)
 ).fit(X_train, y_train.PitNextLap)
+
+
+dump_pickle(model_tuned, '../models/model_knn.pkl')

@@ -14,7 +14,8 @@ from sklearn.metrics import roc_auc_score
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_pipeline
 from sklearn.inspection import permutation_importance
-from sklearn.linear_model import LogisticRegression
+from sklearn.calibration import CalibratedClassifierCV
+from sklearn.linear_model import RidgeClassifier
 from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
 from sklearn.model_selection import cross_val_score, StratifiedKFold
 
@@ -26,7 +27,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/logistic_regression.log'), 
+        logging.FileHandler('logs/ridge.log'), 
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -90,15 +91,23 @@ def objective(trial, X, y):
 
         model = make_pipeline(
             column_transformer,
-            LogisticRegression(
-                solver=trial.suggest_categorical("solver", ["saga"]),
-                C=trial.suggest_float("C", 1e-5, 100, log=True),
-                l1_ratio=trial.suggest_float("l1_ratio", 0.0, 1.0),
+            RidgeClassifier(
+                alpha=trial.suggest_float("alpha", 1e-5, 100, log=True),
+                solver=trial.suggest_categorical("solver", ["auto", "svd", "cholesky", "lsqr", "sparse_cg", "sag", "saga", "lbfgs"]),
+                tol=trial.suggest_float("tol", 1e-5, 1e-1, log=True),
+                fit_intercept=trial.suggest_categorical("fit_intercept", [True, False]),
+                max_iter=trial.suggest_int("max_iter", 500, 5000, step=500),
                 class_weight="balanced",
             )
+        )
+
+        calibrated_ridge = CalibratedClassifierCV(
+            estimator=model, 
+            method=trial.suggest_categorical("calibration_method", ["sigmoid", "isotonic"]), 
+            cv=3
         ).fit(X_train, y_train)
 
-        proba = model.predict_proba(X_valid)[:, 1]
+        proba = calibrated_ridge.predict_proba(X_valid)[:, 1]
 
         auc = roc_auc_score(y_valid, proba)
         aucs.append(auc)
@@ -119,13 +128,21 @@ logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 #%%
 logging.info("----- Saving Pipeline -----")
 
-pipe_tuned = make_pipeline(
-    column_transformer,
-    LogisticRegression(
-        **study.best_trial.params,
-        class_weight="balanced",
-    )
-).fit(X_train, y_train)
+best_params = study.best_params
 
+ridge_keys = ["alpha", "solver", "tol", "fit_intercept", "max_iter"]
+best_ridge_params = {k: best_params[k] for k in ridge_keys if k in best_params}
 
-dump_pickle(pipe_tuned, '../models/model_logistic_regression.pkl')
+calibration_keys = ["calibration_method"]
+best_calibration_params = {k: best_params[k] for k in calibration_keys if k in best_params}
+
+calibrated_ridge = CalibratedClassifierCV(
+    estimator=make_pipeline(
+        column_transformer,
+        RidgeClassifier(**best_ridge_params, class_weight="balanced")
+    ), 
+    **best_calibration_params, 
+    cv=3
+).fit(X_train)
+
+dump_pickle(calibrated_ridge, '../models/model_ridge.pkl')

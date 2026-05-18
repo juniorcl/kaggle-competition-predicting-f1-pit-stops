@@ -1,7 +1,8 @@
 #%%
-import re
+import sys
 import optuna
 import pickle
+import logging
 
 import numpy as np
 import pandas as pd
@@ -17,6 +18,19 @@ from feature_engine.selection import DropFeatures
 
 
 #%%
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('logs/hist_gradient_boosting.log'), 
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+
+optuna_logger = optuna.logging.get_logger("optuna")
+optuna_logger.handlers = logging.getLogger().handlers
+optuna_logger.setLevel(logging.INFO)
+
 def dump_pickle(file_obj, file_path):
     with open(file_path, 'bw') as file:
         pickle.dump(file_obj, file)
@@ -28,6 +42,8 @@ y_train = pd.read_parquet('../data/processed/y_train.parquet')
 
 
 #%%
+logging.info("----- Feature Selection -----")
+
 model = make_pipeline(
     RareLabelEncoder(variables=['driver']),
     HistGradientBoostingClassifier(class_weight='balanced', verbose=0),
@@ -49,8 +65,12 @@ importance_df = pd.DataFrame({
 
 features_to_drop = importance_df.query("importance_mean <= 0").feature.tolist()
 
+logging.info(f"Features to drop: {features_to_drop}")
+
 
 #%%
+logging.info("----- Model Tuning -----")
+
 def objective(trial, X, y):
 
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
@@ -94,14 +114,14 @@ def objective(trial, X, y):
     return np.mean(aucs)
 
 study = optuna.create_study(direction="maximize", pruner=optuna.pruners.MedianPruner(n_warmup_steps=2))
-study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
 
-
-print("Best AUC:", study.best_value)
-print("Best params:", study.best_params)
+logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 
 
 #%%
+logging.info("----- Saving Pipeline -----")
+
 pipe_tuned = make_pipeline(
     RareLabelEncoder(variables=['driver']),
     DropFeatures(features_to_drop),

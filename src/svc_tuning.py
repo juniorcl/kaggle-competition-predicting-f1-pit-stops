@@ -10,11 +10,12 @@ import pandas as pd
 from sklearn import set_config
 from category_encoders import CatBoostEncoder
 
+from sklearn.svm import SVC
 from sklearn.metrics import roc_auc_score
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_pipeline
+from sklearn.decomposition import PCA
 from sklearn.inspection import permutation_importance
-from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
 from sklearn.model_selection import cross_val_score, StratifiedKFold
 
@@ -26,7 +27,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/logistic_regression.log'), 
+        logging.FileHandler('logs/svc.log'), 
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -83,6 +84,11 @@ def objective(trial, X, y):
 
     aucs = []
 
+    kernel = trial.suggest_categorical("kernel", ["linear", "poly", "rbf", "sigmoid"])
+    
+    if kernel == "poly":
+        degree = trial.suggest_int("degree", 2, 5)
+
     for fold, (train_idx, valid_idx) in enumerate(cv.split(X, y)):
         
         X_train, X_valid = X.iloc[train_idx, :], X.iloc[valid_idx, :]
@@ -90,10 +96,19 @@ def objective(trial, X, y):
 
         model = make_pipeline(
             column_transformer,
-            LogisticRegression(
-                solver=trial.suggest_categorical("solver", ["saga"]),
-                C=trial.suggest_float("C", 1e-5, 100, log=True),
-                l1_ratio=trial.suggest_float("l1_ratio", 0.0, 1.0),
+            PCA(
+                n_components=trial.suggest_float("n_components", 0.80, 0.99),
+                svd_solver=trial.suggest_categorical("svd_solver", ["full"]),
+                whiten=trial.suggest_categorical("whiten", [True, False]),
+                iterated_power=trial.suggest_int("iterated_power", 1, 10),
+                power_iteration_normalizer=trial.suggest_categorical("power_iteration_normalizer", ["auto", "QR", "LU"]),
+            ),
+            SVC(
+                C=trial.suggest_float("C", 1e-3, 1e2, log=True),
+                gamma=trial.suggest_categorical("gamma", ["scale", "auto"]),
+                kernel=kernel,
+                degree=degree,
+                probability=True,
                 class_weight="balanced",
             )
         ).fit(X_train, y_train)
@@ -119,13 +134,19 @@ logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 #%%
 logging.info("----- Saving Pipeline -----")
 
-pipe_tuned = make_pipeline(
+best_params = study.best_params
+
+pca_keys = ["n_components", "svd_solver", "whiten", "iterated_power", "power_iteration_normalizer"]
+best_pca_params = {k: best_params[k] for k in pca_keys if k in best_params}
+
+svc_params = ["C", "kernel", "gamma"]
+best_svc_params = {k: best_params[k] for k in svc_keys if k in best_params}
+
+model_tuned = make_pipeline(
     column_transformer,
-    LogisticRegression(
-        **study.best_trial.params,
-        class_weight="balanced",
-    )
-).fit(X_train, y_train)
+    PCA(**best_pca_params),
+    SVC(**best_svc_params, probability=True, class_weight="balanced")
+).fit(X_train, y_train.PitNextLap)
 
 
-dump_pickle(pipe_tuned, '../models/model_logistic_regression.pkl')
+dump_pickle(pipe_tuned, '../models/model_svc.pkl')
