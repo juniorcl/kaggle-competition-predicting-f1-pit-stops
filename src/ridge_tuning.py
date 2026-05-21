@@ -13,6 +13,7 @@ from category_encoders import CatBoostEncoder
 from sklearn.metrics import roc_auc_score
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_pipeline
+from sklearn.frozen import FrozenEstimator
 from sklearn.inspection import permutation_importance
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.linear_model import RidgeClassifier
@@ -84,32 +85,29 @@ def objective(trial, X, y):
 
     aucs = []
 
+    solver = trial.suggest_categorical("solver", ["auto", "cholesky", "lsqr", "sag"])
+    params = {
+        "alpha": trial.suggest_float("alpha", 1e-5, 100, log=True),
+        "solver": solver,
+        "tol": trial.suggest_float("tol", 1e-5, 1e-1, log=True),
+        "fit_intercept": trial.suggest_categorical("fit_intercept", [True, False]),
+        "class_weight": trial.suggest_categorical("class_weight", [None, "balanced"])
+    }
+
+    if solver in ["lsqr", "sag"]:
+        params["max_iter"] = trial.suggest_int("max_iter", 500, 5000, step=500)
+
     for fold, (train_idx, valid_idx) in enumerate(cv.split(X, y)):
         
         X_train, X_valid = X.iloc[train_idx, :], X.iloc[valid_idx, :]
         y_train, y_valid = y.iloc[train_idx, 0], y.iloc[valid_idx, 0]
 
-        model = make_pipeline(
-            column_transformer,
-            RidgeClassifier(
-                alpha=trial.suggest_float("alpha", 1e-5, 100, log=True),
-                solver=trial.suggest_categorical("solver", ["auto", "svd", "cholesky", "lsqr", "sparse_cg", "sag", "saga", "lbfgs"]),
-                tol=trial.suggest_float("tol", 1e-5, 1e-1, log=True),
-                fit_intercept=trial.suggest_categorical("fit_intercept", [True, False]),
-                max_iter=trial.suggest_int("max_iter", 500, 5000, step=500),
-                class_weight="balanced",
-            )
-        )
+        model = make_pipeline(column_transformer, RidgeClassifier(**params, random_state=42))
+        model.fit(X_train, y_train)
 
-        calibrated_ridge = CalibratedClassifierCV(
-            estimator=model, 
-            method=trial.suggest_categorical("calibration_method", ["sigmoid", "isotonic"]), 
-            cv=3
-        ).fit(X_train, y_train)
+        decision = model.decision_function(X_valid)
 
-        proba = calibrated_ridge.predict_proba(X_valid)[:, 1]
-
-        auc = roc_auc_score(y_valid, proba)
+        auc = roc_auc_score(y_valid, decision)
         aucs.append(auc)
 
         trial.report(np.mean(aucs), step=fold)
@@ -128,21 +126,10 @@ logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 #%%
 logging.info("----- Saving Pipeline -----")
 
-best_params = study.best_params
+params = {'solver': 'auto', 'alpha': 1.2926809258095353, 'tol': 1.658877395640658e-05, 'fit_intercept': True, 'class_weight': 'balanced'}
 
-ridge_keys = ["alpha", "solver", "tol", "fit_intercept", "max_iter"]
-best_ridge_params = {k: best_params[k] for k in ridge_keys if k in best_params}
+tuned_model = make_pipeline(column_transformer, RidgeClassifier(**params, random_state=42)).fit(X_train, y_train.iloc[:, 0])
 
-calibration_keys = ["calibration_method"]
-best_calibration_params = {k: best_params[k] for k in calibration_keys if k in best_params}
+dump_pickle(tuned_model, '../models/model_ridge.pkl')
 
-calibrated_ridge = CalibratedClassifierCV(
-    estimator=make_pipeline(
-        column_transformer,
-        RidgeClassifier(**best_ridge_params, class_weight="balanced")
-    ), 
-    **best_calibration_params, 
-    cv=3
-).fit(X_train)
-
-dump_pickle(calibrated_ridge, '../models/model_ridge.pkl')
+# %%
