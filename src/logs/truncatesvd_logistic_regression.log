@@ -1,0 +1,1329 @@
+2026-05-20 12:22:06,301 - INFO - ----- Fine Tuning -----
+2026-05-20 12:22:06,301 - INFO - A new study created in memory with name: no-name-e28096ee-3782-47d4-a2b5-f72776cdd6a3
+2026-05-20 12:22:13,629 - WARNING - Trial 5 failed with parameters: {'n_components': 186, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'auto', 'tol': 0.0004334809053530617, 'solver': 'saga', 'C': 0.07045354748492894, 'l1_ratio': 0.5318127188018651} because of the following error: ValueError('n_components(186) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(186) must be <= n_features(75).
+2026-05-20 12:22:13,684 - WARNING - Trial 5 failed with value None.
+2026-05-20 12:22:13,726 - WARNING - Trial 2 failed with parameters: {'n_components': 127, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'tol': 5.188806244420687e-06, 'solver': 'saga', 'C': 3.730228402094389, 'l1_ratio': 0.12768714662984437} because of the following error: ValueError('n_components(127) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(127) must be <= n_features(75).
+2026-05-20 12:22:13,731 - WARNING - Trial 4 failed with parameters: {'n_components': 153, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'LU', 'tol': 4.5078900031326565e-05, 'solver': 'saga', 'C': 0.00044292645942882263, 'l1_ratio': 0.997865095119379} because of the following error: ValueError('n_components(153) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(153) must be <= n_features(75).
+2026-05-20 12:22:13,750 - WARNING - Trial 8 failed with parameters: {'n_components': 140, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.00439033496826404, 'solver': 'saga', 'C': 0.009499182456128066, 'l1_ratio': 0.03755616306136189} because of the following error: ValueError('n_components(140) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(140) must be <= n_features(75).
+2026-05-20 12:22:13,751 - WARNING - Trial 2 failed with value None.
+2026-05-20 12:22:13,753 - WARNING - Trial 4 failed with value None.
+2026-05-20 12:22:13,777 - WARNING - Trial 3 failed with parameters: {'n_components': 172, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'QR', 'tol': 0.00010006659095267502, 'solver': 'saga', 'C': 0.01659321692978027, 'l1_ratio': 0.1253825851361503} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'OR', 'none', 'LU', 'auto'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'OR', 'none', 'LU', 'auto'}. Got 'QR' instead.
+2026-05-20 12:22:13,794 - WARNING - Trial 3 failed with value None.
+2026-05-20 12:22:13,789 - WARNING - Trial 11 failed with parameters: {'n_components': 114, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'QR', 'tol': 3.0468495048378064e-06, 'solver': 'saga', 'C': 59.39772514296407, 'l1_ratio': 0.5958385797677787} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'OR', 'none', 'LU', 'auto'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'OR', 'none', 'LU', 'auto'}. Got 'QR' instead.
+2026-05-20 12:22:13,796 - WARNING - Trial 11 failed with value None.
+2026-05-20 12:22:13,778 - WARNING - Trial 8 failed with value None.
+2026-05-20 12:22:13,808 - WARNING - Trial 6 failed with parameters: {'n_components': 239, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'LU', 'tol': 0.006263603400273098, 'solver': 'saga', 'C': 30.156416050390888, 'l1_ratio': 0.03700364150367175} because of the following error: ValueError('n_components(239) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(239) must be <= n_features(75).
+2026-05-20 12:22:13,809 - WARNING - Trial 6 failed with value None.
+2026-05-20 12:22:13,842 - WARNING - Trial 1 failed with parameters: {'n_components': 153, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'QR', 'tol': 3.7511392343697164e-05, 'solver': 'saga', 'C': 1.297680029101845, 'l1_ratio': 0.27920650586611884} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'OR', 'none', 'LU', 'auto'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'OR', 'none', 'LU', 'auto'}. Got 'QR' instead.
+2026-05-20 12:22:13,844 - WARNING - Trial 1 failed with value None.
+2026-05-20 12:22:13,848 - WARNING - Trial 10 failed with parameters: {'n_components': 153, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'tol': 0.0017854683780702217, 'solver': 'saga', 'C': 0.0002443250212521758, 'l1_ratio': 0.5879268586002142} because of the following error: ValueError('n_components(153) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(153) must be <= n_features(75).
+2026-05-20 12:22:13,849 - WARNING - Trial 10 failed with value None.
+2026-05-20 12:22:14,209 - WARNING - Trial 9 failed with parameters: {'n_components': 131, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'LU', 'tol': 4.530532650812255e-06, 'solver': 'saga', 'C': 1.8668243813678584, 'l1_ratio': 0.3972048003358901} because of the following error: ValueError('n_components(131) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning copy.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(131) must be <= n_features(75).
+2026-05-20 12:22:14,210 - WARNING - Trial 9 failed with value None.
+2026-05-20 12:22:26,303 - INFO - ----- Fine Tuning -----
+2026-05-20 12:22:26,303 - INFO - A new study created in memory with name: no-name-513dd7af-5d79-4914-8a3d-222dd277863c
+2026-05-20 12:22:33,615 - WARNING - Trial 4 failed with parameters: {'n_components': 229, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 3.3723795996788096e-06, 'solver': 'saga', 'C': 0.0006052847141928608, 'l1_ratio': 0.011640599674778707} because of the following error: ValueError('n_components(229) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(229) must be <= n_features(75).
+2026-05-20 12:22:33,619 - WARNING - Trial 3 failed with parameters: {'n_components': 185, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'LU', 'tol': 0.007848101611554801, 'solver': 'saga', 'C': 0.6045967176625356, 'l1_ratio': 0.5951276274141093} because of the following error: ValueError('n_components(185) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(185) must be <= n_features(75).
+2026-05-20 12:22:33,624 - WARNING - Trial 4 failed with value None.
+2026-05-20 12:22:33,627 - WARNING - Trial 3 failed with value None.
+2026-05-20 12:22:33,686 - WARNING - Trial 7 failed with parameters: {'n_components': 217, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'LU', 'tol': 4.3641835798074946e-05, 'solver': 'saga', 'C': 2.0114974542674943e-05, 'l1_ratio': 0.5442902405641438} because of the following error: ValueError('n_components(217) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(217) must be <= n_features(75).
+2026-05-20 12:22:33,689 - WARNING - Trial 7 failed with value None.
+2026-05-20 12:22:33,724 - WARNING - Trial 11 failed with parameters: {'n_components': 76, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'QR', 'tol': 9.874813757766379e-06, 'solver': 'saga', 'C': 2.086427196949555, 'l1_ratio': 0.16861429354642998} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.
+2026-05-20 12:22:33,725 - WARNING - Trial 5 failed with parameters: {'n_components': 174, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'LU', 'tol': 5.061113189791929e-06, 'solver': 'saga', 'C': 32.18272716570454, 'l1_ratio': 0.7050131530027194} because of the following error: ValueError('n_components(174) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(174) must be <= n_features(75).
+2026-05-20 12:22:33,732 - WARNING - Trial 11 failed with value None.
+2026-05-20 12:22:33,733 - WARNING - Trial 5 failed with value None.
+2026-05-20 12:22:33,739 - WARNING - Trial 2 failed with parameters: {'n_components': 212, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'auto', 'tol': 0.0003757179294809632, 'solver': 'saga', 'C': 3.395322095804328, 'l1_ratio': 0.07373012917421573} because of the following error: ValueError('n_components(212) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(212) must be <= n_features(75).
+2026-05-20 12:22:33,748 - WARNING - Trial 6 failed with parameters: {'n_components': 197, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'QR', 'tol': 9.232373819485328e-06, 'solver': 'saga', 'C': 0.6306078728693127, 'l1_ratio': 0.6922769835534416} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.
+2026-05-20 12:22:33,751 - WARNING - Trial 2 failed with value None.
+2026-05-20 12:22:33,751 - WARNING - Trial 6 failed with value None.
+2026-05-20 12:22:33,770 - WARNING - Trial 1 failed with parameters: {'n_components': 135, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'QR', 'tol': 2.6500296222153876e-05, 'solver': 'saga', 'C': 0.808388332781026, 'l1_ratio': 0.5961330994209291} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.
+2026-05-20 12:22:33,783 - WARNING - Trial 10 failed with parameters: {'n_components': 44, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'QR', 'tol': 1.4547201718780307e-05, 'solver': 'saga', 'C': 33.01515914182928, 'l1_ratio': 0.6898250136637377} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.
+2026-05-20 12:22:33,783 - WARNING - Trial 8 failed with parameters: {'n_components': 76, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'QR', 'tol': 0.0007481641045204896, 'solver': 'saga', 'C': 98.76430400935509, 'l1_ratio': 0.22099275114486983} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.
+2026-05-20 12:22:33,784 - WARNING - Trial 9 failed with parameters: {'n_components': 66, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'QR', 'tol': 1.3469345565015226e-05, 'solver': 'saga', 'C': 0.0013319174570990766, 'l1_ratio': 0.883810636245492} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'LU', 'none', 'auto', 'OR'}. Got 'QR' instead.
+2026-05-20 12:22:33,786 - WARNING - Trial 1 failed with value None.
+2026-05-20 12:22:33,787 - WARNING - Trial 0 failed with parameters: {'n_components': 233, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'tol': 1.741585215284311e-06, 'solver': 'saga', 'C': 1.8618118034577849, 'l1_ratio': 0.17833033249251062} because of the following error: ValueError('n_components(233) must be <= n_features(75).').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/decomposition/_truncated_svd.py", line 240, in fit_transform
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: n_components(233) must be <= n_features(75).
+2026-05-20 12:22:33,788 - WARNING - Trial 10 failed with value None.
+2026-05-20 12:22:33,789 - WARNING - Trial 8 failed with value None.
+2026-05-20 12:22:33,789 - WARNING - Trial 9 failed with value None.
+2026-05-20 12:22:33,790 - WARNING - Trial 0 failed with value None.
+2026-05-20 12:23:09,148 - INFO - ----- Fine Tuning -----
+2026-05-20 12:23:09,149 - INFO - A new study created in memory with name: no-name-0fb94f0b-b8ac-401a-8a0b-f9238ce17d36
+2026-05-20 12:23:16,308 - WARNING - Trial 0 failed with parameters: {'n_components': 29, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'QR', 'tol': 0.004274835655404493, 'solver': 'saga', 'C': 11.699041496844451, 'l1_ratio': 0.5740641592888127} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'none', 'OR', 'auto', 'LU'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'none', 'OR', 'auto', 'LU'}. Got 'QR' instead.
+2026-05-20 12:23:16,325 - WARNING - Trial 0 failed with value None.
+2026-05-20 12:23:16,677 - WARNING - Trial 10 failed with parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'QR', 'tol': 0.0002239657416869118, 'solver': 'saga', 'C': 62.75476208868737, 'l1_ratio': 0.2943878802392411} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'none', 'OR', 'auto', 'LU'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'none', 'OR', 'auto', 'LU'}. Got 'QR' instead.
+2026-05-20 12:23:16,679 - WARNING - Trial 10 failed with value None.
+2026-05-20 12:23:16,697 - WARNING - Trial 5 failed with parameters: {'n_components': 18, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'QR', 'tol': 2.220381151239934e-06, 'solver': 'saga', 'C': 4.14959262962994, 'l1_ratio': 0.038944369635823484} because of the following error: InvalidParameterError("The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'none', 'OR', 'auto', 'LU'}. Got 'QR' instead.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 121, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncate_svd_logistic_regression_tuning.py", line 106, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 613, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 547, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 1484, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'power_iteration_normalizer' parameter of TruncatedSVD must be a str among {'none', 'OR', 'auto', 'LU'}. Got 'QR' instead.
+2026-05-20 12:23:16,752 - WARNING - Trial 5 failed with value None.
+2026-05-20 12:23:50,478 - INFO - ----- Fine Tuning -----
+2026-05-20 12:23:50,478 - INFO - A new study created in memory with name: no-name-97006197-e33e-4b4e-806b-2ddf699c50e9
+2026-05-20 12:26:07,731 - INFO - Trial 4 finished with value: 0.5 and parameters: {'n_components': 3, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'OR', 'tol': 8.925638252789607e-06, 'solver': 'saga', 'C': 2.620037923127566e-05, 'l1_ratio': 0.38948821611812146}. Best is trial 4 with value: 0.5.
+2026-05-20 12:26:22,415 - INFO - Trial 9 finished with value: 0.7094842954395669 and parameters: {'n_components': 20, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'LU', 'tol': 2.8443665628314203e-06, 'solver': 'saga', 'C': 1.5226760981017798e-05, 'l1_ratio': 0.704131337848698}. Best is trial 9 with value: 0.7094842954395669.
+2026-05-20 12:26:34,911 - INFO - Trial 5 finished with value: 0.8329242691413781 and parameters: {'n_components': 32, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'OR', 'tol': 5.454744601849945e-05, 'solver': 'saga', 'C': 5.3521740460498944e-05, 'l1_ratio': 0.3459000969203845}. Best is trial 5 with value: 0.8329242691413781.
+2026-05-20 12:28:17,855 - INFO - Trial 3 finished with value: 0.8886529691329832 and parameters: {'n_components': 68, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'tol': 0.00023564244406115156, 'solver': 'saga', 'C': 0.00035492200558840883, 'l1_ratio': 0.8926154638108101}. Best is trial 3 with value: 0.8886529691329832.
+2026-05-20 12:29:19,719 - INFO - Trial 7 finished with value: 0.8872656713832805 and parameters: {'n_components': 72, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'tol': 0.00022226236091905482, 'solver': 'saga', 'C': 0.00015799625132995615, 'l1_ratio': 0.4795087350428977}. Best is trial 3 with value: 0.8886529691329832.
+2026-05-20 12:29:40,893 - INFO - Trial 8 finished with value: 0.89004723118193 and parameters: {'n_components': 69, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'auto', 'tol': 0.0002323062426738737, 'solver': 'saga', 'C': 8.495947696776449e-05, 'l1_ratio': 0.09201025005657382}. Best is trial 8 with value: 0.89004723118193.
+2026-05-20 12:29:53,100 - INFO - Trial 6 pruned. 
+2026-05-20 12:30:00,311 - INFO - Trial 13 finished with value: 0.8905450918162497 and parameters: {'n_components': 52, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'OR', 'tol': 0.006369052314660639, 'solver': 'saga', 'C': 0.0002167727087826551, 'l1_ratio': 0.029594222992525343}. Best is trial 13 with value: 0.8905450918162497.
+2026-05-20 12:30:44,732 - INFO - Trial 15 pruned. 
+2026-05-20 12:31:01,088 - INFO - Trial 16 pruned. 
+2026-05-20 12:31:22,899 - INFO - Trial 17 pruned. 
+2026-05-20 12:31:23,785 - INFO - Trial 19 pruned. 
+2026-05-20 12:32:16,180 - INFO - Trial 20 pruned. 
+2026-05-20 12:32:44,630 - INFO - Trial 12 pruned. 
+2026-05-20 12:33:38,202 - INFO - Trial 0 pruned. 
+2026-05-20 12:37:24,294 - INFO - Trial 1 pruned. 
+2026-05-20 12:46:12,898 - INFO - ----- Fine Tuning -----
+2026-05-20 12:46:12,898 - INFO - A new study created in memory with name: no-name-d7a749dc-b051-4e42-afaa-9f6256fdc708
+2026-05-20 12:47:40,402 - INFO - Trial 0 finished with value: 0.7098745268370148 and parameters: {'n_components': 5, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'OR', 'tol': 3.587680459173283e-05, 'solver': 'saga', 'C': 1.802592750085776, 'l1_ratio': 0.7305267091027153}. Best is trial 0 with value: 0.7098745268370148.
+2026-05-20 12:47:43,853 - INFO - Trial 9 finished with value: 0.7094526374416783 and parameters: {'n_components': 4, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'tol': 0.000440238930856418, 'solver': 'saga', 'C': 27.99543002680004, 'l1_ratio': 0.34979793375549295}. Best is trial 0 with value: 0.7098745268370148.
+2026-05-20 12:47:55,712 - INFO - Trial 7 finished with value: 0.7098753053829764 and parameters: {'n_components': 5, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'auto', 'tol': 3.852187839648536e-05, 'solver': 'saga', 'C': 1.2918813643431584, 'l1_ratio': 0.9032244716434507}. Best is trial 7 with value: 0.7098753053829764.
+2026-05-20 12:48:18,188 - INFO - Trial 6 finished with value: 0.7428017327026446 and parameters: {'n_components': 21, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'tol': 0.0001358054195543164, 'solver': 'saga', 'C': 2.353991299752265e-05, 'l1_ratio': 0.8068763037817502}. Best is trial 6 with value: 0.7428017327026446.
+2026-05-20 12:49:06,715 - INFO - Trial 13 finished with value: 0.5380375729251881 and parameters: {'n_components': 2, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'LU', 'tol': 0.004539994789014129, 'solver': 'saga', 'C': 0.0002741616151381497, 'l1_ratio': 0.1944284592634492}. Best is trial 6 with value: 0.7428017327026446.
+2026-05-20 12:49:09,994 - INFO - Trial 14 finished with value: 0.7094595672593329 and parameters: {'n_components': 4, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'auto', 'tol': 0.0059674596454822905, 'solver': 'saga', 'C': 0.02607152786378257, 'l1_ratio': 0.06497427061355665}. Best is trial 6 with value: 0.7428017327026446.
+2026-05-20 12:49:52,122 - INFO - Trial 2 finished with value: 0.776703216580035 and parameters: {'n_components': 11, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'OR', 'tol': 0.001773979340768086, 'solver': 'saga', 'C': 4.0789886240759445, 'l1_ratio': 0.6296854983130611}. Best is trial 2 with value: 0.776703216580035.
+2026-05-20 12:51:13,422 - INFO - Trial 17 finished with value: 0.7809958590853301 and parameters: {'n_components': 12, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'LU', 'tol': 3.5161951280449618e-06, 'solver': 'saga', 'C': 0.0005743067035392047, 'l1_ratio': 0.680909007993979}. Best is trial 17 with value: 0.7809958590853301.
+2026-05-20 13:00:26,462 - INFO - Trial 16 finished with value: 0.8926413242755171 and parameters: {'n_components': 55, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'LU', 'tol': 0.00012945997659423976, 'solver': 'saga', 'C': 0.00629800331854468, 'l1_ratio': 0.3889805888793645}. Best is trial 16 with value: 0.8926413242755171.
+2026-05-20 13:01:28,298 - INFO - Trial 12 finished with value: 0.8934698061815045 and parameters: {'n_components': 60, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'LU', 'tol': 0.00098084205584177, 'solver': 'saga', 'C': 5.060768912585233, 'l1_ratio': 0.20522524065502867}. Best is trial 12 with value: 0.8934698061815045.
+2026-05-20 13:01:38,478 - INFO - Trial 15 finished with value: 0.8406213679904854 and parameters: {'n_components': 29, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'LU', 'tol': 0.0007121489455485085, 'solver': 'saga', 'C': 0.004757720273702963, 'l1_ratio': 0.9418922316265516}. Best is trial 12 with value: 0.8934698061815045.
+2026-05-20 13:04:59,196 - INFO - Trial 22 finished with value: 0.8933709308314752 and parameters: {'n_components': 61, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'LU', 'tol': 0.0001653324444268343, 'solver': 'saga', 'C': 0.15389843836067935, 'l1_ratio': 0.40810723343194777}. Best is trial 12 with value: 0.8934698061815045.
+2026-05-20 13:05:32,596 - INFO - Trial 4 finished with value: 0.8290469269121559 and parameters: {'n_components': 27, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'LU', 'tol': 1.1356234333602957e-05, 'solver': 'saga', 'C': 0.11096964109055335, 'l1_ratio': 0.0066521342816882045}. Best is trial 12 with value: 0.8934698061815045.
+2026-05-20 13:05:32,705 - INFO - Trial 1 finished with value: 0.8596222491970019 and parameters: {'n_components': 35, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'OR', 'tol': 7.104389887773207e-06, 'solver': 'saga', 'C': 0.9220597247690787, 'l1_ratio': 0.7839023669507349}. Best is trial 12 with value: 0.8934698061815045.
+2026-05-20 13:06:21,773 - INFO - Trial 20 finished with value: 0.891397925895788 and parameters: {'n_components': 52, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'LU', 'tol': 4.738469866159301e-06, 'solver': 'saga', 'C': 0.0005008700700348581, 'l1_ratio': 0.18629584726788373}. Best is trial 12 with value: 0.8934698061815045.
+2026-05-20 13:07:34,257 - INFO - Trial 10 finished with value: 0.8291938404015158 and parameters: {'n_components': 28, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'LU', 'tol': 0.002003832952140287, 'solver': 'saga', 'C': 15.754260951654766, 'l1_ratio': 0.3341393760904474}. Best is trial 12 with value: 0.8934698061815045.
+2026-05-20 13:09:28,828 - INFO - Trial 18 finished with value: 0.8290261803460041 and parameters: {'n_components': 27, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'LU', 'tol': 0.0007510828637797936, 'solver': 'saga', 'C': 2.2733345066835424, 'l1_ratio': 0.5131165459849027}. Best is trial 12 with value: 0.8934698061815045.
+2026-05-20 13:43:24,091 - INFO - ----- Fine Tuning -----
+2026-05-20 13:43:24,091 - INFO - A new study created in memory with name: no-name-3a835272-8e08-4548-b161-1ada4ea9b571
+2026-05-20 13:51:33,020 - INFO - Trial 8 finished with value: 0.8943670553660142 and parameters: {'n_components': 20, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'LU', 'tol': 0.0010149913026866993, 'num_leaves': 220, 'max_depth': 3, 'learning_rate': 0.016239663455265393, 'lambda_l1': 0.009987297957903448, 'lambda_l2': 0.0017337567678018832, 'feature_fraction': 0.6701113316049467, 'bagging_fraction': 0.8097265786643473, 'bagging_freq': 3, 'min_child_samples': 22}. Best is trial 8 with value: 0.8943670553660142.
+2026-05-20 13:56:37,152 - INFO - Trial 9 finished with value: 0.9304228003818931 and parameters: {'n_components': 69, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'LU', 'tol': 2.0454034090627375e-06, 'num_leaves': 139, 'max_depth': 3, 'learning_rate': 0.10111284122439886, 'lambda_l1': 0.10793708890412199, 'lambda_l2': 0.012001259404231796, 'feature_fraction': 0.6871295540789624, 'bagging_fraction': 0.704841279965814, 'bagging_freq': 4, 'min_child_samples': 65}. Best is trial 9 with value: 0.9304228003818931.
+2026-05-20 14:00:37,544 - INFO - Trial 10 finished with value: 0.9263597781328929 and parameters: {'n_components': 53, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'OR', 'tol': 8.099486363693116e-06, 'num_leaves': 246, 'max_depth': 4, 'learning_rate': 0.029123422261971423, 'lambda_l1': 0.10294196659436745, 'lambda_l2': 0.0024893283274015957, 'feature_fraction': 0.9613385503397383, 'bagging_fraction': 0.8129634092813841, 'bagging_freq': 4, 'min_child_samples': 97}. Best is trial 9 with value: 0.9304228003818931.
+2026-05-20 14:02:32,544 - INFO - Trial 11 finished with value: 0.9314055479270692 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'tol': 0.0005463615594995925, 'num_leaves': 30, 'max_depth': 4, 'learning_rate': 0.04619621094499463, 'lambda_l1': 0.007396827798996783, 'lambda_l2': 0.010168402492429516, 'feature_fraction': 0.7179580112553181, 'bagging_fraction': 0.9780420405091808, 'bagging_freq': 7, 'min_child_samples': 91}. Best is trial 11 with value: 0.9314055479270692.
+2026-05-20 14:06:12,388 - INFO - Trial 1 finished with value: 0.8612075680236618 and parameters: {'n_components': 7, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'OR', 'tol': 0.0007794141169151102, 'num_leaves': 192, 'max_depth': 12, 'learning_rate': 0.12423754821566209, 'lambda_l1': 0.017774387319163334, 'lambda_l2': 0.05195493005161798, 'feature_fraction': 0.6743722514031563, 'bagging_fraction': 0.8091094727002932, 'bagging_freq': 1, 'min_child_samples': 25}. Best is trial 11 with value: 0.9314055479270692.
+2026-05-20 14:06:50,564 - INFO - Trial 12 pruned. 
+2026-05-20 14:07:25,968 - INFO - Trial 0 pruned. 
+2026-05-20 14:09:15,221 - INFO - Trial 2 finished with value: 0.92859926173254 and parameters: {'n_components': 42, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'LU', 'tol': 0.0027683941601047545, 'num_leaves': 33, 'max_depth': 10, 'learning_rate': 0.011222274088168416, 'lambda_l1': 0.0014990948641045384, 'lambda_l2': 0.11134106696457369, 'feature_fraction': 0.9970192633485226, 'bagging_fraction': 0.6084398209611869, 'bagging_freq': 1, 'min_child_samples': 26}. Best is trial 11 with value: 0.9314055479270692.
+2026-05-20 14:10:52,779 - INFO - Trial 16 pruned. 
+2026-05-20 14:13:14,278 - INFO - Trial 17 pruned. 
+2026-05-20 14:13:24,792 - INFO - Trial 6 pruned. 
+2026-05-20 14:26:08,819 - INFO - Trial 5 finished with value: 0.9328512018805594 and parameters: {'n_components': 30, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'LU', 'tol': 5.951745368693615e-05, 'num_leaves': 211, 'max_depth': 12, 'learning_rate': 0.05660486444995508, 'lambda_l1': 0.0783149654863201, 'lambda_l2': 0.7351575806597243, 'feature_fraction': 0.711059307963051, 'bagging_fraction': 0.8021935591045166, 'bagging_freq': 2, 'min_child_samples': 59}. Best is trial 5 with value: 0.9328512018805594.
+2026-05-20 14:27:50,136 - INFO - Trial 7 finished with value: 0.9315794132260734 and parameters: {'n_components': 52, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'OR', 'tol': 0.00018910623430581528, 'num_leaves': 109, 'max_depth': 8, 'learning_rate': 0.0717615231520183, 'lambda_l1': 0.007710382021913472, 'lambda_l2': 0.0667222651246705, 'feature_fraction': 0.9353362553890802, 'bagging_fraction': 0.706396408624711, 'bagging_freq': 5, 'min_child_samples': 26}. Best is trial 5 with value: 0.9328512018805594.
+2026-05-20 14:28:30,193 - INFO - Trial 20 pruned. 
+2026-05-20 14:29:09,817 - INFO - Trial 19 pruned. 
+2026-05-20 14:29:24,141 - INFO - Trial 18 finished with value: 0.9359604004098717 and parameters: {'n_components': 64, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'LU', 'tol': 1.1850556766671812e-05, 'num_leaves': 41, 'max_depth': 12, 'learning_rate': 0.08721207670657674, 'lambda_l1': 0.0034522765784322264, 'lambda_l2': 0.0954475657868849, 'feature_fraction': 0.7479584463552109, 'bagging_fraction': 0.9091867530568217, 'bagging_freq': 3, 'min_child_samples': 43}. Best is trial 18 with value: 0.9359604004098717.
+2026-05-20 14:37:40,246 - INFO - Trial 22 finished with value: 0.934746463893626 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'auto', 'tol': 0.00012126293571747227, 'num_leaves': 64, 'max_depth': 5, 'learning_rate': 0.039335165457236476, 'lambda_l1': 0.12997511808696727, 'lambda_l2': 0.013621709846048501, 'feature_fraction': 0.7587988262002334, 'bagging_fraction': 0.7068800352636226, 'bagging_freq': 5, 'min_child_samples': 75}. Best is trial 18 with value: 0.9359604004098717.
+2026-05-20 14:40:46,192 - INFO - Trial 21 finished with value: 0.9354018462121566 and parameters: {'n_components': 65, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'auto', 'tol': 0.00014811324956331802, 'num_leaves': 38, 'max_depth': 6, 'learning_rate': 0.03594466341299631, 'lambda_l1': 0.644746393369563, 'lambda_l2': 0.8325720018328577, 'feature_fraction': 0.7817366242037869, 'bagging_fraction': 0.9769720739253301, 'bagging_freq': 7, 'min_child_samples': 78}. Best is trial 18 with value: 0.9359604004098717.
+2026-05-20 14:41:55,967 - INFO - Trial 4 finished with value: 0.939461157020039 and parameters: {'n_components': 59, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'auto', 'tol': 1.3022926982125576e-06, 'num_leaves': 128, 'max_depth': 10, 'learning_rate': 0.03409600347639228, 'lambda_l1': 1.0628563538033857, 'lambda_l2': 7.868471599504208, 'feature_fraction': 0.6626817767126574, 'bagging_fraction': 0.8049311570827886, 'bagging_freq': 2, 'min_child_samples': 78}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 14:47:25,887 - INFO - Trial 13 finished with value: 0.9342245295015811 and parameters: {'n_components': 36, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'LU', 'tol': 1.0651082406349519e-05, 'num_leaves': 229, 'max_depth': 11, 'learning_rate': 0.040175999425781234, 'lambda_l1': 0.02871815308039905, 'lambda_l2': 0.04703775717546453, 'feature_fraction': 0.8103246277850004, 'bagging_fraction': 0.9664857395386383, 'bagging_freq': 3, 'min_child_samples': 57}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 14:49:47,146 - INFO - Trial 27 finished with value: 0.9328336991609755 and parameters: {'n_components': 29, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'LU', 'tol': 2.2946581671571756e-05, 'num_leaves': 70, 'max_depth': 12, 'learning_rate': 0.035494043949514775, 'lambda_l1': 0.03883075974627215, 'lambda_l2': 0.7329196317408951, 'feature_fraction': 0.7733568900021824, 'bagging_fraction': 0.8682512985205202, 'bagging_freq': 3, 'min_child_samples': 73}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 14:52:45,719 - INFO - Trial 14 finished with value: 0.9337489441659024 and parameters: {'n_components': 26, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'tol': 2.3517132455966204e-05, 'num_leaves': 231, 'max_depth': 11, 'learning_rate': 0.021696368446489183, 'lambda_l1': 0.0028821099031636527, 'lambda_l2': 3.037414209020825, 'feature_fraction': 0.8894855992361811, 'bagging_fraction': 0.8827806718933013, 'bagging_freq': 5, 'min_child_samples': 91}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 14:55:45,697 - INFO - Trial 26 pruned. 
+2026-05-20 14:57:12,887 - INFO - Trial 23 finished with value: 0.9365853369220183 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'auto', 'tol': 0.00013669318891723018, 'num_leaves': 54, 'max_depth': 12, 'learning_rate': 0.04023333542823333, 'lambda_l1': 0.5701542236772802, 'lambda_l2': 0.3191939686520223, 'feature_fraction': 0.7677318035840084, 'bagging_fraction': 0.9995113235353297, 'bagging_freq': 6, 'min_child_samples': 76}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 14:58:44,690 - INFO - Trial 25 finished with value: 0.9382370092387327 and parameters: {'n_components': 54, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'LU', 'tol': 9.543861192903146e-05, 'num_leaves': 86, 'max_depth': 12, 'learning_rate': 0.030074775449567086, 'lambda_l1': 0.5039803205476858, 'lambda_l2': 0.37242718826214166, 'feature_fraction': 0.7983272284841055, 'bagging_fraction': 0.7078782461074108, 'bagging_freq': 3, 'min_child_samples': 67}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 14:58:48,692 - INFO - Trial 24 finished with value: 0.9379699774401272 and parameters: {'n_components': 56, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'LU', 'tol': 9.107511978493904e-05, 'num_leaves': 77, 'max_depth': 12, 'learning_rate': 0.030725817572696507, 'lambda_l1': 0.5614173586097623, 'lambda_l2': 0.36015729707776195, 'feature_fraction': 0.7986238590346277, 'bagging_fraction': 0.7074304203667447, 'bagging_freq': 3, 'min_child_samples': 64}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 15:01:22,055 - INFO - Trial 28 finished with value: 0.9364514310300475 and parameters: {'n_components': 62, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'auto', 'tol': 1.7756457783839418e-05, 'num_leaves': 75, 'max_depth': 6, 'learning_rate': 0.030844213498266593, 'lambda_l1': 0.5375249992233333, 'lambda_l2': 0.29128300022384507, 'feature_fraction': 0.7886501571451492, 'bagging_fraction': 0.8874705973336088, 'bagging_freq': 3, 'min_child_samples': 75}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 15:01:42,250 - INFO - Trial 3 finished with value: 0.9382685403923432 and parameters: {'n_components': 72, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 0.0015659258236704933, 'num_leaves': 178, 'max_depth': 11, 'learning_rate': 0.015470797117604757, 'lambda_l1': 1.5467637095134998, 'lambda_l2': 0.028112238677261266, 'feature_fraction': 0.9702294321199334, 'bagging_fraction': 0.7989339026088087, 'bagging_freq': 5, 'min_child_samples': 13}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 15:01:52,544 - INFO - Trial 15 finished with value: 0.9382731719558987 and parameters: {'n_components': 61, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'LU', 'tol': 0.0006922739798819307, 'num_leaves': 149, 'max_depth': 9, 'learning_rate': 0.06364682855575064, 'lambda_l1': 7.68976025599429, 'lambda_l2': 0.0040346354636227565, 'feature_fraction': 0.906177241757369, 'bagging_fraction': 0.7002044249988554, 'bagging_freq': 5, 'min_child_samples': 89}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 15:03:12,781 - INFO - Trial 29 finished with value: 0.9364257235191195 and parameters: {'n_components': 63, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'tol': 1.7434782965618138e-05, 'num_leaves': 75, 'max_depth': 6, 'learning_rate': 0.03163406324784159, 'lambda_l1': 0.6519425806472249, 'lambda_l2': 0.31234473753435826, 'feature_fraction': 0.8601299982736934, 'bagging_fraction': 0.8822494284685537, 'bagging_freq': 3, 'min_child_samples': 41}. Best is trial 4 with value: 0.939461157020039.
+2026-05-20 15:03:12,790 - INFO - Best AUC: 0.939461157020039 | Best params: {'n_components': 59, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'auto', 'tol': 1.3022926982125576e-06, 'num_leaves': 128, 'max_depth': 10, 'learning_rate': 0.03409600347639228, 'lambda_l1': 1.0628563538033857, 'lambda_l2': 7.868471599504208, 'feature_fraction': 0.6626817767126574, 'bagging_fraction': 0.8049311570827886, 'bagging_freq': 2, 'min_child_samples': 78}
+2026-05-20 15:03:12,791 - INFO - ----- Saving Pipeline -----
+2026-05-20 15:05:54,470 - INFO - ----- Saving Pipeline -----
+2026-05-20 15:06:22,517 - INFO - ----- Saving Pipeline -----
+2026-05-20 15:07:54,137 - INFO - ----- Saving Pipeline -----
+2026-05-20 23:41:55,964 - INFO - ----- Fine Tuning -----
+2026-05-20 23:41:55,964 - INFO - A new study created in memory with name: no-name-107032a1-3e17-4b7f-a16d-e4fa6cf68d58
+2026-05-20 23:44:02,150 - INFO - Trial 6 finished with value: 0.5 and parameters: {'n_components': 37, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'auto', 'tol': 0.00013330654901350884, 'solver': 'saga', 'C': 1.278258719780785e-05, 'l1_ratio': 0.9440122141218419}. Best is trial 6 with value: 0.5.
+2026-05-20 23:44:40,085 - INFO - Trial 3 finished with value: 0.543688243538442 and parameters: {'n_components': 2, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'LU', 'tol': 5.6268228631113415e-05, 'solver': 'saga', 'C': 0.2718102185778679, 'l1_ratio': 0.8298732293554514}. Best is trial 3 with value: 0.543688243538442.
+2026-05-20 23:44:43,614 - INFO - Trial 1 finished with value: 0.7602682793586046 and parameters: {'n_components': 11, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'LU', 'tol': 0.000996993501161696, 'solver': 'saga', 'C': 0.00017037344579887118, 'l1_ratio': 0.19129506746996394}. Best is trial 1 with value: 0.7602682793586046.
+2026-05-20 23:44:46,271 - INFO - Trial 11 finished with value: 0.8701546262573899 and parameters: {'n_components': 42, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'LU', 'tol': 0.000982455316231765, 'solver': 'saga', 'C': 2.5920442879454717e-05, 'l1_ratio': 0.13845116451680517}. Best is trial 11 with value: 0.8701546262573899.
+2026-05-20 23:45:06,635 - INFO - Trial 7 finished with value: 0.888936033293767 and parameters: {'n_components': 62, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'LU', 'tol': 0.0003678467547983055, 'solver': 'saga', 'C': 0.0003569937226367603, 'l1_ratio': 0.8722315472291758}. Best is trial 7 with value: 0.888936033293767.
+2026-05-20 23:45:27,522 - INFO - Trial 12 pruned. 
+2026-05-20 23:45:55,188 - INFO - Trial 5 finished with value: 0.8934408960655382 and parameters: {'n_components': 64, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'LU', 'tol': 4.876014157296274e-05, 'solver': 'saga', 'C': 1.9476634293736808, 'l1_ratio': 0.0839149546489234}. Best is trial 5 with value: 0.8934408960655382.
+2026-05-20 23:46:13,748 - INFO - Trial 2 pruned. 
+2026-05-20 23:46:41,030 - INFO - Trial 10 pruned. 
+2026-05-20 23:46:46,509 - INFO - Trial 15 pruned. 
+2026-05-20 23:46:54,211 - INFO - Trial 9 finished with value: 0.8785637396265148 and parameters: {'n_components': 56, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'OR', 'tol': 0.0008642135525682114, 'solver': 'saga', 'C': 0.0003123988100863186, 'l1_ratio': 0.9711967800779777}. Best is trial 5 with value: 0.8934408960655382.
+2026-05-20 23:47:01,882 - INFO - Trial 14 pruned. 
+2026-05-20 23:47:28,640 - INFO - Trial 17 pruned. 
+2026-05-20 23:50:03,370 - INFO - Trial 20 finished with value: 0.8925647345521039 and parameters: {'n_components': 66, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'auto', 'tol': 1.3964422984312561e-05, 'solver': 'saga', 'C': 0.0016805674525549798, 'l1_ratio': 0.9658052059655445}. Best is trial 5 with value: 0.8934408960655382.
+2026-05-20 23:50:57,832 - INFO - Trial 18 pruned. 
+2026-05-20 23:58:19,924 - INFO - Trial 4 finished with value: 0.8934172044768373 and parameters: {'n_components': 65, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'OR', 'tol': 0.00010309555605109726, 'solver': 'saga', 'C': 0.02917674715632158, 'l1_ratio': 0.7936193717499858}. Best is trial 5 with value: 0.8934408960655382.
+2026-05-21 00:02:58,551 - INFO - Trial 0 finished with value: 0.885729392879148 and parameters: {'n_components': 43, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'OR', 'tol': 3.1640917426286655e-06, 'solver': 'saga', 'C': 0.00678641757270033, 'l1_ratio': 0.0973929448319828}. Best is trial 5 with value: 0.8934408960655382.
+2026-05-21 00:04:19,956 - INFO - Trial 16 finished with value: 0.8927273755103153 and parameters: {'n_components': 55, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.0005086330470920191, 'solver': 'saga', 'C': 0.045934007546726774, 'l1_ratio': 0.8877415140192075}. Best is trial 5 with value: 0.8934408960655382.
+2026-05-21 00:06:32,901 - INFO - Trial 19 pruned. 
+2026-05-21 00:06:54,095 - INFO - Trial 8 finished with value: 0.8894104616435822 and parameters: {'n_components': 46, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'LU', 'tol': 3.6966570976999667e-06, 'solver': 'saga', 'C': 0.027093649065176573, 'l1_ratio': 0.10864158632612841}. Best is trial 5 with value: 0.8934408960655382.
+2026-05-21 00:49:59,783 - INFO - Trial 13 finished with value: 0.8931895132947709 and parameters: {'n_components': 59, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'LU', 'tol': 9.619346341549262e-05, 'solver': 'saga', 'C': 0.06307053433018894, 'l1_ratio': 0.9603019329622458}. Best is trial 5 with value: 0.8934408960655382.
+2026-05-21 00:51:52,767 - INFO - Trial 26 finished with value: 0.8935909096630755 and parameters: {'n_components': 72, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'auto', 'tol': 2.1537849280058203e-05, 'solver': 'saga', 'C': 1.2187656319729034, 'l1_ratio': 0.6928623153472109}. Best is trial 26 with value: 0.8935909096630755.
+2026-05-21 02:34:24,267 - INFO - ----- Fine Tuning -----
+2026-05-21 02:34:24,268 - INFO - A new study created in memory with name: no-name-64c01e31-2d11-4eb1-a8fd-cb83cddf8a73
+2026-05-21 05:22:36,847 - INFO - ----- Fine Tuning -----
+2026-05-21 05:22:36,847 - INFO - A new study created in memory with name: no-name-566ae511-0855-40ea-a897-5b2946db8a20
+2026-05-21 05:24:59,597 - INFO - Trial 7 finished with value: 0.8750336471054695 and parameters: {'n_components': 66, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'OR', 'tol': 1.7224165249113394e-05, 'solver': 'saga', 'C': 0.00010475224324263944, 'l1_ratio': 0.6968367379363593}. Best is trial 7 with value: 0.8750336471054695.
+2026-05-21 05:25:16,563 - INFO - Trial 10 finished with value: 0.8432952365122912 and parameters: {'n_components': 53, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'OR', 'tol': 0.00010079819606661067, 'solver': 'saga', 'C': 4.9864885212858204e-05, 'l1_ratio': 0.3641510287982791}. Best is trial 7 with value: 0.8750336471054695.
+2026-05-21 05:26:50,031 - INFO - Trial 9 finished with value: 0.7820178432801799 and parameters: {'n_components': 12, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'LU', 'tol': 0.007252479421162315, 'solver': 'saga', 'C': 0.10114474861899642, 'l1_ratio': 0.5858493643386189}. Best is trial 7 with value: 0.8750336471054695.
+2026-05-21 05:27:20,405 - INFO - Trial 4 finished with value: 0.8201683283444998 and parameters: {'n_components': 27, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'OR', 'tol': 0.00014540678491560142, 'solver': 'saga', 'C': 0.0006622243875039486, 'l1_ratio': 0.6240690426306443}. Best is trial 7 with value: 0.8750336471054695.
+2026-05-21 05:27:56,101 - INFO - Trial 5 finished with value: 0.8760106480782802 and parameters: {'n_components': 39, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'auto', 'tol': 0.0007703711982372667, 'solver': 'saga', 'C': 0.00039473423346973334, 'l1_ratio': 0.2687107264386581}. Best is trial 5 with value: 0.8760106480782802.
+2026-05-21 05:28:08,223 - INFO - Trial 14 pruned. 
+2026-05-21 05:28:38,242 - INFO - Trial 6 pruned. 
+2026-05-21 05:28:53,678 - INFO - Trial 11 finished with value: 0.8907679184357006 and parameters: {'n_components': 59, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'tol': 0.002521173474023529, 'solver': 'saga', 'C': 0.0003089599930592606, 'l1_ratio': 0.2402594628586674}. Best is trial 11 with value: 0.8907679184357006.
+2026-05-21 05:29:01,474 - INFO - Trial 12 finished with value: 0.850650252319175 and parameters: {'n_components': 34, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'OR', 'tol': 3.701360279295403e-05, 'solver': 'saga', 'C': 0.0004710174242104127, 'l1_ratio': 0.336637781256095}. Best is trial 11 with value: 0.8907679184357006.
+2026-05-21 05:29:21,265 - INFO - Trial 15 pruned. 
+2026-05-21 05:29:52,432 - INFO - Trial 18 pruned. 
+2026-05-21 05:30:10,428 - INFO - Trial 2 pruned. 
+2026-05-21 05:33:01,063 - INFO - Trial 22 finished with value: 0.891605947822765 and parameters: {'n_components': 51, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 0.0008141363628989509, 'solver': 'saga', 'C': 0.008391660953643876, 'l1_ratio': 0.31673940136586165}. Best is trial 22 with value: 0.891605947822765.
+2026-05-21 05:34:14,749 - INFO - Trial 13 pruned. 
+2026-05-21 05:35:11,501 - INFO - Trial 8 pruned. 
+2026-05-21 05:37:11,592 - INFO - Trial 24 finished with value: 0.891899059130866 and parameters: {'n_components': 51, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 0.0006269005876412398, 'solver': 'saga', 'C': 0.01047425792026982, 'l1_ratio': 0.4219720430361281}. Best is trial 24 with value: 0.891899059130866.
+2026-05-21 05:38:55,825 - INFO - Trial 1 pruned. 
+2026-05-21 05:41:27,686 - INFO - Trial 26 finished with value: 0.8911722570373074 and parameters: {'n_components': 50, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 0.00030537425584114576, 'solver': 'saga', 'C': 0.04242499118877504, 'l1_ratio': 0.016990112930567736}. Best is trial 24 with value: 0.891899059130866.
+2026-05-21 05:44:00,298 - INFO - Trial 17 pruned. 
+2026-05-21 05:44:30,075 - INFO - Trial 16 pruned. 
+2026-05-21 05:44:36,237 - INFO - Trial 20 pruned. 
+2026-05-21 05:46:29,852 - INFO - Trial 23 finished with value: 0.890970938741124 and parameters: {'n_components': 49, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 0.0011331958636720339, 'solver': 'saga', 'C': 0.006900750631172455, 'l1_ratio': 0.010522347377791397}. Best is trial 24 with value: 0.891899059130866.
+2026-05-21 05:48:27,465 - INFO - Trial 27 finished with value: 0.887726849497362 and parameters: {'n_components': 44, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 0.00026941448658087584, 'solver': 'saga', 'C': 0.05791199098498131, 'l1_ratio': 0.42391942863645654}. Best is trial 24 with value: 0.891899059130866.
+2026-05-21 05:51:41,377 - INFO - Trial 25 finished with value: 0.8927516691434073 and parameters: {'n_components': 54, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 0.0007144683508829837, 'solver': 'saga', 'C': 0.033310661890157085, 'l1_ratio': 0.01904376966774668}. Best is trial 25 with value: 0.8927516691434073.
+2026-05-21 05:53:04,221 - INFO - Trial 28 finished with value: 0.8893360706968952 and parameters: {'n_components': 47, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 0.000391585756103701, 'solver': 'saga', 'C': 0.006195034009620878, 'l1_ratio': 0.011563055184109383}. Best is trial 25 with value: 0.8927516691434073.
+2026-05-21 05:54:34,448 - INFO - Trial 33 finished with value: 0.888778510187388 and parameters: {'n_components': 45, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.00028154373300783107, 'solver': 'saga', 'C': 0.005797084471796883, 'l1_ratio': 0.4113851189971054}. Best is trial 25 with value: 0.8927516691434073.
+2026-05-21 05:55:39,372 - INFO - Trial 29 pruned. 
+2026-05-21 06:00:48,339 - INFO - Trial 19 pruned. 
+2026-05-21 06:03:24,336 - INFO - Trial 35 finished with value: 0.8930599968002572 and parameters: {'n_components': 59, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.0005046630718730165, 'solver': 'saga', 'C': 0.009339493762138575, 'l1_ratio': 0.41072964466221323}. Best is trial 35 with value: 0.8930599968002572.
+2026-05-21 06:03:49,280 - INFO - Trial 31 finished with value: 0.8934279352193162 and parameters: {'n_components': 74, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.0003788387833438342, 'solver': 'saga', 'C': 0.0045260864305696645, 'l1_ratio': 0.4280071724895099}. Best is trial 31 with value: 0.8934279352193162.
+2026-05-21 06:03:59,649 - INFO - Trial 32 finished with value: 0.8893510127096274 and parameters: {'n_components': 47, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.0005025661900959707, 'solver': 'saga', 'C': 0.009560589752998658, 'l1_ratio': 0.006173208541992143}. Best is trial 31 with value: 0.8934279352193162.
+2026-05-21 06:10:32,554 - INFO - Trial 34 finished with value: 0.8935033435673333 and parameters: {'n_components': 74, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.0003940601008978604, 'solver': 'saga', 'C': 0.0057430437333773334, 'l1_ratio': 0.007032348588466741}. Best is trial 34 with value: 0.8935033435673333.
+2026-05-21 06:27:54,628 - INFO - Trial 21 finished with value: 0.8918689849864572 and parameters: {'n_components': 51, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 1.0705877019916966e-06, 'solver': 'saga', 'C': 0.027758230952278137, 'l1_ratio': 0.07422016875669044}. Best is trial 34 with value: 0.8935033435673333.
+2026-05-21 06:40:03,434 - INFO - Trial 44 finished with value: 0.8931431638440579 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'auto', 'tol': 0.0001415966942305845, 'solver': 'saga', 'C': 0.0017752160624423634, 'l1_ratio': 0.16743001647875722}. Best is trial 34 with value: 0.8935033435673333.
+2026-05-21 06:50:13,699 - INFO - Trial 0 finished with value: 0.8935330344042228 and parameters: {'n_components': 69, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 1.754536956369068e-05, 'solver': 'saga', 'C': 0.24936279267643952, 'l1_ratio': 0.3146253165335491}. Best is trial 0 with value: 0.8935330344042228.
+2026-05-21 06:53:41,612 - INFO - Trial 45 finished with value: 0.8934007715494185 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'LU', 'tol': 0.0001583647955474139, 'solver': 'saga', 'C': 0.0018232756482303072, 'l1_ratio': 0.20226729071760552}. Best is trial 0 with value: 0.8935330344042228.
+2026-05-21 06:54:30,732 - INFO - Trial 39 finished with value: 0.8928394839641249 and parameters: {'n_components': 57, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.009119112944460984, 'solver': 'saga', 'C': 0.43258854910893546, 'l1_ratio': 0.14077123584021528}. Best is trial 0 with value: 0.8935330344042228.
+2026-05-21 06:57:45,882 - INFO - Trial 41 finished with value: 0.893595040283157 and parameters: {'n_components': 74, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'LU', 'tol': 0.00610366333515385, 'solver': 'saga', 'C': 0.3453851953323206, 'l1_ratio': 0.23506844782903394}. Best is trial 41 with value: 0.893595040283157.
+2026-05-21 07:06:22,642 - INFO - Trial 46 finished with value: 0.8934633278761979 and parameters: {'n_components': 74, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'LU', 'tol': 6.221886647728268e-05, 'solver': 'saga', 'C': 0.002318388475830151, 'l1_ratio': 0.2033649635782684}. Best is trial 41 with value: 0.893595040283157.
+2026-05-21 07:10:50,840 - INFO - Trial 48 finished with value: 0.8932857884310914 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'LU', 'tol': 6.597624068589876e-05, 'solver': 'saga', 'C': 0.0020622470248833967, 'l1_ratio': 0.24705357517818205}. Best is trial 41 with value: 0.893595040283157.
+2026-05-21 07:30:29,868 - INFO - Trial 36 finished with value: 0.893610190673415 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.0007877157329164946, 'solver': 'saga', 'C': 0.3803617202118238, 'l1_ratio': 0.4502496478097277}. Best is trial 36 with value: 0.893610190673415.
+2026-05-21 07:33:16,661 - INFO - Trial 52 finished with value: 0.8932437791740135 and parameters: {'n_components': 67, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'LU', 'tol': 0.004538059288048477, 'solver': 'saga', 'C': 0.3525703975110837, 'l1_ratio': 0.5593137985321257}. Best is trial 36 with value: 0.893610190673415.
+2026-05-21 07:37:38,030 - INFO - Trial 42 finished with value: 0.8935666995995012 and parameters: {'n_components': 74, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 0.00013987978222716366, 'solver': 'saga', 'C': 0.22730189738481282, 'l1_ratio': 0.47453664843707033}. Best is trial 36 with value: 0.893610190673415.
+2026-05-21 07:42:43,158 - INFO - Trial 3 finished with value: 0.893576336621574 and parameters: {'n_components': 68, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'LU', 'tol': 1.739262974835816e-06, 'solver': 'saga', 'C': 6.417667710885413, 'l1_ratio': 0.06894154281403708}. Best is trial 36 with value: 0.893610190673415.
+2026-05-21 08:00:26,466 - INFO - Trial 51 finished with value: 0.8933881896037608 and parameters: {'n_components': 69, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'LU', 'tol': 9.276157096294863e-06, 'solver': 'saga', 'C': 0.23235132858249843, 'l1_ratio': 0.219933028194764}. Best is trial 36 with value: 0.893610190673415.
+2026-05-21 08:02:37,199 - INFO - Trial 56 finished with value: 0.8932613065030713 and parameters: {'n_components': 62, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'LU', 'tol': 0.004629078325299407, 'solver': 'saga', 'C': 1.4319689354563856, 'l1_ratio': 0.6370751243139855}. Best is trial 36 with value: 0.893610190673415.
+2026-05-21 08:02:57,187 - INFO - Trial 40 finished with value: 0.8937726214182687 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'LU', 'tol': 0.0001392365343269728, 'solver': 'saga', 'C': 0.35655141507820654, 'l1_ratio': 0.17750518257177195}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 08:09:47,612 - INFO - Trial 47 finished with value: 0.8935291652475945 and parameters: {'n_components': 74, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'LU', 'tol': 8.667953574287185e-05, 'solver': 'saga', 'C': 0.2154672632604651, 'l1_ratio': 0.24700081143827535}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 08:19:48,643 - INFO - Trial 49 finished with value: 0.8935469428836068 and parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'LU', 'tol': 0.004142200690290943, 'solver': 'saga', 'C': 0.3064854140179993, 'l1_ratio': 0.2492589562240264}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 08:22:06,136 - INFO - Trial 60 finished with value: 0.8932151836462928 and parameters: {'n_components': 64, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'LU', 'tol': 0.0016031406023502006, 'solver': 'saga', 'C': 1.100670454006161, 'l1_ratio': 0.4659435985478871}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 08:30:10,610 - INFO - Trial 50 finished with value: 0.8934601217292558 and parameters: {'n_components': 69, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'LU', 'tol': 6.80711918162539e-06, 'solver': 'saga', 'C': 0.3371230374249959, 'l1_ratio': 0.2650519934706255}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 08:46:55,827 - INFO - Trial 43 finished with value: 0.8935262881503411 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'auto', 'tol': 0.00014881296685142397, 'solver': 'saga', 'C': 0.18639317944103292, 'l1_ratio': 0.09814055333080401}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 08:51:35,656 - INFO - Trial 30 finished with value: 0.8936091862683595 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.0005897120581989988, 'solver': 'saga', 'C': 0.5120468054884167, 'l1_ratio': 0.45435662930271303}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 09:03:12,680 - INFO - Trial 55 finished with value: 0.8935343467090915 and parameters: {'n_components': 69, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'LU', 'tol': 5.9222617708309665e-06, 'solver': 'saga', 'C': 1.0188974696812192, 'l1_ratio': 0.6506561570068732}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 09:11:12,823 - INFO - Trial 38 finished with value: 0.8936078333271056 and parameters: {'n_components': 74, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.008723554402661308, 'solver': 'saga', 'C': 0.716600820815213, 'l1_ratio': 0.24306176490325443}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 09:19:08,359 - INFO - Trial 37 finished with value: 0.8932683060812276 and parameters: {'n_components': 59, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.006648905566237594, 'solver': 'saga', 'C': 0.45885698714672624, 'l1_ratio': 0.20624955761370162}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 09:20:59,048 - INFO - Trial 67 finished with value: 0.8932176439657399 and parameters: {'n_components': 65, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'LU', 'tol': 0.0010088666089435, 'solver': 'saga', 'C': 11.308462097459516, 'l1_ratio': 0.3702877661778767}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 09:40:47,457 - INFO - Trial 54 finished with value: 0.8933488048039478 and parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'LU', 'tol': 0.001380454696263478, 'solver': 'saga', 'C': 1.1953585324930707, 'l1_ratio': 0.660752101596765}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 09:42:29,774 - INFO - Trial 59 finished with value: 0.8935322671958618 and parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'LU', 'tol': 0.001119493273429766, 'solver': 'saga', 'C': 1.113581072290807, 'l1_ratio': 0.08771152627334225}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 09:45:08,899 - INFO - Trial 70 finished with value: 0.8932929237565805 and parameters: {'n_components': 62, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'LU', 'tol': 0.0023469287402562524, 'solver': 'saga', 'C': 3.5952056334765374, 'l1_ratio': 0.2889130951035199}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 09:47:49,747 - INFO - Trial 71 pruned. 
+2026-05-21 10:06:02,239 - INFO - Trial 57 finished with value: 0.8935250945634745 and parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'LU', 'tol': 2.5236536573781756e-06, 'solver': 'saga', 'C': 1.278786919788431, 'l1_ratio': 0.4852571667835728}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:11:35,943 - INFO - Trial 62 finished with value: 0.8934777217535771 and parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'LU', 'tol': 0.004019153320902779, 'solver': 'saga', 'C': 17.94034680809726, 'l1_ratio': 0.10929986204012994}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:31:28,489 - INFO - Trial 66 finished with value: 0.893557855697426 and parameters: {'n_components': 71, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'LU', 'tol': 0.0029764080174621496, 'solver': 'saga', 'C': 9.196463160886687, 'l1_ratio': 0.0691149503855773}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:34:31,457 - INFO - Trial 72 finished with value: 0.8935296354733037 and parameters: {'n_components': 72, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 0.006629008543178793, 'solver': 'saga', 'C': 0.09609103414073178, 'l1_ratio': 0.48575951791490857}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:35:37,456 - INFO - Trial 58 finished with value: 0.8935763080114973 and parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'LU', 'tol': 0.0001680901070656326, 'solver': 'saga', 'C': 1.1214027127312396, 'l1_ratio': 0.08011272642289527}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:36:53,650 - INFO - Trial 76 finished with value: 0.8934413328357966 and parameters: {'n_components': 66, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'auto', 'tol': 0.0002084491852209592, 'solver': 'saga', 'C': 41.27819716212274, 'l1_ratio': 0.5539558169448583}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:38:03,269 - INFO - Trial 77 finished with value: 0.8935277724905367 and parameters: {'n_components': 67, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'LU', 'tol': 1.2105475942335064e-06, 'solver': 'saga', 'C': 4.567564720193899, 'l1_ratio': 0.04235693698595621}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:38:59,079 - INFO - Trial 78 finished with value: 0.8933966886895366 and parameters: {'n_components': 67, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'LU', 'tol': 0.00942231060065083, 'solver': 'saga', 'C': 5.065361593101034, 'l1_ratio': 0.06398253230379831}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:40:44,036 - INFO - Trial 53 finished with value: 0.8935656702892161 and parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'LU', 'tol': 7.329322437560472e-06, 'solver': 'saga', 'C': 1.0585000904750135, 'l1_ratio': 0.19898232048826742}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:46:53,348 - INFO - Trial 81 finished with value: 0.8932787818179717 and parameters: {'n_components': 63, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'OR', 'tol': 5.2891757614561424e-05, 'solver': 'saga', 'C': 2.367431096202422, 'l1_ratio': 0.37361646410698346}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 10:59:15,821 - INFO - Trial 65 finished with value: 0.8934366307232885 and parameters: {'n_components': 71, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'LU', 'tol': 0.001040576943943908, 'solver': 'saga', 'C': 9.498950880359109, 'l1_ratio': 0.05470090107242134}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 11:04:13,032 - INFO - Trial 73 finished with value: 0.8935071279290694 and parameters: {'n_components': 71, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 0.00021791679769451013, 'solver': 'saga', 'C': 0.10842098930181925, 'l1_ratio': 0.5908209404462569}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 11:29:48,764 - INFO - Trial 61 finished with value: 0.8934291735266873 and parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'LU', 'tol': 0.00018150630956775861, 'solver': 'saga', 'C': 13.249749898450915, 'l1_ratio': 0.079086745521487}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 11:43:07,675 - INFO - Trial 75 finished with value: 0.8936663967735907 and parameters: {'n_components': 72, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 0.00017515201778230824, 'solver': 'saga', 'C': 0.10301352058602206, 'l1_ratio': 0.5292286225972714}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 11:44:30,557 - INFO - Trial 68 finished with value: 0.8935699776646056 and parameters: {'n_components': 71, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'LU', 'tol': 0.003471463767261772, 'solver': 'saga', 'C': 2.690976055221984, 'l1_ratio': 0.29633327404850757}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 11:48:25,958 - INFO - Trial 63 finished with value: 0.8935933018445871 and parameters: {'n_components': 70, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'LU', 'tol': 0.0038444563846196417, 'solver': 'saga', 'C': 7.472381894109, 'l1_ratio': 0.29197183990285897}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 11:58:36,517 - INFO - Trial 64 finished with value: 0.8935363103308933 and parameters: {'n_components': 71, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'LU', 'tol': 0.0001915253881967271, 'solver': 'saga', 'C': 9.074321043064812, 'l1_ratio': 0.4793076718843232}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 12:05:26,364 - INFO - Trial 69 finished with value: 0.8936158124032616 and parameters: {'n_components': 71, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'LU', 'tol': 0.003006446202578881, 'solver': 'saga', 'C': 4.152996973318097, 'l1_ratio': 0.07458506193901021}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 12:08:27,066 - INFO - Trial 82 finished with value: 0.8935192928893312 and parameters: {'n_components': 72, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.00010310457278630863, 'solver': 'saga', 'C': 0.6764696756117591, 'l1_ratio': 0.595134411991599}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 12:14:56,778 - INFO - Trial 83 finished with value: 0.8935354527911459 and parameters: {'n_components': 72, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'auto', 'tol': 0.00010038507695953829, 'solver': 'saga', 'C': 0.1165537104626847, 'l1_ratio': 0.592881141508548}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 12:52:53,093 - INFO - Trial 91 finished with value: 0.8935378448541813 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'tol': 0.001998060561181446, 'solver': 'saga', 'C': 0.018602886788351435, 'l1_ratio': 0.33754588479170955}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 13:08:20,869 - INFO - Trial 89 finished with value: 0.8935614070002634 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 0.005778650777565393, 'solver': 'saga', 'C': 0.6201949288792218, 'l1_ratio': 0.7235715906524085}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 13:10:08,166 - INFO - Trial 74 finished with value: 0.8934523962459702 and parameters: {'n_components': 72, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 0.00023323573269246569, 'solver': 'saga', 'C': 4.593795687851763, 'l1_ratio': 0.5807124856910303}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 13:17:48,720 - INFO - Trial 84 finished with value: 0.8936028896562854 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'auto', 'tol': 0.00010074993134954442, 'solver': 'saga', 'C': 0.5297156221818411, 'l1_ratio': 0.12442872194102203}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 13:21:28,550 - INFO - Trial 96 finished with value: 0.8932871342174448 and parameters: {'n_components': 67, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 4.227977482032056e-05, 'solver': 'saga', 'C': 0.07152092447180614, 'l1_ratio': 0.1768187148041667}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 13:29:22,230 - INFO - Trial 88 finished with value: 0.8936652774360546 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 0.00010504625829966503, 'solver': 'saga', 'C': 0.5984446898456979, 'l1_ratio': 0.33254939805308265}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 13:42:55,091 - INFO - Trial 86 finished with value: 0.8936207829654232 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'auto', 'tol': 9.848887479207864e-05, 'solver': 'saga', 'C': 0.12000732153377755, 'l1_ratio': 0.13011069832907635}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 13:47:17,710 - INFO - Trial 99 finished with value: 0.8933325981008423 and parameters: {'n_components': 65, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 7.95243242960615e-05, 'solver': 'saga', 'C': 0.14975334163673226, 'l1_ratio': 0.12418092416094778}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 13:49:57,915 - INFO - Trial 95 finished with value: 0.8935192770070535 and parameters: {'n_components': 68, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'OR', 'tol': 0.005262748046999393, 'solver': 'saga', 'C': 0.6270152035121177, 'l1_ratio': 0.12669364724441762}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 13:53:56,087 - INFO - Trial 98 pruned. 
+2026-05-21 14:01:18,540 - INFO - Trial 80 finished with value: 0.893509439868016 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'OR', 'tol': 2.6280494751706715e-05, 'solver': 'saga', 'C': 0.6169739989593203, 'l1_ratio': 0.3738935611119519}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 14:06:37,835 - INFO - Trial 90 finished with value: 0.8935771779011439 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'tol': 0.005822449150089993, 'solver': 'saga', 'C': 0.6045754814324377, 'l1_ratio': 0.3361820288915325}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 14:09:31,105 - INFO - Trial 79 finished with value: 0.89347305418495 and parameters: {'n_components': 72, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'OR', 'tol': 0.00011356835592015807, 'solver': 'saga', 'C': 0.6368657787199431, 'l1_ratio': 0.059950402332789185}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 14:13:52,839 - INFO - Trial 93 finished with value: 0.8933176770738948 and parameters: {'n_components': 68, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 0.007657329188258368, 'solver': 'saga', 'C': 0.632500356296281, 'l1_ratio': 0.12594285045381787}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 14:25:18,414 - INFO - Trial 92 finished with value: 0.893483795307106 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 0.005795492261124535, 'solver': 'saga', 'C': 0.5993142185176847, 'l1_ratio': 0.12939505207005716}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 14:25:33,298 - INFO - Trial 85 finished with value: 0.8936715767977021 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'auto', 'tol': 2.958933987882121e-05, 'solver': 'saga', 'C': 0.6212556850278836, 'l1_ratio': 0.29618360939526084}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 14:26:02,746 - INFO - Trial 87 finished with value: 0.8934489708663707 and parameters: {'n_components': 73, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'auto', 'tol': 0.00011073869615317288, 'solver': 'saga', 'C': 0.6176294674110989, 'l1_ratio': 0.523173690588205}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 14:36:27,898 - INFO - Trial 94 finished with value: 0.893478208153827 and parameters: {'n_components': 68, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'auto', 'tol': 0.005744810780310283, 'solver': 'saga', 'C': 2.1584447272806613, 'l1_ratio': 0.12655530306335389}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 14:41:18,743 - INFO - Trial 97 finished with value: 0.893534802184585 and parameters: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'auto', 'tol': 0.005411179449003807, 'solver': 'saga', 'C': 0.15576606047723804, 'l1_ratio': 0.12972319292667772}. Best is trial 40 with value: 0.8937726214182687.
+2026-05-21 14:41:18,747 - INFO - Best AUC: 0.8937726214182687 | Best params: {'n_components': 75, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'LU', 'tol': 0.0001392365343269728, 'solver': 'saga', 'C': 0.35655141507820654, 'l1_ratio': 0.17750518257177195}
+2026-05-21 14:41:18,748 - INFO - ----- Saving Pipeline -----

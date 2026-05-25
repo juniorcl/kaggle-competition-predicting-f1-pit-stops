@@ -1,0 +1,349 @@
+2026-05-21 21:22:11,125 - INFO - ----- Fine Tuning -----
+2026-05-21 21:22:11,126 - INFO - A new study created in memory with name: no-name-f76c4c64-1457-4ea2-b3ac-71bdd9e36d22
+2026-05-21 21:22:11,919 - WARNING - Trial 5 failed with parameters: {'trunsvd_n_components': 5, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'OR', 'tol': 1.3529913417811162e-06, 'kernel': 'sigmoid', 'gamma': 0.004020993311830097, 'n_components': 64, 'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 2.5529576479570225e-05, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,944 - WARNING - Trial 5 failed with value None.
+2026-05-21 21:22:11,955 - WARNING - Trial 1 failed with parameters: {'trunsvd_n_components': 59, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'auto', 'tol': 0.0007237041176025009, 'kernel': 'sigmoid', 'gamma': 1.6379971634708517, 'n_components': 72, 'loss': 'log_loss', 'penalty': 'l1', 'alpha': 0.0037504487915163928, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,960 - WARNING - Trial 1 failed with value None.
+2026-05-21 21:22:11,963 - WARNING - Trial 3 failed with parameters: {'trunsvd_n_components': 3, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'LU', 'tol': 0.00390003161112347, 'kernel': 'rbf', 'gamma': 1.4492874502546738, 'n_components': 74, 'loss': 'log_loss', 'penalty': 'elasticnet', 'alpha': 4.6490605912133735e-06, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,963 - WARNING - Trial 10 failed with parameters: {'trunsvd_n_components': 58, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'LU', 'tol': 0.00024434282141079137, 'kernel': 'sigmoid', 'gamma': 4.377125649987269e-05, 'n_components': 65, 'loss': 'log_loss', 'penalty': 'elasticnet', 'alpha': 0.04741325828128534, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,965 - WARNING - Trial 4 failed with parameters: {'trunsvd_n_components': 68, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'LU', 'tol': 0.00011778267917716883, 'kernel': 'cosine', 'gamma': 8.803453054990114e-05, 'n_components': 67, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 1.1811811013345314e-06, 'learning_rate': 'adaptive'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,969 - WARNING - Trial 3 failed with value None.
+2026-05-21 21:22:11,970 - WARNING - Trial 10 failed with value None.
+2026-05-21 21:22:11,972 - WARNING - Trial 2 failed with parameters: {'trunsvd_n_components': 73, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'auto', 'tol': 8.495725412349402e-05, 'kernel': 'cosine', 'gamma': 0.00577082289929084, 'n_components': 69, 'loss': 'log_loss', 'penalty': 'l1', 'alpha': 5.395477942703739e-05, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,972 - WARNING - Trial 4 failed with value None.
+2026-05-21 21:22:11,974 - WARNING - Trial 0 failed with parameters: {'trunsvd_n_components': 62, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'LU', 'tol': 0.00018578580006877279, 'kernel': 'sigmoid', 'gamma': 5.709831929975151, 'n_components': 73, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 5.331589413662096e-07, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,977 - WARNING - Trial 9 failed with parameters: {'trunsvd_n_components': 18, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'LU', 'tol': 0.0026265588501856326, 'kernel': 'sigmoid', 'gamma': 0.023891941743221005, 'n_components': 65, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 3.8074201374984296e-07, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,979 - WARNING - Trial 6 failed with parameters: {'trunsvd_n_components': 38, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'LU', 'tol': 0.006296950677937416, 'kernel': 'sigmoid', 'gamma': 0.0007871986183621081, 'n_components': 72, 'loss': 'log_loss', 'penalty': 'l1', 'alpha': 0.006690139571211216, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,980 - WARNING - Trial 8 failed with parameters: {'trunsvd_n_components': 52, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'auto', 'tol': 1.0766499300731274e-06, 'kernel': 'rbf', 'gamma': 0.2853969184372309, 'n_components': 73, 'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 0.09452858747827944, 'learning_rate': 'adaptive'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,980 - WARNING - Trial 2 failed with value None.
+2026-05-21 21:22:11,981 - WARNING - Trial 0 failed with value None.
+2026-05-21 21:22:11,983 - WARNING - Trial 7 failed with parameters: {'trunsvd_n_components': 36, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'LU', 'tol': 4.2296074093589726e-05, 'kernel': 'sigmoid', 'gamma': 4.729460383548088, 'n_components': 67, 'loss': 'modified_huber', 'penalty': 'l2', 'alpha': 0.005639951736582298, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,984 - WARNING - Trial 11 failed with parameters: {'trunsvd_n_components': 21, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'tol': 2.4393068448161204e-06, 'kernel': 'sigmoid', 'gamma': 2.427610204819148, 'n_components': 65, 'loss': 'modified_huber', 'penalty': 'l1', 'alpha': 0.010791317834039407, 'learning_rate': 'adaptive'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 21:22:11,984 - WARNING - Trial 9 failed with value None.
+2026-05-21 21:22:11,985 - WARNING - Trial 6 failed with value None.
+2026-05-21 21:22:11,986 - WARNING - Trial 8 failed with value None.
+2026-05-21 21:22:11,986 - WARNING - Trial 7 failed with value None.
+2026-05-21 21:22:11,986 - WARNING - Trial 11 failed with value None.
+2026-05-21 22:03:03,623 - INFO - ----- Fine Tuning -----
+2026-05-21 22:03:03,623 - INFO - A new study created in memory with name: no-name-469302da-0cd1-48b4-9f74-d60c9f982697
+2026-05-21 22:03:04,437 - WARNING - Trial 4 failed with parameters: {'trunsvd_n_components': 6, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'auto', 'tol': 4.283220290509868e-05, 'kernel': 'sigmoid', 'gamma': 6.404514800663287e-05, 'n_components': 68, 'loss': 'log_loss', 'penalty': 'elasticnet', 'alpha': 7.967929416927045e-05, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,438 - WARNING - Trial 5 failed with parameters: {'trunsvd_n_components': 66, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'auto', 'tol': 4.034357068010576e-05, 'kernel': 'cosine', 'gamma': 0.5713660104309908, 'n_components': 67, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 0.0037346169923398436, 'learning_rate': 'adaptive'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,448 - WARNING - Trial 4 failed with value None.
+2026-05-21 22:03:04,449 - WARNING - Trial 5 failed with value None.
+2026-05-21 22:03:04,456 - WARNING - Trial 9 failed with parameters: {'trunsvd_n_components': 60, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'OR', 'tol': 7.166189728518262e-06, 'kernel': 'sigmoid', 'gamma': 2.093190624568186, 'n_components': 68, 'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 0.0007419899114238797, 'learning_rate': 'adaptive'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,461 - WARNING - Trial 6 failed with parameters: {'trunsvd_n_components': 19, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'OR', 'tol': 1.3431320982206407e-06, 'kernel': 'cosine', 'gamma': 0.0001723898990790718, 'n_components': 68, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 0.0005766689558828925, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,462 - WARNING - Trial 10 failed with parameters: {'trunsvd_n_components': 23, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'OR', 'tol': 5.207114833993528e-06, 'kernel': 'cosine', 'gamma': 0.0008043357170898289, 'n_components': 68, 'loss': 'log_loss', 'penalty': 'l1', 'alpha': 0.021065003664484907, 'learning_rate': 'adaptive'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,463 - WARNING - Trial 9 failed with value None.
+2026-05-21 22:03:04,465 - WARNING - Trial 1 failed with parameters: {'trunsvd_n_components': 69, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'LU', 'tol': 0.0003487827063051465, 'kernel': 'cosine', 'gamma': 0.05338010716575222, 'n_components': 66, 'loss': 'log_loss', 'penalty': 'l1', 'alpha': 1.1250786974204025e-05, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,466 - WARNING - Trial 0 failed with parameters: {'trunsvd_n_components': 8, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'auto', 'tol': 0.004747789813371493, 'kernel': 'cosine', 'gamma': 0.00012531109543269874, 'n_components': 67, 'loss': 'log_loss', 'penalty': 'l1', 'alpha': 1.397774529498984e-07, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,470 - WARNING - Trial 11 failed with parameters: {'trunsvd_n_components': 75, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'OR', 'tol': 2.2426895552099715e-06, 'kernel': 'cosine', 'gamma': 2.873350724982601e-05, 'n_components': 72, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 0.020278406753156605, 'learning_rate': 'adaptive'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,471 - WARNING - Trial 2 failed with parameters: {'trunsvd_n_components': 38, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'LU', 'tol': 1.2853156807851194e-06, 'kernel': 'cosine', 'gamma': 1.7248645351229122, 'n_components': 71, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 3.121332957921339e-06, 'learning_rate': 'adaptive'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,471 - WARNING - Trial 6 failed with value None.
+2026-05-21 22:03:04,472 - WARNING - Trial 10 failed with value None.
+2026-05-21 22:03:04,474 - WARNING - Trial 7 failed with parameters: {'trunsvd_n_components': 6, 'algorithm': 'randomized', 'n_iter': 13, 'power_iteration_normalizer': 'LU', 'tol': 7.470582177930495e-06, 'kernel': 'rbf', 'gamma': 0.06033145441251079, 'n_components': 67, 'loss': 'log_loss', 'penalty': 'elasticnet', 'alpha': 6.345781786676333e-05, 'learning_rate': 'adaptive'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,474 - WARNING - Trial 8 failed with parameters: {'trunsvd_n_components': 67, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'auto', 'tol': 0.009925422089449321, 'kernel': 'rbf', 'gamma': 0.7004983517991029, 'n_components': 74, 'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 3.2483433448597504e-05, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,475 - WARNING - Trial 3 failed with parameters: {'trunsvd_n_components': 66, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'LU', 'tol': 2.9305886455015974e-06, 'kernel': 'cosine', 'gamma': 0.0002038904048855263, 'n_components': 71, 'loss': 'modified_huber', 'penalty': 'l1', 'alpha': 0.0003287064909391002, 'learning_rate': 'optimal'} because of the following error: NameError("name 'best_params' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 135, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_nystroem_sgdclassifier.py", line 111, in objective
+    eta0=best_params["eta0"],
+         ^^^^^^^^^^^
+NameError: name 'best_params' is not defined
+2026-05-21 22:03:04,476 - WARNING - Trial 1 failed with value None.
+2026-05-21 22:03:04,477 - WARNING - Trial 0 failed with value None.
+2026-05-21 22:03:04,477 - WARNING - Trial 11 failed with value None.
+2026-05-21 22:03:04,478 - WARNING - Trial 2 failed with value None.
+2026-05-21 22:03:04,479 - WARNING - Trial 7 failed with value None.
+2026-05-21 22:03:04,479 - WARNING - Trial 8 failed with value None.
+2026-05-21 22:03:04,479 - WARNING - Trial 3 failed with value None.
+2026-05-22 10:09:32,149 - INFO - ----- Fine Tuning -----
+2026-05-22 10:09:32,149 - INFO - A new study created in memory with name: no-name-e9d6f23c-e979-4b32-b23e-38e21087aa92
+2026-05-22 10:11:45,807 - INFO - ----- Fine Tuning -----
+2026-05-22 10:11:45,807 - INFO - A new study created in memory with name: no-name-8602fd5c-d8a1-455a-a929-10e36e3953bb
+2026-05-22 10:14:50,134 - INFO - Trial 9 finished with value: 0.8773872576008571 and parameters: {'trunsvd_n_components': 37, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'OR', 'trunsvd_tol': 5.436424243894687e-06, 'kernel': 'rbf', 'gamma': 3.415000888509085e-05, 'n_components': 70, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 0.0007597801224146792, 'learning_rate': 'optimal', 'eta0': 0.002474958457022478, 'l1_ratio': 0.7252951543943912, 'tol': 0.0019165766895156042, 'average': False}. Best is trial 9 with value: 0.8773872576008571.
+2026-05-22 10:15:28,651 - INFO - Trial 1 finished with value: 0.8844774509735511 and parameters: {'trunsvd_n_components': 45, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 3.50079991522966e-05, 'kernel': 'rbf', 'gamma': 0.023055290443836557, 'n_components': 74, 'loss': 'modified_huber', 'penalty': 'l2', 'alpha': 0.06334931644885712, 'learning_rate': 'optimal', 'eta0': 0.0010007716277104432, 'l1_ratio': 0.9528624700871349, 'tol': 0.002343563386711137, 'average': True}. Best is trial 1 with value: 0.8844774509735511.
+2026-05-22 10:15:59,603 - INFO - Trial 2 finished with value: 0.8571087277698393 and parameters: {'trunsvd_n_components': 31, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'OR', 'trunsvd_tol': 0.002703698760521011, 'kernel': 'rbf', 'gamma': 0.0010149917549692744, 'n_components': 69, 'loss': 'modified_huber', 'penalty': 'l1', 'alpha': 0.0007477936504684761, 'learning_rate': 'adaptive', 'eta0': 0.00015230829788755933, 'l1_ratio': 0.5595780610731355, 'tol': 7.744058603081763e-05, 'average': False}. Best is trial 1 with value: 0.8844774509735511.
+2026-05-22 10:16:48,345 - INFO - Trial 5 finished with value: 0.7523069488780902 and parameters: {'trunsvd_n_components': 14, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 0.0011590608525417162, 'kernel': 'cosine', 'gamma': 0.029146019919261724, 'n_components': 71, 'loss': 'modified_huber', 'penalty': 'l2', 'alpha': 1.6572526071254196e-05, 'learning_rate': 'adaptive', 'eta0': 0.005186386877970459, 'l1_ratio': 0.34108202186676795, 'tol': 0.00011319165050633162, 'average': True}. Best is trial 1 with value: 0.8844774509735511.
+2026-05-22 10:17:07,356 - INFO - Trial 10 finished with value: 0.8813440176496096 and parameters: {'trunsvd_n_components': 35, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 3.780016538654623e-06, 'kernel': 'rbf', 'gamma': 4.041284838745585e-05, 'n_components': 68, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 1.5966698435515714e-06, 'learning_rate': 'adaptive', 'eta0': 0.013736946895135901, 'l1_ratio': 0.5382286731059641, 'tol': 0.001219274906565017, 'average': True}. Best is trial 1 with value: 0.8844774509735511.
+2026-05-22 10:17:13,816 - INFO - Trial 6 pruned. 
+2026-05-22 10:17:38,828 - INFO - Trial 0 pruned. 
+2026-05-22 10:17:45,921 - INFO - Trial 4 pruned. 
+2026-05-22 10:18:05,781 - INFO - Trial 7 pruned. 
+2026-05-22 10:18:06,810 - INFO - Trial 8 finished with value: 0.8941602641754441 and parameters: {'trunsvd_n_components': 71, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 0.0003570000550676663, 'kernel': 'cosine', 'gamma': 0.010165019473560412, 'n_components': 73, 'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 1.0133041892444458e-06, 'learning_rate': 'adaptive', 'eta0': 0.005172858281838436, 'l1_ratio': 0.14253031899557456, 'tol': 2.11816377440597e-05, 'average': False}. Best is trial 8 with value: 0.8941602641754441.
+2026-05-22 10:18:21,064 - INFO - Trial 12 pruned. 
+2026-05-22 10:19:12,479 - INFO - Trial 15 pruned. 
+2026-05-22 10:19:29,174 - INFO - Trial 14 pruned. 
+2026-05-22 10:19:35,721 - INFO - Trial 19 pruned. 
+2026-05-22 10:19:36,693 - INFO - Trial 16 pruned. 
+2026-05-22 10:20:07,254 - INFO - Trial 18 pruned. 
+2026-05-22 10:20:26,051 - INFO - Trial 13 pruned. 
+2026-05-22 10:21:04,550 - INFO - Trial 20 pruned. 
+2026-05-22 10:21:21,626 - INFO - Trial 17 pruned. 
+2026-05-22 10:22:01,752 - INFO - Trial 22 pruned. 
+2026-05-22 10:23:06,683 - INFO - Trial 23 pruned. 
+2026-05-22 10:23:15,788 - INFO - Trial 24 pruned. 
+2026-05-22 10:23:27,255 - INFO - Trial 25 pruned. 
+2026-05-22 10:24:38,589 - INFO - Trial 30 pruned. 
+2026-05-22 10:25:24,396 - INFO - Trial 31 pruned. 
+2026-05-22 10:26:01,481 - INFO - Trial 33 pruned. 
+2026-05-22 10:26:30,092 - INFO - Trial 34 pruned. 
+2026-05-22 10:27:25,275 - INFO - Trial 32 pruned. 
+2026-05-22 10:28:21,576 - INFO - Trial 28 pruned. 
+2026-05-22 10:28:34,157 - INFO - Trial 37 pruned. 
+2026-05-22 10:29:08,118 - INFO - Trial 38 pruned. 
+2026-05-22 10:29:46,459 - INFO - Trial 36 finished with value: 0.8877661271954373 and parameters: {'trunsvd_n_components': 43, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 0.0004188966160963872, 'kernel': 'rbf', 'gamma': 0.006026352448221189, 'n_components': 72, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 1.0058185672597923e-06, 'learning_rate': 'adaptive', 'eta0': 0.01009997978035745, 'l1_ratio': 0.5774945877916834, 'tol': 0.0004644624492800853, 'average': True}. Best is trial 8 with value: 0.8941602641754441.
+2026-05-22 10:29:54,225 - INFO - Trial 35 finished with value: 0.8926283939287524 and parameters: {'trunsvd_n_components': 44, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 0.0004218960465247447, 'kernel': 'rbf', 'gamma': 0.0033270327162260287, 'n_components': 72, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 1.6809583063591013e-06, 'learning_rate': 'adaptive', 'eta0': 0.08407331370286797, 'l1_ratio': 0.6213895648729971, 'tol': 0.00045260233600468607, 'average': True}. Best is trial 8 with value: 0.8941602641754441.
+2026-05-22 10:30:36,602 - INFO - Trial 3 pruned. 
+2026-05-22 10:30:48,625 - INFO - Trial 39 pruned. 
+2026-05-22 10:30:48,736 - INFO - Trial 42 pruned. 
+2026-05-22 10:30:49,054 - INFO - Trial 40 pruned. 
+2026-05-22 10:30:55,020 - INFO - Trial 41 pruned. 
+2026-05-22 10:31:09,806 - INFO - Trial 11 pruned. 
+2026-05-22 10:32:09,074 - INFO - Trial 21 pruned. 
+2026-05-22 10:33:31,835 - INFO - Trial 43 finished with value: 0.8850185240312991 and parameters: {'trunsvd_n_components': 37, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 9.560627992403845e-06, 'kernel': 'rbf', 'gamma': 0.0023098600562840143, 'n_components': 71, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 3.437436734088215e-05, 'learning_rate': 'adaptive', 'eta0': 0.03727157050491721, 'l1_ratio': 0.460530097598568, 'tol': 0.004260785361257544, 'average': True}. Best is trial 8 with value: 0.8941602641754441.
+2026-05-22 10:33:34,606 - INFO - Trial 47 pruned. 
+2026-05-22 10:33:53,663 - INFO - Trial 44 finished with value: 0.895307168953566 and parameters: {'trunsvd_n_components': 49, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 0.0002007740868798078, 'kernel': 'rbf', 'gamma': 0.0015475955121722707, 'n_components': 72, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 4.077026481027349e-07, 'learning_rate': 'adaptive', 'eta0': 0.0011419601057602714, 'l1_ratio': 0.4519587541447113, 'tol': 0.00015615232993554682, 'average': True}. Best is trial 44 with value: 0.895307168953566.
+2026-05-22 10:33:56,568 - INFO - Trial 46 pruned. 
+2026-05-22 10:33:57,464 - INFO - Trial 48 pruned. 
+2026-05-22 10:34:11,302 - INFO - Trial 45 finished with value: 0.8952180350343264 and parameters: {'trunsvd_n_components': 50, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 0.00015819041111484792, 'kernel': 'rbf', 'gamma': 0.0014370690348122655, 'n_components': 72, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 3.1211399698784767e-07, 'learning_rate': 'adaptive', 'eta0': 0.0011024441471103761, 'l1_ratio': 0.4143801189899806, 'tol': 0.00012570654980990592, 'average': True}. Best is trial 44 with value: 0.895307168953566.
+2026-05-22 10:34:13,155 - INFO - Trial 27 pruned. 
+2026-05-22 10:34:18,541 - INFO - Trial 49 finished with value: 0.8892299061929331 and parameters: {'trunsvd_n_components': 51, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 0.0006409336941961158, 'kernel': 'cosine', 'gamma': 0.01653827163464341, 'n_components': 72, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 4.552327268499251e-07, 'learning_rate': 'adaptive', 'eta0': 0.03843652311892498, 'l1_ratio': 0.6193391885016511, 'tol': 0.00012822827269537632, 'average': True}. Best is trial 44 with value: 0.895307168953566.
+2026-05-22 10:53:35,388 - INFO - Trial 26 pruned. 
+2026-05-22 10:57:05,038 - INFO - Trial 29 pruned. 
+2026-05-22 10:57:05,043 - INFO - Best AUC: 0.895307168953566 | Best params: {'trunsvd_n_components': 49, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'trunsvd_tol': 0.0002007740868798078, 'kernel': 'rbf', 'gamma': 0.0015475955121722707, 'n_components': 72, 'loss': 'log_loss', 'penalty': 'l2', 'alpha': 4.077026481027349e-07, 'learning_rate': 'adaptive', 'eta0': 0.0011419601057602714, 'l1_ratio': 0.4519587541447113, 'tol': 0.00015615232993554682, 'average': True}
+2026-05-22 10:57:05,045 - INFO - ----- Saving Pipeline -----
+2026-05-22 11:00:21,883 - INFO - ----- Saving Pipeline -----

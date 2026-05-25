@@ -1,0 +1,43 @@
+2026-05-21 14:56:19,756 - INFO - ----- Fine Tuning -----
+2026-05-21 14:56:19,757 - INFO - A new study created in memory with name: no-name-eba738a2-f12f-4ad2-8794-0acd1f544c42
+2026-05-21 15:11:49,373 - INFO - ----- Fine Tuning -----
+2026-05-21 15:11:49,373 - INFO - A new study created in memory with name: no-name-f6c30cb4-19ba-4382-be38-08187d0fccb8
+2026-05-21 15:14:02,659 - INFO - Trial 10 finished with value: 0.5 and parameters: {'n_components_pca': 0.8904513930279191, 'svd_solver': 'full', 'whiten': False, 'kernel': 'rbf', 'gamma': 2.8174482722257466, 'n_components': 69, 'solver': 'saga', 'C': 2.8561820291560815e-05, 'l1_ratio': 0.32928338437065885}. Best is trial 10 with value: 0.5.
+2026-05-21 15:14:16,610 - INFO - Trial 0 finished with value: 0.5 and parameters: {'n_components_pca': 0.8776358258657899, 'svd_solver': 'full', 'whiten': False, 'kernel': 'rbf', 'gamma': 0.048199251570165226, 'n_components': 73, 'solver': 'saga', 'C': 2.988978523949751e-05, 'l1_ratio': 0.42738130575992506}. Best is trial 10 with value: 0.5.
+2026-05-21 15:14:21,029 - INFO - Trial 1 finished with value: 0.5 and parameters: {'n_components_pca': 0.8426274473268348, 'svd_solver': 'full', 'whiten': True, 'kernel': 'rbf', 'gamma': 0.0003680329784001078, 'n_components': 69, 'solver': 'saga', 'C': 0.00029307109319178074, 'l1_ratio': 0.781402047763731}. Best is trial 10 with value: 0.5.
+2026-05-21 15:14:36,534 - INFO - Trial 5 finished with value: 0.5 and parameters: {'n_components_pca': 0.8815665635254352, 'svd_solver': 'full', 'whiten': True, 'kernel': 'rbf', 'gamma': 2.727238696729022e-05, 'n_components': 74, 'solver': 'saga', 'C': 0.00034963831820948447, 'l1_ratio': 0.2094387907291203}. Best is trial 10 with value: 0.5.
+2026-05-21 15:15:17,894 - INFO - Trial 11 finished with value: 0.718687947863051 and parameters: {'n_components_pca': 0.9688388170874485, 'svd_solver': 'full', 'whiten': False, 'kernel': 'rbf', 'gamma': 3.188089822330469e-05, 'n_components': 64, 'solver': 'saga', 'C': 0.11074904449266122, 'l1_ratio': 0.5279963314733275}. Best is trial 11 with value: 0.718687947863051.
+2026-05-21 15:15:18,169 - INFO - Trial 3 finished with value: 0.592153584021387 and parameters: {'n_components_pca': 0.898366803201052, 'svd_solver': 'full', 'whiten': True, 'kernel': 'cosine', 'gamma': 8.750666062046214, 'n_components': 67, 'solver': 'saga', 'C': 0.0023233309033515322, 'l1_ratio': 0.8663679859704448}. Best is trial 11 with value: 0.718687947863051.
+2026-05-21 15:15:33,948 - INFO - Trial 7 finished with value: 0.7369671090123603 and parameters: {'n_components_pca': 0.8985201044743205, 'svd_solver': 'full', 'whiten': True, 'kernel': 'rbf', 'gamma': 2.8280832043170565, 'n_components': 66, 'solver': 'saga', 'C': 3.178776889475997, 'l1_ratio': 0.11143576429822721}. Best is trial 7 with value: 0.7369671090123603.
+2026-05-21 15:15:46,797 - INFO - Trial 4 finished with value: 0.5920915286436882 and parameters: {'n_components_pca': 0.9031690243496759, 'svd_solver': 'full', 'whiten': True, 'kernel': 'cosine', 'gamma': 0.05187273203035213, 'n_components': 72, 'solver': 'saga', 'C': 0.2188497714518784, 'l1_ratio': 0.5673941177137624}. Best is trial 7 with value: 0.7369671090123603.
+2026-05-21 15:15:50,948 - INFO - ----- Fine Tuning -----
+2026-05-21 15:15:50,948 - INFO - A new study created in memory with name: no-name-55e2aef2-0224-4e54-b1cd-0892c4b85680
+2026-05-21 15:17:28,970 - INFO - Trial 8 finished with value: 0.5249260843584389 and parameters: {'n_components_pca': 0.861200723346287, 'svd_solver': 'full', 'whiten': False, 'kernel': 'sigmoid', 'gamma': 5.627087993587948, 'n_components': 72, 'solver': 'saga', 'C': 2.9606427657470527e-05, 'l1_ratio': 0.4090811886148996}. Best is trial 8 with value: 0.5249260843584389.
+2026-05-21 15:17:57,310 - INFO - Trial 10 finished with value: 0.6383014023275908 and parameters: {'n_components_pca': 0.929323793662586, 'svd_solver': 'full', 'whiten': True, 'kernel': 'cosine', 'gamma': 3.3278783293854436e-05, 'n_components': 71, 'solver': 'saga', 'C': 9.219891466132129e-05, 'l1_ratio': 0.8344807718536259}. Best is trial 10 with value: 0.6383014023275908.
+2026-05-21 15:19:11,976 - INFO - Trial 13 finished with value: 0.7319120540547692 and parameters: {'n_components_pca': 0.9347433610909336, 'svd_solver': 'full', 'whiten': True, 'kernel': 'rbf', 'gamma': 2.2095518411854056, 'n_components': 67, 'solver': 'saga', 'C': 1.8398958846373725e-05, 'l1_ratio': 0.28671490231725616}. Best is trial 13 with value: 0.7319120540547692.
+2026-05-21 15:20:20,811 - INFO - Trial 9 finished with value: 0.7620488083269114 and parameters: {'n_components_pca': 0.932253528923054, 'svd_solver': 'full', 'whiten': False, 'kernel': 'rbf', 'gamma': 0.019359251773806357, 'n_components': 64, 'solver': 'saga', 'C': 0.009553005769280042, 'l1_ratio': 0.7305261842089722}. Best is trial 9 with value: 0.7620488083269114.
+2026-05-21 15:21:00,766 - INFO - Trial 15 finished with value: 0.5 and parameters: {'n_components_pca': 0.8413071322991742, 'svd_solver': 'full', 'whiten': True, 'kernel': 'sigmoid', 'gamma': 0.1309543541901742, 'n_components': 66, 'solver': 'saga', 'C': 1.7744793022289507e-05, 'l1_ratio': 0.13344684124341588}. Best is trial 9 with value: 0.7620488083269114.
+2026-05-21 15:22:09,639 - INFO - Trial 16 finished with value: 0.7763188498884176 and parameters: {'n_components_pca': 0.950296864397314, 'svd_solver': 'full', 'whiten': False, 'kernel': 'sigmoid', 'gamma': 0.18849980008170614, 'n_components': 66, 'solver': 'saga', 'C': 8.102778885568847, 'l1_ratio': 0.6187748087678075}. Best is trial 16 with value: 0.7763188498884176.
+2026-05-21 15:23:24,409 - INFO - Trial 17 finished with value: 0.7747704038861842 and parameters: {'n_components_pca': 0.9815968369337833, 'svd_solver': 'full', 'whiten': False, 'kernel': 'sigmoid', 'gamma': 7.261992455878379, 'n_components': 67, 'solver': 'saga', 'C': 0.011101831377150642, 'l1_ratio': 0.6253423448516733}. Best is trial 16 with value: 0.7763188498884176.
+2026-05-21 15:29:21,835 - INFO - Trial 7 pruned. 
+2026-05-21 15:35:16,422 - INFO - Trial 0 pruned. 
+2026-05-21 15:41:38,118 - INFO - Trial 1 finished with value: 0.7759053525604973 and parameters: {'n_components_pca': 0.9887212854022434, 'svd_solver': 'full', 'whiten': False, 'kernel': 'sigmoid', 'gamma': 3.164309401273681, 'n_components': 75, 'solver': 'saga', 'C': 4.262922494402965, 'l1_ratio': 0.8335094415270459}. Best is trial 16 with value: 0.7763188498884176.
+2026-05-21 15:42:55,969 - INFO - Trial 18 pruned. 
+2026-05-21 15:44:19,078 - INFO - Trial 22 finished with value: 0.7989188696379779 and parameters: {'n_components_pca': 0.9869588505596223, 'svd_solver': 'full', 'whiten': False, 'kernel': 'sigmoid', 'gamma': 0.3264205369921175, 'n_components': 75, 'solver': 'saga', 'C': 67.33311128194121, 'l1_ratio': 0.9848844895400077}. Best is trial 22 with value: 0.7989188696379779.
+2026-05-21 15:46:17,549 - INFO - Trial 23 finished with value: 0.783654958092586 and parameters: {'n_components_pca': 0.9656165085491881, 'svd_solver': 'full', 'whiten': False, 'kernel': 'sigmoid', 'gamma': 0.18695365005539138, 'n_components': 75, 'solver': 'saga', 'C': 17.62360322590969, 'l1_ratio': 0.9611726723315929}. Best is trial 22 with value: 0.7989188696379779.
+2026-05-21 15:47:31,557 - INFO - Trial 24 finished with value: 0.7892404188503797 and parameters: {'n_components_pca': 0.9639872621372843, 'svd_solver': 'full', 'whiten': False, 'kernel': 'sigmoid', 'gamma': 0.18677479062123548, 'n_components': 75, 'solver': 'saga', 'C': 88.84063076557847, 'l1_ratio': 0.976106936862085}. Best is trial 22 with value: 0.7989188696379779.
+2026-05-21 15:48:49,129 - INFO - Trial 25 finished with value: 0.7805952398097558 and parameters: {'n_components_pca': 0.9647139476171073, 'svd_solver': 'full', 'whiten': False, 'kernel': 'sigmoid', 'gamma': 0.5379168885180934, 'n_components': 73, 'solver': 'saga', 'C': 70.77417003742642, 'l1_ratio': 0.9841346922965756}. Best is trial 22 with value: 0.7989188696379779.
+2026-05-21 15:52:30,367 - INFO - Trial 11 pruned. 
+2026-05-21 15:58:19,116 - INFO - Trial 20 pruned. 
+2026-05-21 16:02:45,830 - INFO - Trial 4 pruned. 
+2026-05-21 16:28:25,641 - INFO - Trial 12 pruned. 
+2026-05-21 16:31:12,722 - INFO - Trial 19 pruned. 
+2026-05-21 16:32:22,797 - INFO - Trial 28 pruned. 
+2026-05-21 16:52:51,928 - INFO - Trial 6 pruned. 
+2026-05-21 16:54:05,592 - INFO - Trial 29 pruned. 
+2026-05-21 17:04:36,474 - INFO - Trial 5 pruned. 
+2026-05-21 17:08:53,156 - INFO - Trial 3 pruned. 
+2026-05-21 17:11:21,690 - INFO - Trial 2 pruned. 
+2026-05-21 17:21:27,475 - INFO - Trial 26 pruned. 
+2026-05-21 17:29:44,418 - INFO - Trial 21 pruned. 
+2026-05-21 17:38:24,499 - INFO - Trial 27 pruned. 

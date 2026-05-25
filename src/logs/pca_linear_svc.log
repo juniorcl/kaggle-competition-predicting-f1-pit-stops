@@ -1,0 +1,1116 @@
+2026-05-21 00:58:43,639 - INFO - ----- Model Tuning -----
+2026-05-21 00:58:43,639 - INFO - A new study created in memory with name: no-name-bebc8ebb-334a-4cd4-91b7-f41efe35d40a
+2026-05-21 00:59:13,875 - WARNING - Trial 8 failed with parameters: {'n_components': 0.8864576279942021, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 3, 'power_iteration_normalizer': 'LU', 'C': 30.977249753860615, 'loss': 'hinge', 'tol': 0.00019230404153181308} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:13,878 - WARNING - Trial 11 failed with parameters: {'n_components': 0.8865628495077518, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 5, 'power_iteration_normalizer': 'QR', 'C': 0.7305411795820855, 'loss': 'hinge', 'tol': 5.2307058789010306e-06} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:13,879 - WARNING - Trial 2 failed with parameters: {'n_components': 0.8465881154932668, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 6, 'power_iteration_normalizer': 'auto', 'C': 0.06590833173741956, 'loss': 'hinge', 'tol': 5.582990189578278e-06} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:14,012 - WARNING - Trial 4 failed with parameters: {'n_components': 0.8487621595414835, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 3, 'power_iteration_normalizer': 'QR', 'C': 2.2354657298198295, 'loss': 'hinge', 'tol': 0.0010245470772829142} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:14,034 - WARNING - Trial 5 failed with parameters: {'n_components': 0.9895698917910145, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 7, 'power_iteration_normalizer': 'LU', 'C': 0.010964043668398123, 'loss': 'hinge', 'tol': 0.0012366886209151798} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:14,038 - WARNING - Trial 8 failed with value None.
+2026-05-21 00:59:14,039 - WARNING - Trial 6 failed with parameters: {'n_components': 0.938037728291002, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 10, 'power_iteration_normalizer': 'QR', 'C': 0.014338232280110436, 'loss': 'hinge', 'tol': 0.00018152781838098108} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:14,040 - WARNING - Trial 11 failed with value None.
+2026-05-21 00:59:14,041 - WARNING - Trial 2 failed with value None.
+2026-05-21 00:59:14,043 - WARNING - Trial 4 failed with value None.
+2026-05-21 00:59:14,044 - WARNING - Trial 5 failed with value None.
+2026-05-21 00:59:14,047 - WARNING - Trial 6 failed with value None.
+2026-05-21 00:59:14,130 - WARNING - Trial 7 failed with parameters: {'n_components': 0.8039707296442071, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 8, 'power_iteration_normalizer': 'LU', 'C': 0.00020717708622107367, 'loss': 'squared_hinge', 'tol': 4.421698869202296e-05} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:14,133 - WARNING - Trial 7 failed with value None.
+2026-05-21 00:59:14,154 - WARNING - Trial 9 failed with parameters: {'n_components': 0.8663521681103449, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 6, 'power_iteration_normalizer': 'QR', 'C': 35.70380589216738, 'loss': 'squared_hinge', 'tol': 6.340858465566275e-06} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:14,156 - WARNING - Trial 9 failed with value None.
+2026-05-21 00:59:14,184 - WARNING - Trial 0 failed with parameters: {'n_components': 0.9206392112679987, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 5, 'power_iteration_normalizer': 'auto', 'C': 0.24146256492988216, 'loss': 'squared_hinge', 'tol': 3.111540040526454e-05} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:14,186 - WARNING - Trial 0 failed with value None.
+2026-05-21 00:59:14,225 - WARNING - Trial 10 failed with parameters: {'n_components': 0.8166072309039336, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 10, 'power_iteration_normalizer': 'LU', 'C': 1.3943967964947674, 'loss': 'squared_hinge', 'tol': 5.409669349618248e-05} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:14,226 - WARNING - Trial 10 failed with value None.
+2026-05-21 00:59:14,339 - WARNING - Trial 3 failed with parameters: {'n_components': 0.953582405976311, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 3, 'power_iteration_normalizer': 'auto', 'C': 0.9874361475108213, 'loss': 'squared_hinge', 'tol': 0.005049170668603052} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:14,340 - WARNING - Trial 3 failed with value None.
+2026-05-21 00:59:14,701 - WARNING - Trial 1 failed with parameters: {'n_components': 0.9873225675572798, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 6, 'power_iteration_normalizer': 'QR', 'C': 0.09735558184740294, 'loss': 'squared_hinge', 'tol': 0.003819517224332487} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:14,702 - WARNING - Trial 1 failed with value None.
+2026-05-21 00:59:18,473 - INFO - ----- Model Tuning -----
+2026-05-21 00:59:18,473 - INFO - A new study created in memory with name: no-name-93dbce51-305e-46d5-9d59-7b7f9f87228c
+2026-05-21 00:59:48,540 - WARNING - Trial 3 failed with parameters: {'n_components': 0.8552095501991347, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 5, 'power_iteration_normalizer': 'QR', 'C': 0.0028411396159219427, 'loss': 'hinge', 'tol': 5.071279363532003e-06} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:48,694 - WARNING - Trial 3 failed with value None.
+2026-05-21 00:59:48,582 - WARNING - Trial 10 failed with parameters: {'n_components': 0.8696787746049832, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 4, 'power_iteration_normalizer': 'auto', 'C': 1.0185766999153837e-05, 'loss': 'hinge', 'tol': 0.0002133295594137188} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:48,674 - WARNING - Trial 9 failed with parameters: {'n_components': 0.9688465416293636, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 10, 'power_iteration_normalizer': 'LU', 'C': 0.15964445538236058, 'loss': 'hinge', 'tol': 0.008497064230983143} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:48,691 - WARNING - Trial 2 failed with parameters: {'n_components': 0.9873328106382648, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 7, 'power_iteration_normalizer': 'LU', 'C': 0.30903927515796753, 'loss': 'hinge', 'tol': 0.008563228759965716} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:48,702 - WARNING - Trial 9 failed with value None.
+2026-05-21 00:59:48,548 - WARNING - Trial 8 failed with parameters: {'n_components': 0.9192187541938893, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 8, 'power_iteration_normalizer': 'LU', 'C': 0.00016026211388510948, 'loss': 'hinge', 'tol': 8.369078017588622e-05} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 00:59:48,699 - WARNING - Trial 10 failed with value None.
+2026-05-21 00:59:48,705 - WARNING - Trial 2 failed with value None.
+2026-05-21 00:59:48,707 - WARNING - Trial 8 failed with value None.
+2026-05-21 00:59:48,779 - WARNING - Trial 1 failed with parameters: {'n_components': 0.8547855208487437, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 2, 'power_iteration_normalizer': 'auto', 'C': 2.865400226831532e-05, 'loss': 'squared_hinge', 'tol': 0.0002777740703413057} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:48,780 - WARNING - Trial 7 failed with parameters: {'n_components': 0.8397795032506624, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 5, 'power_iteration_normalizer': 'QR', 'C': 2.2634876279692438e-05, 'loss': 'squared_hinge', 'tol': 4.2256978278679164e-05} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:48,785 - WARNING - Trial 1 failed with value None.
+2026-05-21 00:59:48,786 - WARNING - Trial 7 failed with value None.
+2026-05-21 00:59:48,793 - WARNING - Trial 11 failed with parameters: {'n_components': 0.8237186026441061, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 4, 'power_iteration_normalizer': 'QR', 'C': 0.08035923817069743, 'loss': 'squared_hinge', 'tol': 0.0007271344196788922} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:48,795 - WARNING - Trial 11 failed with value None.
+2026-05-21 00:59:48,807 - WARNING - Trial 0 failed with parameters: {'n_components': 0.864192133357708, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 2, 'power_iteration_normalizer': 'LU', 'C': 0.04945620132424814, 'loss': 'squared_hinge', 'tol': 0.0005638252431974201} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:48,808 - WARNING - Trial 0 failed with value None.
+2026-05-21 00:59:48,895 - WARNING - Trial 5 failed with parameters: {'n_components': 0.8228020256508083, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 1, 'power_iteration_normalizer': 'auto', 'C': 0.6113444042490626, 'loss': 'squared_hinge', 'tol': 9.307975437764167e-05} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:48,897 - WARNING - Trial 5 failed with value None.
+2026-05-21 00:59:48,961 - WARNING - Trial 4 failed with parameters: {'n_components': 0.9596467224368628, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 1, 'power_iteration_normalizer': 'LU', 'C': 0.08916601451167205, 'loss': 'squared_hinge', 'tol': 5.55231754282956e-06} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:48,962 - WARNING - Trial 4 failed with value None.
+2026-05-21 00:59:49,272 - WARNING - Trial 6 failed with parameters: {'n_components': 0.984283907583188, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 3, 'power_iteration_normalizer': 'auto', 'C': 0.0002678029759699415, 'loss': 'squared_hinge', 'tol': 1.3922138251681597e-05} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LinearSVC' object has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 118, in objective
+    proba = model.predict_proba(X_valid_fold)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 00:59:49,274 - WARNING - Trial 6 failed with value None.
+2026-05-21 01:02:03,360 - INFO - ----- Model Tuning -----
+2026-05-21 01:02:03,360 - INFO - A new study created in memory with name: no-name-a99f4d3a-ac4a-49aa-91fd-bea15989cc50
+2026-05-21 01:02:31,951 - WARNING - Trial 9 failed with parameters: {'n_components': 0.8447808369497861, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 8, 'power_iteration_normalizer': 'auto', 'C': 0.25030471777825536, 'loss': 'hinge', 'tol': 6.159386949793709e-05} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 01:02:32,168 - WARNING - Trial 4 failed with parameters: {'n_components': 0.8217544448888721, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 7, 'power_iteration_normalizer': 'auto', 'C': 3.1135470595290566e-05, 'loss': 'hinge', 'tol': 0.0017519485530819562} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 01:02:32,200 - WARNING - Trial 3 failed with parameters: {'n_components': 0.8875672277197245, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 8, 'power_iteration_normalizer': 'QR', 'C': 0.009371571787882461, 'loss': 'hinge', 'tol': 0.0020729383221761368} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 01:02:32,203 - WARNING - Trial 7 failed with parameters: {'n_components': 0.9535391061531469, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 5, 'power_iteration_normalizer': 'LU', 'C': 0.30621532727192985, 'loss': 'hinge', 'tol': 4.963985388645871e-06} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 01:02:32,208 - WARNING - Trial 10 failed with parameters: {'n_components': 0.825271508763026, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 5, 'power_iteration_normalizer': 'LU', 'C': 0.00030935601771216913, 'loss': 'hinge', 'tol': 1.59544166004301e-06} because of the following error: ValueError("Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 131, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/pca_linear_svc_tuning.py", line 116, in objective
+    ).fit(X_train_fold, y_train_fold)
+      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1237, in _fit_liblinear
+    solver_type = _get_liblinear_solver_type(multi_class, penalty, loss, dual)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py", line 1068, in _get_liblinear_solver_type
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unsupported set of arguments: The combination of penalty='l2' and loss='hinge' are not supported when dual=False, Parameters: penalty='l2', loss='hinge', dual=False
+2026-05-21 01:02:32,287 - WARNING - Trial 9 failed with value None.
+2026-05-21 01:02:32,291 - WARNING - Trial 4 failed with value None.
+2026-05-21 01:02:32,294 - WARNING - Trial 3 failed with value None.
+2026-05-21 01:02:32,295 - WARNING - Trial 7 failed with value None.
+2026-05-21 01:02:32,297 - WARNING - Trial 10 failed with value None.
+2026-05-21 01:03:50,723 - INFO - Trial 5 finished with value: 0.7133161581993583 and parameters: {'n_components': 0.9558625978616477, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 4, 'power_iteration_normalizer': 'QR', 'C': 0.016574341070916584, 'loss': 'squared_hinge', 'tol': 0.0019424454675649513}. Best is trial 5 with value: 0.7133161581993583.
+2026-05-21 01:03:50,759 - INFO - Trial 2 finished with value: 0.6095353600764511 and parameters: {'n_components': 0.9263696006072529, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 3, 'power_iteration_normalizer': 'auto', 'C': 0.001195477362905689, 'loss': 'squared_hinge', 'tol': 0.00419914320022039}. Best is trial 5 with value: 0.7133161581993583.
+2026-05-21 01:03:51,111 - INFO - Trial 6 finished with value: 0.6784401805713554 and parameters: {'n_components': 0.9311782261795192, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 1, 'power_iteration_normalizer': 'LU', 'C': 0.0001360614926074703, 'loss': 'squared_hinge', 'tol': 0.0003480261499345724}. Best is trial 5 with value: 0.7133161581993583.
+2026-05-21 01:03:51,436 - INFO - Trial 11 finished with value: 0.7130992058024146 and parameters: {'n_components': 0.9512466161037358, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 9, 'power_iteration_normalizer': 'LU', 'C': 98.48719933628932, 'loss': 'squared_hinge', 'tol': 9.912145101892615e-06}. Best is trial 5 with value: 0.7133161581993583.
+2026-05-21 01:03:51,459 - INFO - Trial 0 finished with value: 0.7148399311083127 and parameters: {'n_components': 0.9657497729089781, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 9, 'power_iteration_normalizer': 'QR', 'C': 2.3518379202828235, 'loss': 'squared_hinge', 'tol': 0.0002935649814074917}. Best is trial 0 with value: 0.7148399311083127.
+2026-05-21 01:03:51,463 - INFO - Trial 8 finished with value: 0.7129854445810055 and parameters: {'n_components': 0.9496929732951489, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 3, 'power_iteration_normalizer': 'QR', 'C': 0.13209314934178187, 'loss': 'squared_hinge', 'tol': 0.0002744396063903099}. Best is trial 0 with value: 0.7148399311083127.
+2026-05-21 01:03:51,485 - INFO - Trial 1 finished with value: 0.7192271726926489 and parameters: {'n_components': 0.9705464091939489, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 8, 'power_iteration_normalizer': 'LU', 'C': 0.00037397846947323846, 'loss': 'squared_hinge', 'tol': 0.00018333276071366938}. Best is trial 1 with value: 0.7192271726926489.
+2026-05-21 01:04:33,092 - INFO - ----- Model Tuning -----
+2026-05-21 01:04:33,092 - INFO - A new study created in memory with name: no-name-58b229ee-2adf-4dfa-a32b-af3f452c2532
+2026-05-21 01:06:36,501 - INFO - ----- Model Tuning -----
+2026-05-21 01:06:36,501 - INFO - A new study created in memory with name: no-name-b800d4df-7ff6-4908-8e35-d93ff9eb76a7
+2026-05-21 01:09:14,505 - INFO - Trial 4 finished with value: 0.5303581525797589 and parameters: {'n_components': 0.8254014673260401, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 9, 'power_iteration_normalizer': 'QR', 'C': 6.565814840062073, 'loss': 'squared_hinge', 'tol': 1.4788147363131549e-06}. Best is trial 4 with value: 0.5303581525797589.
+2026-05-21 01:09:14,538 - INFO - Trial 9 finished with value: 0.5303581366380276 and parameters: {'n_components': 0.8202094970270787, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 3, 'power_iteration_normalizer': 'LU', 'C': 3.470027703219975, 'loss': 'squared_hinge', 'tol': 5.288680301685803e-06}. Best is trial 4 with value: 0.5303581525797589.
+2026-05-21 01:09:14,544 - INFO - Trial 8 finished with value: 0.5303640106216332 and parameters: {'n_components': 0.8443180905885901, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 4, 'power_iteration_normalizer': 'auto', 'C': 0.0027402910983472853, 'loss': 'squared_hinge', 'tol': 2.07919580877757e-06}. Best is trial 8 with value: 0.5303640106216332.
+2026-05-21 01:09:14,556 - INFO - Trial 2 finished with value: 0.5224106083817138 and parameters: {'n_components': 0.8070729145503878, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 6, 'power_iteration_normalizer': 'QR', 'C': 1.1443009938733178e-05, 'loss': 'squared_hinge', 'tol': 1.4369381352106542e-05}. Best is trial 8 with value: 0.5303640106216332.
+2026-05-21 01:09:14,612 - INFO - Trial 0 finished with value: 0.7123578087739981 and parameters: {'n_components': 0.9383418090777791, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 1, 'power_iteration_normalizer': 'LU', 'C': 0.0007184785267808544, 'loss': 'squared_hinge', 'tol': 0.002520212539672056}. Best is trial 0 with value: 0.7123578087739981.
+2026-05-21 01:09:14,782 - INFO - Trial 6 finished with value: 0.7128928540756587 and parameters: {'n_components': 0.947832502140963, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 1, 'power_iteration_normalizer': 'auto', 'C': 8.488721030687863e-05, 'loss': 'squared_hinge', 'tol': 5.7906957431156e-06}. Best is trial 6 with value: 0.7128928540756587.
+2026-05-21 01:09:14,813 - INFO - Trial 5 finished with value: 0.5444296440358386 and parameters: {'n_components': 0.9118251671911315, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 4, 'power_iteration_normalizer': 'LU', 'C': 6.296797527062074, 'loss': 'squared_hinge', 'tol': 0.0005104616539889484}. Best is trial 6 with value: 0.7128928540756587.
+2026-05-21 01:09:14,816 - INFO - Trial 1 finished with value: 0.5303583002856485 and parameters: {'n_components': 0.8227619041162025, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 6, 'power_iteration_normalizer': 'QR', 'C': 18.758644555930797, 'loss': 'squared_hinge', 'tol': 2.763393182613338e-06}. Best is trial 6 with value: 0.7128928540756587.
+2026-05-21 01:09:14,875 - INFO - Trial 10 finished with value: 0.5287673049043375 and parameters: {'n_components': 0.8707779610329915, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 3, 'power_iteration_normalizer': 'QR', 'C': 59.658938223001, 'loss': 'squared_hinge', 'tol': 0.00021768563659488926}. Best is trial 6 with value: 0.7128928540756587.
+2026-05-21 01:09:14,948 - INFO - Trial 11 finished with value: 0.7136088659517222 and parameters: {'n_components': 0.9608564048754841, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 9, 'power_iteration_normalizer': 'auto', 'C': 7.346576344500878e-05, 'loss': 'squared_hinge', 'tol': 0.00025339785440471683}. Best is trial 11 with value: 0.7136088659517222.
+2026-05-21 01:09:14,978 - INFO - Trial 3 finished with value: 0.5444419472786516 and parameters: {'n_components': 0.8890504531331307, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 4, 'power_iteration_normalizer': 'QR', 'C': 0.002305421969608325, 'loss': 'squared_hinge', 'tol': 4.76781230482943e-06}. Best is trial 11 with value: 0.7136088659517222.
+2026-05-21 01:09:15,063 - INFO - Trial 7 finished with value: 0.7694108514214878 and parameters: {'n_components': 0.9870432162754412, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 2, 'power_iteration_normalizer': 'LU', 'C': 3.962407814028763, 'loss': 'squared_hinge', 'tol': 0.0019412297637342586}. Best is trial 7 with value: 0.7694108514214878.
+2026-05-21 01:11:50,412 - INFO - Trial 14 finished with value: 0.769035054762909 and parameters: {'n_components': 0.9846302701718344, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.1390707348756247, 'loss': 'squared_hinge', 'tol': 0.007533224146795535}. Best is trial 7 with value: 0.7694108514214878.
+2026-05-21 01:11:50,424 - INFO - Trial 15 finished with value: 0.7680685217865424 and parameters: {'n_components': 0.9824150626491412, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.1990916258916828, 'loss': 'squared_hinge', 'tol': 0.009849556882143154}. Best is trial 7 with value: 0.7694108514214878.
+2026-05-21 01:11:50,529 - INFO - Trial 21 finished with value: 0.7451424590414512 and parameters: {'n_components': 0.9795650522904199, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 9, 'power_iteration_normalizer': 'auto', 'C': 0.09589667638625389, 'loss': 'squared_hinge', 'tol': 0.007462296641353162}. Best is trial 7 with value: 0.7694108514214878.
+2026-05-21 01:11:50,667 - INFO - Trial 13 finished with value: 0.769410927226113 and parameters: {'n_components': 0.9871133086724954, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.12134569070431157, 'loss': 'squared_hinge', 'tol': 0.009121312794624713}. Best is trial 13 with value: 0.769410927226113.
+2026-05-21 01:11:50,682 - INFO - Trial 23 finished with value: 0.7684143248267592 and parameters: {'n_components': 0.9829360119915503, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.1682135869545778, 'loss': 'squared_hinge', 'tol': 0.008240458145497658}. Best is trial 13 with value: 0.769410927226113.
+2026-05-21 01:11:50,752 - INFO - Trial 12 finished with value: 0.7705095469308688 and parameters: {'n_components': 0.9886219868408617, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.14761188751763923, 'loss': 'squared_hinge', 'tol': 0.005996600214416379}. Best is trial 12 with value: 0.7705095469308688.
+2026-05-21 01:11:50,760 - INFO - Trial 19 finished with value: 0.7694109107971014 and parameters: {'n_components': 0.9862456647464578, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.17015686939300417, 'loss': 'squared_hinge', 'tol': 0.009369182580057972}. Best is trial 12 with value: 0.7705095469308688.
+2026-05-21 01:11:50,895 - INFO - Trial 16 finished with value: 0.7701355100756038 and parameters: {'n_components': 0.9875451546077537, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.1280559208842355, 'loss': 'squared_hinge', 'tol': 0.006294011565023796}. Best is trial 12 with value: 0.7705095469308688.
+2026-05-21 01:11:50,924 - INFO - Trial 20 finished with value: 0.7707440213270912 and parameters: {'n_components': 0.989448048183618, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.23249313586931764, 'loss': 'squared_hinge', 'tol': 0.0025808265259923383}. Best is trial 20 with value: 0.7707440213270912.
+2026-05-21 01:11:51,039 - INFO - Trial 17 finished with value: 0.7704163661870969 and parameters: {'n_components': 0.9882405544660929, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.07872225870770966, 'loss': 'squared_hinge', 'tol': 0.006756266242697943}. Best is trial 20 with value: 0.7707440213270912.
+2026-05-21 01:11:51,085 - INFO - Trial 22 finished with value: 0.7705095387967333 and parameters: {'n_components': 0.9890164227371888, 'svd_solver': 'full', 'whiten': False, 'iterated_power': 10, 'power_iteration_normalizer': 'auto', 'C': 0.16517391381385296, 'loss': 'squared_hinge', 'tol': 0.008969144660893463}. Best is trial 20 with value: 0.7707440213270912.
+2026-05-21 01:11:51,099 - INFO - Trial 18 finished with value: 0.7694108850949462 and parameters: {'n_components': 0.9870662094415742, 'svd_solver': 'full', 'whiten': True, 'iterated_power': 9, 'power_iteration_normalizer': 'auto', 'C': 0.21460220876747413, 'loss': 'squared_hinge', 'tol': 0.007880197696516492}. Best is trial 20 with value: 0.7707440213270912.
+2026-05-21 01:12:36,550 - INFO - Trial 29 pruned. 
+2026-05-21 01:12:36,583 - INFO - Trial 27 pruned. 
+2026-05-21 01:12:36,612 - INFO - Trial 24 pruned. 
+2026-05-21 01:12:36,616 - INFO - Trial 28 pruned. 
+2026-05-21 01:12:36,620 - INFO - Trial 25 pruned. 
+2026-05-21 01:12:36,625 - INFO - Trial 26 pruned. 
+2026-05-21 01:15:09,838 - INFO - ----- Model Tuning -----
+2026-05-21 01:15:09,839 - INFO - A new study created in memory with name: no-name-29c2569a-7797-42f3-97ea-373c732f9699
+2026-05-21 01:17:39,962 - INFO - Trial 8 finished with value: 0.6095394409960198 and parameters: {'n_components': 0.9281439183074076, 'svd_solver': 'full', 'whiten': False, 'C': 0.027813123593290554, 'loss': 'squared_hinge', 'tol': 0.004019285982514077}. Best is trial 8 with value: 0.6095394409960198.
+2026-05-21 01:17:40,257 - INFO - Trial 2 finished with value: 0.5303584808458605 and parameters: {'n_components': 0.8229761742848765, 'svd_solver': 'full', 'whiten': True, 'C': 0.6721122311873995, 'loss': 'squared_hinge', 'tol': 0.0003232100644534827}. Best is trial 8 with value: 0.6095394409960198.
+2026-05-21 01:17:40,262 - INFO - Trial 1 finished with value: 0.6784397156546196 and parameters: {'n_components': 0.930610152380856, 'svd_solver': 'full', 'whiten': False, 'C': 21.15964464340201, 'loss': 'squared_hinge', 'tol': 2.941707654973954e-06}. Best is trial 1 with value: 0.6784397156546196.
+2026-05-21 01:17:40,294 - INFO - Trial 3 finished with value: 0.5444339299305755 and parameters: {'n_components': 0.9106032745293494, 'svd_solver': 'full', 'whiten': True, 'C': 0.01791316454387537, 'loss': 'squared_hinge', 'tol': 0.0024637058589721426}. Best is trial 1 with value: 0.6784397156546196.
+2026-05-21 01:17:40,300 - INFO - Trial 10 finished with value: 0.5303581659186973 and parameters: {'n_components': 0.8471094534755501, 'svd_solver': 'full', 'whiten': False, 'C': 0.6527213854248474, 'loss': 'squared_hinge', 'tol': 1.1497245259160666e-05}. Best is trial 1 with value: 0.6784397156546196.
+2026-05-21 01:17:40,305 - INFO - Trial 0 finished with value: 0.5445406762989021 and parameters: {'n_components': 0.8984678721994362, 'svd_solver': 'full', 'whiten': True, 'C': 0.0002551360764988297, 'loss': 'squared_hinge', 'tol': 0.002698719815374379}. Best is trial 1 with value: 0.6784397156546196.
+2026-05-21 01:17:40,362 - INFO - Trial 6 finished with value: 0.5328695697515089 and parameters: {'n_components': 0.8559496498367983, 'svd_solver': 'full', 'whiten': True, 'C': 0.0001043680478544098, 'loss': 'squared_hinge', 'tol': 0.0026995129470068382}. Best is trial 1 with value: 0.6784397156546196.
+2026-05-21 01:17:40,409 - INFO - Trial 11 finished with value: 0.5303584507520639 and parameters: {'n_components': 0.8284923125935189, 'svd_solver': 'full', 'whiten': False, 'C': 14.338701982950187, 'loss': 'squared_hinge', 'tol': 0.000741865739212499}. Best is trial 1 with value: 0.6784397156546196.
+2026-05-21 01:17:40,471 - INFO - Trial 4 finished with value: 0.5444299376577761 and parameters: {'n_components': 0.912552020998819, 'svd_solver': 'full', 'whiten': True, 'C': 14.110897561300064, 'loss': 'squared_hinge', 'tol': 1.7483100088349174e-05}. Best is trial 1 with value: 0.6784397156546196.
+2026-05-21 01:17:40,493 - INFO - Trial 5 finished with value: 0.5444299282227794 and parameters: {'n_components': 0.88736385799199, 'svd_solver': 'full', 'whiten': True, 'C': 85.98193648476999, 'loss': 'squared_hinge', 'tol': 1.2422513272646915e-05}. Best is trial 1 with value: 0.6784397156546196.
+2026-05-21 01:17:40,626 - INFO - Trial 7 finished with value: 0.5444299392845614 and parameters: {'n_components': 0.8979955686096065, 'svd_solver': 'full', 'whiten': True, 'C': 24.105339772650552, 'loss': 'squared_hinge', 'tol': 3.390335531389009e-05}. Best is trial 1 with value: 0.6784397156546196.
+2026-05-21 01:17:40,647 - INFO - Trial 9 finished with value: 0.7130983638144222 and parameters: {'n_components': 0.951226641701936, 'svd_solver': 'full', 'whiten': False, 'C': 0.0016279893515809116, 'loss': 'squared_hinge', 'tol': 1.815863197533527e-05}. Best is trial 9 with value: 0.7130983638144222.
+2026-05-21 01:20:13,617 - INFO - Trial 18 finished with value: 0.7363868383088839 and parameters: {'n_components': 0.975857591828021, 'svd_solver': 'full', 'whiten': False, 'C': 0.001686567196985917, 'loss': 'squared_hinge', 'tol': 1.0301873128789746e-06}. Best is trial 18 with value: 0.7363868383088839.
+2026-05-21 01:20:14,205 - INFO - Trial 13 finished with value: 0.7150006594991904 and parameters: {'n_components': 0.966459153785216, 'svd_solver': 'full', 'whiten': False, 'C': 0.0012574313838818471, 'loss': 'squared_hinge', 'tol': 1.1544728118721054e-06}. Best is trial 18 with value: 0.7363868383088839.
+2026-05-21 01:20:14,294 - INFO - Trial 20 finished with value: 0.7261765800483084 and parameters: {'n_components': 0.9743800313165474, 'svd_solver': 'full', 'whiten': False, 'C': 0.0013866714080246092, 'loss': 'squared_hinge', 'tol': 1.1835588832644407e-06}. Best is trial 18 with value: 0.7363868383088839.
+2026-05-21 01:20:14,530 - INFO - Trial 15 finished with value: 0.745141881206647 and parameters: {'n_components': 0.9790003545952816, 'svd_solver': 'full', 'whiten': False, 'C': 0.001457333892501947, 'loss': 'squared_hinge', 'tol': 1.4871298299344514e-06}. Best is trial 15 with value: 0.745141881206647.
+2026-05-21 01:20:14,833 - INFO - Trial 22 finished with value: 0.7684144124797307 and parameters: {'n_components': 0.9827763962695437, 'svd_solver': 'full', 'whiten': False, 'C': 0.001585056731281738, 'loss': 'squared_hinge', 'tol': 1.2111857989919026e-06}. Best is trial 22 with value: 0.7684144124797307.
+2026-05-21 01:20:14,917 - INFO - Trial 23 finished with value: 0.7222488392294453 and parameters: {'n_components': 0.9737786330416848, 'svd_solver': 'full', 'whiten': False, 'C': 0.0013750651930571859, 'loss': 'squared_hinge', 'tol': 1.2500919164235165e-06}. Best is trial 22 with value: 0.7684144124797307.
+2026-05-21 01:20:14,946 - INFO - Trial 16 finished with value: 0.7605262849471798 and parameters: {'n_components': 0.9809722587968086, 'svd_solver': 'full', 'whiten': False, 'C': 0.001396177334223881, 'loss': 'squared_hinge', 'tol': 1.0437466393040354e-06}. Best is trial 22 with value: 0.7684144124797307.
+2026-05-21 01:20:14,996 - INFO - Trial 17 finished with value: 0.7264738779151366 and parameters: {'n_components': 0.9753523274636653, 'svd_solver': 'full', 'whiten': False, 'C': 0.0021749542267563877, 'loss': 'squared_hinge', 'tol': 1.0075429821400761e-06}. Best is trial 22 with value: 0.7684144124797307.
+2026-05-21 01:20:15,055 - INFO - Trial 21 finished with value: 0.7261765333621643 and parameters: {'n_components': 0.9751673932733892, 'svd_solver': 'full', 'whiten': False, 'C': 0.0015085115297833606, 'loss': 'squared_hinge', 'tol': 1.21193549021299e-06}. Best is trial 22 with value: 0.7684144124797307.
+2026-05-21 01:20:15,103 - INFO - Trial 19 finished with value: 0.7445357264656216 and parameters: {'n_components': 0.9782154349159897, 'svd_solver': 'full', 'whiten': False, 'C': 0.000894691124808483, 'loss': 'squared_hinge', 'tol': 1.6307877148592883e-06}. Best is trial 22 with value: 0.7684144124797307.
+2026-05-21 01:20:15,115 - INFO - Trial 14 finished with value: 0.7174526293034491 and parameters: {'n_components': 0.969416618642048, 'svd_solver': 'full', 'whiten': False, 'C': 0.0011708037288156955, 'loss': 'squared_hinge', 'tol': 1.04345926366534e-06}. Best is trial 22 with value: 0.7684144124797307.
+2026-05-21 01:20:15,125 - INFO - Trial 12 finished with value: 0.7370718360210493 and parameters: {'n_components': 0.9780357121753834, 'svd_solver': 'full', 'whiten': False, 'C': 0.001861368037025458, 'loss': 'squared_hinge', 'tol': 1.020557759211369e-06}. Best is trial 22 with value: 0.7684144124797307.
+2026-05-21 01:21:45,331 - INFO - Trial 30 pruned. 
+2026-05-21 01:21:45,393 - INFO - Trial 35 pruned. 
+2026-05-21 01:21:45,458 - INFO - Trial 34 pruned. 
+2026-05-21 01:21:45,490 - INFO - Trial 27 pruned. 
+2026-05-21 01:21:45,508 - INFO - Trial 26 pruned. 
+2026-05-21 01:21:45,531 - INFO - Trial 33 pruned. 
+2026-05-21 01:21:45,533 - INFO - Trial 32 pruned. 
+2026-05-21 01:21:45,534 - INFO - Trial 31 pruned. 
+2026-05-21 01:21:45,571 - INFO - Trial 29 pruned. 
+2026-05-21 01:21:45,928 - INFO - Trial 28 pruned. 
+2026-05-21 01:22:48,631 - INFO - Trial 25 finished with value: 0.7693739017173037 and parameters: {'n_components': 0.9868048291666712, 'svd_solver': 'full', 'whiten': False, 'C': 3.179538113527557e-05, 'loss': 'squared_hinge', 'tol': 4.2450617497027064e-06}. Best is trial 25 with value: 0.7693739017173037.
+2026-05-21 01:22:48,643 - INFO - Trial 24 finished with value: 0.7693082345873765 and parameters: {'n_components': 0.9868131562094294, 'svd_solver': 'full', 'whiten': False, 'C': 1.3936708797772476e-05, 'loss': 'squared_hinge', 'tol': 1.1453653453147122e-06}. Best is trial 25 with value: 0.7693739017173037.
+2026-05-21 01:22:53,794 - INFO - Trial 43 pruned. 
+2026-05-21 01:22:57,991 - INFO - Trial 37 pruned. 
+2026-05-21 01:24:02,136 - INFO - Trial 47 pruned. 
+2026-05-21 01:24:25,477 - INFO - Trial 42 finished with value: 0.7684123060474863 and parameters: {'n_components': 0.9833417683483898, 'svd_solver': 'full', 'whiten': False, 'C': 0.0071644620022211294, 'loss': 'squared_hinge', 'tol': 2.432006325992129e-06}. Best is trial 25 with value: 0.7693739017173037.
+2026-05-21 01:24:25,505 - INFO - Trial 44 finished with value: 0.7701315021348866 and parameters: {'n_components': 0.9876465542756733, 'svd_solver': 'full', 'whiten': False, 'C': 0.008574781637948085, 'loss': 'squared_hinge', 'tol': 6.60169482718981e-05}. Best is trial 44 with value: 0.7701315021348866.
+2026-05-21 01:24:25,510 - INFO - Trial 39 finished with value: 0.769097374028906 and parameters: {'n_components': 0.9856580615007303, 'svd_solver': 'full', 'whiten': False, 'C': 0.007904291667742671, 'loss': 'squared_hinge', 'tol': 2.076806949759212e-06}. Best is trial 44 with value: 0.7701315021348866.
+2026-05-21 01:24:25,510 - INFO - Trial 38 finished with value: 0.7704121820738425 and parameters: {'n_components': 0.987943267311917, 'svd_solver': 'full', 'whiten': False, 'C': 0.007046797019797724, 'loss': 'squared_hinge', 'tol': 2.216979605430039e-06}. Best is trial 38 with value: 0.7704121820738425.
+2026-05-21 01:24:25,516 - INFO - Trial 40 finished with value: 0.7705053839635893 and parameters: {'n_components': 0.9890932779435972, 'svd_solver': 'full', 'whiten': False, 'C': 0.007681419176218294, 'loss': 'squared_hinge', 'tol': 2.285697171538424e-06}. Best is trial 40 with value: 0.7705053839635893.
+2026-05-21 01:24:25,526 - INFO - Trial 45 finished with value: 0.7708783342438873 and parameters: {'n_components': 0.9898844633798193, 'svd_solver': 'full', 'whiten': False, 'C': 0.00022633095609925444, 'loss': 'squared_hinge', 'tol': 2.203406431035072e-06}. Best is trial 45 with value: 0.7708783342438873.
+2026-05-21 01:24:25,534 - INFO - Trial 41 finished with value: 0.7705053509416003 and parameters: {'n_components': 0.9889935543226674, 'svd_solver': 'full', 'whiten': False, 'C': 0.007049929122330277, 'loss': 'squared_hinge', 'tol': 2.133877416211478e-06}. Best is trial 45 with value: 0.7708783342438873.
+2026-05-21 01:24:25,543 - INFO - Trial 36 finished with value: 0.7704121669452377 and parameters: {'n_components': 0.9880651767603694, 'svd_solver': 'full', 'whiten': False, 'C': 0.007568028370352718, 'loss': 'squared_hinge', 'tol': 2.1991188427416665e-06}. Best is trial 45 with value: 0.7708783342438873.
+2026-05-21 01:24:41,580 - INFO - Trial 46 finished with value: 0.7690743330820226 and parameters: {'n_components': 0.9849504236491762, 'svd_solver': 'full', 'whiten': True, 'C': 0.00023824982723496236, 'loss': 'squared_hinge', 'tol': 7.89993696700365e-05}. Best is trial 45 with value: 0.7708783342438873.
+2026-05-21 01:24:42,120 - INFO - Trial 49 finished with value: 0.7705076401753466 and parameters: {'n_components': 0.9893198985591993, 'svd_solver': 'full', 'whiten': True, 'C': 0.00018218843794386562, 'loss': 'squared_hinge', 'tol': 9.859658644165118e-05}. Best is trial 45 with value: 0.7708783342438873.
+2026-05-21 01:24:42,297 - INFO - Trial 48 finished with value: 0.7704146751498977 and parameters: {'n_components': 0.9884112218731015, 'svd_solver': 'full', 'whiten': True, 'C': 0.00023100474793369437, 'loss': 'squared_hinge', 'tol': 2.3872453244976186e-06}. Best is trial 45 with value: 0.7708783342438873.
+2026-05-21 01:24:42,299 - INFO - Best AUC: 0.7708783342438873 | Best params: {'n_components': 0.9898844633798193, 'svd_solver': 'full', 'whiten': False, 'C': 0.00022633095609925444, 'loss': 'squared_hinge', 'tol': 2.203406431035072e-06}
+2026-05-21 01:24:42,299 - INFO - ----- Saving Pipeline -----
+2026-05-21 01:25:17,340 - INFO - ----- Model Tuning -----
+2026-05-21 01:25:17,340 - INFO - A new study created in memory with name: no-name-d0887a70-95b0-4268-9049-0ec800db2953
+2026-05-21 01:27:46,331 - INFO - Trial 0 finished with value: 0.530358331355866 and parameters: {'n_components': 0.8490729830100597, 'svd_solver': 'full', 'whiten': True, 'C': 4.021003149180271, 'loss': 'squared_hinge', 'tol': 8.741152445453208e-06}. Best is trial 0 with value: 0.530358331355866.
+2026-05-21 01:27:46,420 - INFO - Trial 7 finished with value: 0.5444299993104693 and parameters: {'n_components': 0.8857194441034205, 'svd_solver': 'full', 'whiten': True, 'C': 46.76709690084262, 'loss': 'squared_hinge', 'tol': 0.0002877489173310943}. Best is trial 7 with value: 0.5444299993104693.
+2026-05-21 01:27:46,454 - INFO - Trial 1 finished with value: 0.5444299083780649 and parameters: {'n_components': 0.8861103814694017, 'svd_solver': 'full', 'whiten': False, 'C': 16.009619571712154, 'loss': 'squared_hinge', 'tol': 2.493527197494332e-06}. Best is trial 7 with value: 0.5444299993104693.
+2026-05-21 01:27:46,469 - INFO - Trial 3 finished with value: 0.576260983391746 and parameters: {'n_components': 0.9201662487404688, 'svd_solver': 'full', 'whiten': False, 'C': 30.810254979599513, 'loss': 'squared_hinge', 'tol': 0.002535476048526685}. Best is trial 3 with value: 0.576260983391746.
+2026-05-21 01:27:46,498 - INFO - Trial 5 finished with value: 0.5303612164450181 and parameters: {'n_components': 0.8202124032040659, 'svd_solver': 'full', 'whiten': True, 'C': 0.3879943205787135, 'loss': 'squared_hinge', 'tol': 0.006749586227161375}. Best is trial 3 with value: 0.576260983391746.
+2026-05-21 01:27:46,547 - INFO - Trial 11 finished with value: 0.5767618663182594 and parameters: {'n_components': 0.9165935856241226, 'svd_solver': 'full', 'whiten': False, 'C': 4.292629789207671e-05, 'loss': 'squared_hinge', 'tol': 1.103408391651744e-05}. Best is trial 11 with value: 0.5767618663182594.
+2026-05-21 01:27:46,614 - INFO - Trial 10 finished with value: 0.7131292411451096 and parameters: {'n_components': 0.9554804701677944, 'svd_solver': 'full', 'whiten': True, 'C': 32.078273716210965, 'loss': 'squared_hinge', 'tol': 7.288253416362015e-05}. Best is trial 10 with value: 0.7131292411451096.
+2026-05-21 01:27:46,638 - INFO - Trial 4 finished with value: 0.544430143924124 and parameters: {'n_components': 0.8953674585477575, 'svd_solver': 'full', 'whiten': True, 'C': 0.12101983221288533, 'loss': 'squared_hinge', 'tol': 3.31560799108046e-05}. Best is trial 10 with value: 0.7131292411451096.
+2026-05-21 01:27:46,788 - INFO - Trial 9 finished with value: 0.7448140762538367 and parameters: {'n_components': 0.9785929597429968, 'svd_solver': 'full', 'whiten': True, 'C': 0.0002703864419642645, 'loss': 'squared_hinge', 'tol': 1.1381526262311225e-05}. Best is trial 9 with value: 0.7448140762538367.
+2026-05-21 01:27:46,876 - INFO - Trial 8 finished with value: 0.7157808832691366 and parameters: {'n_components': 0.968107725369604, 'svd_solver': 'full', 'whiten': True, 'C': 0.017871012350278007, 'loss': 'squared_hinge', 'tol': 0.0009458033127575515}. Best is trial 9 with value: 0.7448140762538367.
+2026-05-21 01:27:46,944 - INFO - Trial 6 finished with value: 0.7146986949776567 and parameters: {'n_components': 0.9643413651387345, 'svd_solver': 'full', 'whiten': True, 'C': 0.915858032407645, 'loss': 'squared_hinge', 'tol': 7.441278065331798e-06}. Best is trial 9 with value: 0.7448140762538367.
+2026-05-21 01:27:46,971 - INFO - Trial 2 finished with value: 0.7192270277472783 and parameters: {'n_components': 0.9715166507418052, 'svd_solver': 'full', 'whiten': True, 'C': 0.1632518115776584, 'loss': 'squared_hinge', 'tol': 1.1932536605270938e-05}. Best is trial 9 with value: 0.7448140762538367.
+2026-05-21 01:29:58,293 - INFO - Trial 12 finished with value: 0.6095353327411728 and parameters: {'n_components': 0.9271175727451384, 'svd_solver': 'full', 'whiten': True, 'C': 2.5228040573691537, 'loss': 'squared_hinge', 'tol': 1.6724743804557383e-05}. Best is trial 9 with value: 0.7448140762538367.
+2026-05-21 01:29:58,635 - INFO - Trial 21 finished with value: 0.7124569479426835 and parameters: {'n_components': 0.9410373248422967, 'svd_solver': 'full', 'whiten': True, 'C': 0.0019119895317133296, 'loss': 'squared_hinge', 'tol': 1.8062826089580982e-06}. Best is trial 9 with value: 0.7448140762538367.
+2026-05-21 01:30:16,840 - INFO - Trial 18 finished with value: 0.7687443758655321 and parameters: {'n_components': 0.9839405357255192, 'svd_solver': 'full', 'whiten': True, 'C': 0.0026506634844974787, 'loss': 'squared_hinge', 'tol': 1.1423063214564828e-06}. Best is trial 18 with value: 0.7687443758655321.
+2026-05-21 01:30:21,890 - INFO - Trial 17 finished with value: 0.7694111515091658 and parameters: {'n_components': 0.9861449319400742, 'svd_solver': 'full', 'whiten': True, 'C': 0.0027580746247982905, 'loss': 'squared_hinge', 'tol': 1.2160432780657187e-06}. Best is trial 17 with value: 0.7694111515091658.
+2026-05-21 01:30:22,003 - INFO - Trial 15 finished with value: 0.7691008374685373 and parameters: {'n_components': 0.9855702599934698, 'svd_solver': 'full', 'whiten': True, 'C': 0.002894090402101606, 'loss': 'squared_hinge', 'tol': 1.1343422985341915e-06}. Best is trial 17 with value: 0.7694111515091658.
+2026-05-21 01:30:22,332 - INFO - Trial 22 finished with value: 0.7690776322137068 and parameters: {'n_components': 0.9849352548013977, 'svd_solver': 'full', 'whiten': True, 'C': 0.0025715811719501124, 'loss': 'squared_hinge', 'tol': 1.1336647084194475e-06}. Best is trial 17 with value: 0.7694111515091658.
+2026-05-21 01:30:22,747 - INFO - Trial 13 finished with value: 0.7691328465049264 and parameters: {'n_components': 0.9859408749778846, 'svd_solver': 'full', 'whiten': True, 'C': 0.0025996320863640524, 'loss': 'squared_hinge', 'tol': 1.044984788106435e-06}. Best is trial 17 with value: 0.7694111515091658.
+2026-05-21 01:30:22,789 - INFO - Trial 20 finished with value: 0.769411009659241 and parameters: {'n_components': 0.9868140741588515, 'svd_solver': 'full', 'whiten': True, 'C': 0.002092813032595811, 'loss': 'squared_hinge', 'tol': 1.0094833490225657e-06}. Best is trial 17 with value: 0.7694111515091658.
+2026-05-21 01:30:22,800 - INFO - Trial 14 finished with value: 0.7705095615291355 and parameters: {'n_components': 0.9890461395461976, 'svd_solver': 'full', 'whiten': True, 'C': 0.0026417517128731866, 'loss': 'squared_hinge', 'tol': 3.428918026793246e-05}. Best is trial 14 with value: 0.7705095615291355.
+2026-05-21 01:30:27,556 - INFO - Trial 16 finished with value: 0.7701325648658514 and parameters: {'n_components': 0.9875990891388499, 'svd_solver': 'full', 'whiten': True, 'C': 0.0030939014357595695, 'loss': 'squared_hinge', 'tol': 1.4323368674655285e-06}. Best is trial 14 with value: 0.7705095615291355.
+2026-05-21 01:30:28,485 - INFO - Trial 23 finished with value: 0.7701321328103914 and parameters: {'n_components': 0.9877026099278587, 'svd_solver': 'full', 'whiten': True, 'C': 0.0020844906071640266, 'loss': 'squared_hinge', 'tol': 1.2370220895927373e-06}. Best is trial 14 with value: 0.7705095615291355.
+2026-05-21 01:30:28,547 - INFO - Trial 19 finished with value: 0.7704128643163365 and parameters: {'n_components': 0.9882534258571845, 'svd_solver': 'full', 'whiten': True, 'C': 0.002099502691283067, 'loss': 'squared_hinge', 'tol': 1.304350059680774e-06}. Best is trial 14 with value: 0.7705095615291355.
+2026-05-21 01:31:57,234 - INFO - Trial 32 pruned. 
+2026-05-21 01:31:57,475 - INFO - Trial 30 pruned. 
+2026-05-21 01:31:57,481 - INFO - Trial 35 pruned. 
+2026-05-21 01:31:57,517 - INFO - Trial 34 pruned. 
+2026-05-21 01:31:57,588 - INFO - Trial 29 pruned. 
+2026-05-21 01:31:57,597 - INFO - Trial 31 pruned. 
+2026-05-21 01:31:57,608 - INFO - Trial 28 pruned. 
+2026-05-21 01:31:57,659 - INFO - Trial 27 pruned. 
+2026-05-21 01:31:57,765 - INFO - Trial 33 pruned. 
+2026-05-21 01:32:28,722 - INFO - Trial 24 finished with value: 0.7676429059026317 and parameters: {'n_components': 0.9812294856356149, 'svd_solver': 'full', 'whiten': False, 'C': 0.00019416250846103025, 'loss': 'squared_hinge', 'tol': 0.00017534536972802742}. Best is trial 14 with value: 0.7705095615291355.
+2026-05-21 01:32:28,769 - INFO - Trial 25 finished with value: 0.7708789750219693 and parameters: {'n_components': 0.9898445672383137, 'svd_solver': 'full', 'whiten': False, 'C': 0.00039919834079521423, 'loss': 'squared_hinge', 'tol': 0.00022567853464034986}. Best is trial 25 with value: 0.7708789750219693.
+2026-05-21 01:32:59,048 - INFO - Trial 26 finished with value: 0.7687388404567363 and parameters: {'n_components': 0.984432442381061, 'svd_solver': 'full', 'whiten': False, 'C': 0.00014098546310785457, 'loss': 'squared_hinge', 'tol': 1.520381557900679e-06}. Best is trial 25 with value: 0.7708789750219693.
+2026-05-21 01:33:28,897 - INFO - Trial 41 pruned. 
+2026-05-21 01:33:29,097 - INFO - Trial 40 pruned. 
+2026-05-21 01:33:29,146 - INFO - Trial 38 pruned. 
+2026-05-21 01:33:29,238 - INFO - Trial 37 pruned. 
+2026-05-21 01:33:29,248 - INFO - Trial 36 pruned. 
+2026-05-21 01:33:29,264 - INFO - Trial 43 pruned. 
+2026-05-21 01:33:29,268 - INFO - Trial 39 pruned. 
+2026-05-21 01:33:29,276 - INFO - Trial 42 pruned. 
+2026-05-21 01:33:29,299 - INFO - Trial 44 pruned. 
+2026-05-21 01:33:59,197 - INFO - Trial 46 pruned. 
+2026-05-21 01:33:59,342 - INFO - Trial 45 pruned. 
+2026-05-21 01:34:29,116 - INFO - Trial 47 pruned. 
+2026-05-21 01:34:58,549 - INFO - Trial 48 pruned. 
+2026-05-21 01:34:58,568 - INFO - Trial 52 pruned. 
+2026-05-21 01:34:58,647 - INFO - Trial 50 pruned. 
+2026-05-21 01:34:58,706 - INFO - Trial 56 pruned. 
+2026-05-21 01:34:58,706 - INFO - Trial 49 pruned. 
+2026-05-21 01:34:58,728 - INFO - Trial 53 pruned. 
+2026-05-21 01:34:58,736 - INFO - Trial 54 pruned. 
+2026-05-21 01:34:58,758 - INFO - Trial 51 pruned. 
+2026-05-21 01:34:58,799 - INFO - Trial 55 pruned. 
+2026-05-21 01:35:29,328 - INFO - Trial 57 pruned. 
+2026-05-21 01:35:29,348 - INFO - Trial 58 pruned. 
+2026-05-21 01:35:59,787 - INFO - Trial 59 pruned. 
+2026-05-21 01:36:30,371 - INFO - Trial 66 pruned. 
+2026-05-21 01:36:30,540 - INFO - Trial 68 pruned. 
+2026-05-21 01:36:30,753 - INFO - Trial 67 pruned. 
+2026-05-21 01:36:30,787 - INFO - Trial 65 pruned. 
+2026-05-21 01:36:31,057 - INFO - Trial 60 pruned. 
+2026-05-21 01:36:31,080 - INFO - Trial 61 pruned. 
+2026-05-21 01:37:01,276 - INFO - Trial 70 pruned. 
+2026-05-21 01:37:02,549 - INFO - Trial 69 pruned. 
+2026-05-21 01:37:32,462 - INFO - Trial 64 finished with value: 0.7448119406040996 and parameters: {'n_components': 0.9787242603115585, 'svd_solver': 'full', 'whiten': True, 'C': 0.20760485288067698, 'loss': 'squared_hinge', 'tol': 6.810277884578454e-06}. Best is trial 25 with value: 0.7708789750219693.
+2026-05-21 01:37:32,509 - INFO - Trial 63 finished with value: 0.744535956336877 and parameters: {'n_components': 0.9782612041335058, 'svd_solver': 'full', 'whiten': True, 'C': 0.004659337009392062, 'loss': 'squared_hinge', 'tol': 7.126643916839805e-06}. Best is trial 25 with value: 0.7708789750219693.
+2026-05-21 01:37:34,574 - INFO - Trial 62 finished with value: 0.7709633060196877 and parameters: {'n_components': 0.9899693575840214, 'svd_solver': 'full', 'whiten': True, 'C': 4.7328440768446174e-05, 'loss': 'squared_hinge', 'tol': 6.005650603077046e-05}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:38:37,685 - INFO - Trial 71 finished with value: 0.7708763544176687 and parameters: {'n_components': 0.9899554424532915, 'svd_solver': 'full', 'whiten': False, 'C': 7.075175332355592e-05, 'loss': 'squared_hinge', 'tol': 2.1517338012592677e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:38:42,713 - INFO - Trial 80 pruned. 
+2026-05-21 01:39:07,313 - INFO - Trial 75 finished with value: 0.7705076133015694 and parameters: {'n_components': 0.9891692073753929, 'svd_solver': 'full', 'whiten': False, 'C': 0.0015402337597462468, 'loss': 'squared_hinge', 'tol': 2.1838062416118803e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:39:10,816 - INFO - Trial 74 finished with value: 0.7707424711153152 and parameters: {'n_components': 0.989510319311591, 'svd_solver': 'full', 'whiten': False, 'C': 0.0017643606559559187, 'loss': 'squared_hinge', 'tol': 2.150752807445298e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:39:10,845 - INFO - Trial 76 finished with value: 0.7705075758865544 and parameters: {'n_components': 0.9889918930216429, 'svd_solver': 'full', 'whiten': False, 'C': 0.0014285271041183244, 'loss': 'squared_hinge', 'tol': 1.8223217713350356e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:39:11,164 - INFO - Trial 73 finished with value: 0.7707424546855621 and parameters: {'n_components': 0.9894412196162916, 'svd_solver': 'full', 'whiten': False, 'C': 0.001696350023841636, 'loss': 'squared_hinge', 'tol': 2.1684967128828476e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:39:11,256 - INFO - Trial 77 finished with value: 0.7698936418114058 and parameters: {'n_components': 0.9872700331651405, 'svd_solver': 'full', 'whiten': False, 'C': 0.0016290273826437276, 'loss': 'squared_hinge', 'tol': 2.280603287860265e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:39:11,326 - INFO - Trial 72 finished with value: 0.7707424663979323 and parameters: {'n_components': 0.9894277565841031, 'svd_solver': 'full', 'whiten': False, 'C': 0.0016829301671097779, 'loss': 'squared_hinge', 'tol': 1.9855334015998973e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:39:42,146 - INFO - Trial 79 finished with value: 0.7708837044774356 and parameters: {'n_components': 0.9896730243972707, 'svd_solver': 'full', 'whiten': False, 'C': 0.001765615595180372, 'loss': 'squared_hinge', 'tol': 2.341497092190252e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:39:42,618 - INFO - Trial 78 finished with value: 0.7705089128846103 and parameters: {'n_components': 0.9888542629103269, 'svd_solver': 'full', 'whiten': False, 'C': 0.0015099436536753369, 'loss': 'squared_hinge', 'tol': 1.7874462115164987e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:39:49,100 - INFO - Trial 81 finished with value: 0.7705128069342033 and parameters: {'n_components': 0.98925629523079, 'svd_solver': 'full', 'whiten': False, 'C': 0.00039459986707005284, 'loss': 'squared_hinge', 'tol': 0.002436075974650758}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:40:13,430 - INFO - Trial 82 finished with value: 0.7708817756797923 and parameters: {'n_components': 0.9897536432960771, 'svd_solver': 'full', 'whiten': False, 'C': 0.0015664589296559444, 'loss': 'squared_hinge', 'tol': 1.4923400624112008e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:40:43,576 - INFO - Trial 87 pruned. 
+2026-05-21 01:40:43,599 - INFO - Trial 86 pruned. 
+2026-05-21 01:40:43,939 - INFO - Trial 88 pruned. 
+2026-05-21 01:40:44,147 - INFO - Trial 90 pruned. 
+2026-05-21 01:40:44,485 - INFO - Trial 89 pruned. 
+2026-05-21 01:41:14,242 - INFO - Trial 91 pruned. 
+2026-05-21 01:41:14,448 - INFO - Trial 92 pruned. 
+2026-05-21 01:41:15,812 - INFO - Trial 83 finished with value: 0.7705088368115094 and parameters: {'n_components': 0.988737482176297, 'svd_solver': 'full', 'whiten': False, 'C': 0.00040553718514200137, 'loss': 'squared_hinge', 'tol': 1.401651540860372e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:41:16,882 - INFO - Trial 84 finished with value: 0.7698958347039123 and parameters: {'n_components': 0.9872105854909807, 'svd_solver': 'full', 'whiten': False, 'C': 0.0017175267087105785, 'loss': 'squared_hinge', 'tol': 2.5820468522754523e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:41:20,424 - INFO - Trial 93 pruned. 
+2026-05-21 01:41:35,166 - INFO - Trial 94 pruned. 
+2026-05-21 01:41:36,214 - INFO - Trial 85 finished with value: 0.770887069557143 and parameters: {'n_components': 0.9896934681264191, 'svd_solver': 'full', 'whiten': False, 'C': 0.000400344453459912, 'loss': 'squared_hinge', 'tol': 2.6380146748155437e-06}. Best is trial 62 with value: 0.7709633060196877.
+2026-05-21 01:41:47,290 - INFO - Trial 99 pruned. 
+2026-05-21 01:41:47,790 - INFO - Trial 97 pruned. 
+2026-05-21 01:41:47,801 - INFO - Trial 98 pruned. 
+2026-05-21 01:41:47,808 - INFO - Trial 96 pruned. 
+2026-05-21 01:41:47,810 - INFO - Trial 95 pruned. 
+2026-05-21 01:41:47,811 - INFO - Best AUC: 0.7709633060196877 | Best params: {'n_components': 0.9899693575840214, 'svd_solver': 'full', 'whiten': True, 'C': 4.7328440768446174e-05, 'loss': 'squared_hinge', 'tol': 6.005650603077046e-05}
+2026-05-21 01:41:47,811 - INFO - ----- Saving Pipeline -----

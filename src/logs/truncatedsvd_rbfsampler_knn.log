@@ -1,0 +1,308 @@
+2026-05-21 19:49:56,673 - INFO - ----- Fine Tuning -----
+2026-05-21 19:49:56,673 - INFO - A new study created in memory with name: no-name-7dacd673-f981-45d6-9d0f-bc1f69ce27f8
+2026-05-21 19:49:57,473 - WARNING - Trial 8 failed with parameters: {'n_components': 7, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'OR', 'tol': 3.04295856132677e-05, 'gamma': 9.719310643637593e-06} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,493 - WARNING - Trial 7 failed with parameters: {'n_components': 52, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'OR', 'tol': 3.3882832054610013e-06, 'gamma': 2.1189283467586074e-05} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,494 - WARNING - Trial 1 failed with parameters: {'n_components': 20, 'algorithm': 'randomized', 'n_iter': 4, 'power_iteration_normalizer': 'auto', 'tol': 2.0674442941046094e-05, 'gamma': 0.00046812640471680095} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,497 - WARNING - Trial 2 failed with parameters: {'n_components': 28, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'auto', 'tol': 0.00044517196801787556, 'gamma': 0.0002693769678974672} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,543 - WARNING - Trial 5 failed with parameters: {'n_components': 18, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'OR', 'tol': 6.0641104394510104e-05, 'gamma': 0.002153896556815113} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,544 - WARNING - Trial 8 failed with value None.
+2026-05-21 19:49:57,547 - WARNING - Trial 7 failed with value None.
+2026-05-21 19:49:57,548 - WARNING - Trial 4 failed with parameters: {'n_components': 25, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'OR', 'tol': 1.1271326631582007e-06, 'gamma': 0.000260922020483269} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,549 - WARNING - Trial 6 failed with parameters: {'n_components': 66, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'OR', 'tol': 0.003535237940237214, 'gamma': 6.176955424026156} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,551 - WARNING - Trial 1 failed with value None.
+2026-05-21 19:49:57,552 - WARNING - Trial 0 failed with parameters: {'n_components': 43, 'algorithm': 'randomized', 'n_iter': 9, 'power_iteration_normalizer': 'LU', 'tol': 0.0009219292898748076, 'gamma': 7.905156829659834e-06} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,553 - WARNING - Trial 11 failed with parameters: {'n_components': 15, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'OR', 'tol': 1.5573314712608233e-05, 'gamma': 6.710495262260087e-05} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,554 - WARNING - Trial 2 failed with value None.
+2026-05-21 19:49:57,556 - WARNING - Trial 5 failed with value None.
+2026-05-21 19:49:57,557 - WARNING - Trial 9 failed with parameters: {'n_components': 13, 'algorithm': 'randomized', 'n_iter': 14, 'power_iteration_normalizer': 'LU', 'tol': 0.0014990922543055563, 'gamma': 0.01154176017171116} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,558 - WARNING - Trial 10 failed with parameters: {'n_components': 15, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'auto', 'tol': 0.0021265567144027045, 'gamma': 0.00019086065065659091} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,558 - WARNING - Trial 3 failed with parameters: {'n_components': 21, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'OR', 'tol': 0.0015335410635480752, 'gamma': 0.00039546784772028686} because of the following error: ValueError('Cannot set different log configuration to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 127, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/truncatedsvd_rbfsampler_knn_tuning.py", line 102, in objective
+    n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/_convert_positional_args.py", line 127, in converter_wrapper
+    return func(**kwargs)  # type: ignore[call-arg]
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 336, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/trial/_trial.py", line 632, in _suggest
+    distributions.check_distribution_compatibility(trial.distributions[name], distribution)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/distributions.py", line 649, in check_distribution_compatibility
+    raise ValueError("Cannot set different log configuration to the same parameter name.")
+ValueError: Cannot set different log configuration to the same parameter name.
+2026-05-21 19:49:57,560 - WARNING - Trial 4 failed with value None.
+2026-05-21 19:49:57,561 - WARNING - Trial 6 failed with value None.
+2026-05-21 19:49:57,562 - WARNING - Trial 0 failed with value None.
+2026-05-21 19:49:57,563 - WARNING - Trial 11 failed with value None.
+2026-05-21 19:49:57,564 - WARNING - Trial 9 failed with value None.
+2026-05-21 19:49:57,565 - WARNING - Trial 10 failed with value None.
+2026-05-21 19:49:57,565 - WARNING - Trial 3 failed with value None.
+2026-05-21 19:51:08,633 - INFO - ----- Fine Tuning -----
+2026-05-21 19:51:08,633 - INFO - A new study created in memory with name: no-name-55e2fea2-ec05-4ee3-876d-30dd812ddc4c
+2026-05-21 20:09:18,709 - INFO - ----- Fine Tuning -----
+2026-05-21 20:09:18,710 - INFO - A new study created in memory with name: no-name-8836bbcf-52db-4630-9fbe-f471c3a28964
+2026-05-21 20:24:59,092 - INFO - ----- Fine Tuning -----
+2026-05-21 20:24:59,092 - INFO - A new study created in memory with name: no-name-cd9369f6-b1f5-4842-9f0e-f6cbc43a2ad9
+2026-05-22 20:05:25,802 - INFO - ----- Fine Tuning -----
+2026-05-22 20:05:25,802 - INFO - A new study created in memory with name: no-name-3be76752-1d74-4e62-a404-1f7cd259dd47
+2026-05-22 20:29:36,400 - INFO - Trial 4 finished with value: 0.900627511928706 and parameters: {'trunsvd_n_components': 22, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'auto', 'tol': 0.0008201052347630867, 'gamma': 4.851508994427559e-05, 'n_components': 67, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'euclidean', 'p': 2, 'leaf_size': 11}. Best is trial 4 with value: 0.900627511928706.
+2026-05-22 20:29:52,037 - INFO - Trial 10 finished with value: 0.6570846146439254 and parameters: {'trunsvd_n_components': 48, 'algorithm': 'randomized', 'n_iter': 5, 'power_iteration_normalizer': 'OR', 'tol': 1.142628813917725e-05, 'gamma': 0.1418909961572972, 'n_components': 71, 'n_neighbors': 7, 'weights': 'distance', 'metric': 'minkowski', 'p': 2, 'leaf_size': 74}. Best is trial 4 with value: 0.900627511928706.
+2026-05-22 20:29:54,121 - INFO - Trial 9 finished with value: 0.8832045939054479 and parameters: {'trunsvd_n_components': 27, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'OR', 'tol': 0.003812385910970203, 'gamma': 0.11143194631094747, 'n_components': 71, 'n_neighbors': 9, 'weights': 'distance', 'metric': 'euclidean', 'p': 2, 'leaf_size': 71}. Best is trial 4 with value: 0.900627511928706.
+2026-05-22 20:30:00,170 - INFO - Trial 1 finished with value: 0.7743822536213967 and parameters: {'trunsvd_n_components': 4, 'algorithm': 'randomized', 'n_iter': 10, 'power_iteration_normalizer': 'LU', 'tol': 0.0016689358497895958, 'gamma': 0.03782801308175149, 'n_components': 73, 'n_neighbors': 4, 'weights': 'distance', 'metric': 'minkowski', 'p': 2, 'leaf_size': 91}. Best is trial 4 with value: 0.900627511928706.
+2026-05-22 20:31:10,706 - INFO - Trial 0 finished with value: 0.854695362401951 and parameters: {'trunsvd_n_components': 69, 'algorithm': 'randomized', 'n_iter': 6, 'power_iteration_normalizer': 'LU', 'tol': 7.424064677301215e-06, 'gamma': 0.002164139860555208, 'n_components': 72, 'n_neighbors': 3, 'weights': 'distance', 'metric': 'minkowski', 'p': 2, 'leaf_size': 91}. Best is trial 4 with value: 0.900627511928706.
+2026-05-22 20:31:29,026 - INFO - Trial 3 finished with value: 0.8926444541368583 and parameters: {'trunsvd_n_components': 24, 'algorithm': 'randomized', 'n_iter': 11, 'power_iteration_normalizer': 'LU', 'tol': 0.0013489551199299113, 'gamma': 0.000195156849247213, 'n_components': 75, 'n_neighbors': 7, 'weights': 'uniform', 'metric': 'euclidean', 'p': 1, 'leaf_size': 66}. Best is trial 4 with value: 0.900627511928706.
+2026-05-22 20:34:37,003 - INFO - Trial 11 finished with value: 0.8967825267143518 and parameters: {'trunsvd_n_components': 65, 'algorithm': 'randomized', 'n_iter': 12, 'power_iteration_normalizer': 'LU', 'tol': 0.007661502084349091, 'gamma': 8.925594446895545e-06, 'n_components': 66, 'n_neighbors': 7, 'weights': 'uniform', 'metric': 'minkowski', 'p': 2, 'leaf_size': 60}. Best is trial 4 with value: 0.900627511928706.
+2026-05-22 20:35:36,811 - INFO - Trial 6 pruned. 
+2026-05-22 20:35:49,927 - INFO - Trial 2 pruned. 
+2026-05-22 20:45:14,590 - INFO - Trial 15 pruned. 
+2026-05-22 20:45:59,964 - INFO - Trial 13 pruned. 
+2026-05-22 20:48:33,234 - INFO - Trial 18 pruned. 
+2026-05-22 20:51:20,504 - INFO - Trial 20 pruned. 
+2026-05-22 21:21:33,982 - INFO - Trial 8 pruned. 
+2026-05-22 21:53:46,198 - INFO - Trial 16 pruned. 
+2026-05-22 21:53:56,001 - INFO - Trial 12 pruned. 
+2026-05-22 22:21:28,550 - INFO - Trial 26 finished with value: 0.9056520247873452 and parameters: {'trunsvd_n_components': 43, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'tol': 0.00030752088344903673, 'gamma': 1.6982495892714964e-06, 'n_components': 68, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'minkowski', 'p': 2, 'leaf_size': 59}. Best is trial 26 with value: 0.9056520247873452.
+2026-05-22 22:21:33,628 - INFO - Trial 27 finished with value: 0.9089648111229082 and parameters: {'trunsvd_n_components': 49, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'tol': 0.00025778778008419526, 'gamma': 1.0602714603756325e-06, 'n_components': 66, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'minkowski', 'p': 2, 'leaf_size': 56}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:29:41,800 - INFO - Trial 7 finished with value: 0.8937823405840698 and parameters: {'trunsvd_n_components': 23, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'auto', 'tol': 3.7898553340264498e-06, 'gamma': 0.06994037644437284, 'n_components': 73, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'manhattan', 'p': 2, 'leaf_size': 60}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:30:21,843 - INFO - Trial 17 pruned. 
+2026-05-22 22:33:18,453 - INFO - Trial 5 finished with value: 0.9075528946348864 and parameters: {'trunsvd_n_components': 60, 'algorithm': 'randomized', 'n_iter': 15, 'power_iteration_normalizer': 'LU', 'tol': 2.5027211826956514e-06, 'gamma': 1.852290169236453e-05, 'n_components': 73, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'minkowski', 'p': 1, 'leaf_size': 28}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:44:30,698 - INFO - Trial 28 finished with value: 0.9073512017646342 and parameters: {'trunsvd_n_components': 49, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'auto', 'tol': 0.00023742712153817228, 'gamma': 1.0299917315748544e-06, 'n_components': 69, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'minkowski', 'p': 2, 'leaf_size': 54}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:44:47,604 - INFO - Trial 29 finished with value: 0.9072416729025882 and parameters: {'trunsvd_n_components': 51, 'algorithm': 'randomized', 'n_iter': 8, 'power_iteration_normalizer': 'auto', 'tol': 0.00017106222718635028, 'gamma': 1.2507951456536024e-06, 'n_components': 69, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'minkowski', 'p': 2, 'leaf_size': 51}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:48:32,019 - INFO - Trial 14 pruned. 
+2026-05-22 22:52:55,222 - INFO - Trial 22 finished with value: 0.906960017650823 and parameters: {'trunsvd_n_components': 45, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'auto', 'tol': 0.0002239622012063629, 'gamma': 1.1365889952094948e-06, 'n_components': 67, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'manhattan', 'p': 1, 'leaf_size': 11}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:53:25,980 - INFO - Trial 21 finished with value: 0.9016829773978857 and parameters: {'trunsvd_n_components': 39, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'auto', 'tol': 0.0002118339337936452, 'gamma': 1.0470340029168954e-06, 'n_components': 68, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'manhattan', 'p': 1, 'leaf_size': 11}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:53:37,219 - INFO - Trial 23 finished with value: 0.9053958178145111 and parameters: {'trunsvd_n_components': 44, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'auto', 'tol': 0.00022039279639057187, 'gamma': 1.5242376998305414e-06, 'n_components': 67, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'manhattan', 'p': 1, 'leaf_size': 12}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:53:50,048 - INFO - Trial 19 pruned. 
+2026-05-22 22:54:09,918 - INFO - Trial 24 finished with value: 0.9049318021324035 and parameters: {'trunsvd_n_components': 43, 'algorithm': 'randomized', 'n_iter': 3, 'power_iteration_normalizer': 'auto', 'tol': 0.00026184937925194867, 'gamma': 1.1355119659680306e-06, 'n_components': 67, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'manhattan', 'p': 2, 'leaf_size': 28}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:58:05,693 - INFO - Trial 25 finished with value: 0.9069381694629722 and parameters: {'trunsvd_n_components': 45, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'tol': 0.00024173406342795786, 'gamma': 5.20570870337817e-06, 'n_components': 67, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'manhattan', 'p': 1, 'leaf_size': 55}. Best is trial 27 with value: 0.9089648111229082.
+2026-05-22 22:58:05,699 - INFO - Best AUC: 0.9089648111229082 | Best params: {'trunsvd_n_components': 49, 'algorithm': 'randomized', 'n_iter': 7, 'power_iteration_normalizer': 'auto', 'tol': 0.00025778778008419526, 'gamma': 1.0602714603756325e-06, 'n_components': 66, 'n_neighbors': 10, 'weights': 'uniform', 'metric': 'minkowski', 'p': 2, 'leaf_size': 56}
+2026-05-22 22:58:05,699 - INFO - ----- Saving Pipeline -----
+2026-05-23 16:36:46,134 - INFO - ----- Saving Pipeline -----
+2026-05-23 16:36:57,680 - INFO - ----- Saving Pipeline -----

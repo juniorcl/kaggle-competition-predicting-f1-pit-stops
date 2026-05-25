@@ -2,3 +2,357 @@
 2026-05-15 21:08:37,991 - INFO - ----- Fine Tuning -----
 2026-05-15 22:05:14,899 - INFO - Best AUC: 0.8934924863693583 | Best params: {'C': 7.298885645430723}
 2026-05-15 22:05:14,899 - INFO - ----- Saving Pipeline -----
+2026-05-21 20:18:33,811 - INFO - ----- Fine Tuning -----
+2026-05-21 20:18:33,811 - INFO - A new study created in memory with name: no-name-2af9e9ec-4143-4f57-a687-dc775194d4c3
+2026-05-21 20:18:34,352 - WARNING - Trial 0 failed with parameters: {'loss': 'log_loss', 'penalty': 'l1', 'alpha': 0.0015012617706758344, 'learning_rate': 'optimal', 'eta0': 0.0032588088280838595, 'l1_ratio': 0.5513095851757914, 'tol_sgd': 0.00015275174240082505, 'average': True} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,370 - WARNING - Trial 0 failed with value None.
+2026-05-21 20:18:34,595 - WARNING - Trial 2 failed with parameters: {'loss': 'modified_huber', 'penalty': 'l2', 'alpha': 0.024637467243986664, 'learning_rate': 'adaptive', 'eta0': 0.00010961244938627807, 'l1_ratio': 0.6637566512732967, 'tol_sgd': 4.2076844431217044e-05, 'average': False} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,603 - WARNING - Trial 2 failed with value None.
+2026-05-21 20:18:34,608 - WARNING - Trial 1 failed with parameters: {'loss': 'log_loss', 'penalty': 'elasticnet', 'alpha': 0.000128398754286767, 'learning_rate': 'optimal', 'eta0': 0.003628513883018822, 'l1_ratio': 0.7211754291334092, 'tol_sgd': 0.0005716693732063673, 'average': False} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,612 - WARNING - Trial 1 failed with value None.
+2026-05-21 20:18:34,620 - WARNING - Trial 10 failed with parameters: {'loss': 'log_loss', 'penalty': 'elasticnet', 'alpha': 0.020174820551077055, 'learning_rate': 'optimal', 'eta0': 0.0004161338106128429, 'l1_ratio': 0.5869194497878271, 'tol_sgd': 0.005201457453873784, 'average': False} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,621 - WARNING - Trial 8 failed with parameters: {'loss': 'squared_hinge', 'penalty': 'l1', 'alpha': 1.1189855015279848e-07, 'learning_rate': 'adaptive', 'eta0': 0.0448498993002766, 'l1_ratio': 0.25708781062738506, 'tol_sgd': 0.009405747782492355, 'average': False} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,622 - WARNING - Trial 4 failed with parameters: {'loss': 'log_loss', 'penalty': 'elasticnet', 'alpha': 7.0950280513035716e-06, 'learning_rate': 'adaptive', 'eta0': 0.00045736890584164273, 'l1_ratio': 0.4375527138833737, 'tol_sgd': 3.8994378161160426e-05, 'average': True} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,624 - WARNING - Trial 10 failed with value None.
+2026-05-21 20:18:34,625 - WARNING - Trial 8 failed with value None.
+2026-05-21 20:18:34,627 - WARNING - Trial 9 failed with parameters: {'loss': 'log_loss', 'penalty': 'l1', 'alpha': 0.0010623204782785056, 'learning_rate': 'adaptive', 'eta0': 0.023330343379564678, 'l1_ratio': 0.5751543959649748, 'tol_sgd': 2.7956521849290768e-05, 'average': True} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,627 - WARNING - Trial 4 failed with value None.
+2026-05-21 20:18:34,628 - WARNING - Trial 3 failed with parameters: {'loss': 'modified_huber', 'penalty': 'l2', 'alpha': 3.900787118546197e-07, 'learning_rate': 'optimal', 'eta0': 0.03697738900610329, 'l1_ratio': 0.4819171850034266, 'tol_sgd': 0.00023927805405094603, 'average': False} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,629 - WARNING - Trial 5 failed with parameters: {'loss': 'squared_hinge', 'penalty': 'l1', 'alpha': 3.1850193609792694e-07, 'learning_rate': 'adaptive', 'eta0': 0.008513979913464045, 'l1_ratio': 0.9833415684602624, 'tol_sgd': 0.0004775285588830452, 'average': False} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,629 - WARNING - Trial 11 failed with parameters: {'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 2.054713274843515e-06, 'learning_rate': 'adaptive', 'eta0': 0.002890729689618278, 'l1_ratio': 0.4951925711909717, 'tol_sgd': 3.735050647458867e-05, 'average': False} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,630 - WARNING - Trial 7 failed with parameters: {'loss': 'log_loss', 'penalty': 'elasticnet', 'alpha': 1.0471320795364866e-05, 'learning_rate': 'adaptive', 'eta0': 0.0006883730407454291, 'l1_ratio': 0.46470112754353166, 'tol_sgd': 0.0014930022264936008, 'average': False} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,631 - WARNING - Trial 9 failed with value None.
+2026-05-21 20:18:34,632 - WARNING - Trial 6 failed with parameters: {'loss': 'squared_hinge', 'penalty': 'elasticnet', 'alpha': 0.0041769819634126515, 'learning_rate': 'optimal', 'eta0': 0.001825891046742564, 'l1_ratio': 0.024815184864179995, 'tol_sgd': 0.0002843729097248406, 'average': False} because of the following error: TypeError("SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 93, in objective
+    SGDClassifier(
+    ~~~~~~~~~~~~~^
+        loss=trial.suggest_categorical("loss", ["log_loss", "modified_huber", "hinge", "squared_hinge"]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        n_jobs=1
+        ^^^^^^^^
+    )
+    ^
+TypeError: SGDClassifier.__init__() got an unexpected keyword argument 'tol_sgd'
+2026-05-21 20:18:34,633 - WARNING - Trial 3 failed with value None.
+2026-05-21 20:18:34,634 - WARNING - Trial 5 failed with value None.
+2026-05-21 20:18:34,635 - WARNING - Trial 11 failed with value None.
+2026-05-21 20:18:34,635 - WARNING - Trial 7 failed with value None.
+2026-05-21 20:18:34,636 - WARNING - Trial 6 failed with value None.
+2026-05-21 20:19:28,047 - INFO - ----- Fine Tuning -----
+2026-05-21 20:19:28,047 - INFO - A new study created in memory with name: no-name-05d520c1-f9c1-4e3a-ac6f-d15109975853
+2026-05-21 20:19:36,959 - WARNING - Trial 8 failed with parameters: {'loss': 'hinge', 'penalty': 'l2', 'alpha': 0.04161818422453125, 'learning_rate': 'optimal', 'eta0': 0.006505952725965256, 'l1_ratio': 0.5023551252551857, 'tol': 2.3931799431858404e-05, 'average': False} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1310, in _check_proba
+    raise AttributeError(
+        "probability estimates are not available for loss=%r" % self.loss
+    )
+AttributeError: probability estimates are not available for loss='hinge'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'SGDClassifier' has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 109, in objective
+    proba = model.predict_proba(X_valid)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 20:19:36,962 - WARNING - Trial 8 failed with value None.
+2026-05-21 20:19:39,523 - WARNING - Trial 11 failed with parameters: {'loss': 'squared_hinge', 'penalty': 'l1', 'alpha': 1.1340305810397713e-05, 'learning_rate': 'optimal', 'eta0': 0.008517487286375698, 'l1_ratio': 0.2863208086251263, 'tol': 7.076855491045572e-05, 'average': False} because of the following error: AttributeError("This 'Pipeline' has no attribute 'predict_proba'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1310, in _check_proba
+    raise AttributeError(
+        "probability estimates are not available for loss=%r" % self.loss
+    )
+AttributeError: probability estimates are not available for loss='squared_hinge'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 32, in _check
+    check_result = self.check(obj)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 45, in check
+    getattr(self._final_estimator, attr)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'SGDClassifier' has no attribute 'predict_proba'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 122, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/sgdclassifier_tuning.py", line 109, in objective
+    proba = model.predict_proba(X_valid)[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 43, in __get__
+    self._check(obj, owner=owner)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/_available_if.py", line 34, in _check
+    raise AttributeError(attr_err_msg) from e
+AttributeError: This 'Pipeline' has no attribute 'predict_proba'
+2026-05-21 20:19:39,525 - WARNING - Trial 11 failed with value None.
+2026-05-21 20:22:05,432 - INFO - ----- Fine Tuning -----
+2026-05-21 20:22:05,433 - INFO - A new study created in memory with name: no-name-7e08d933-7600-4361-9dec-50c22beab451
+2026-05-21 20:22:37,813 - INFO - Trial 0 finished with value: 0.8790843441871263 and parameters: {'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 0.013936896193853408, 'learning_rate': 'optimal', 'eta0': 0.0022863288397869993, 'l1_ratio': 0.49005991581489994, 'tol': 0.005997790545703715, 'average': False}. Best is trial 0 with value: 0.8790843441871263.
+2026-05-21 20:22:42,296 - INFO - Trial 1 finished with value: 0.8883723073986147 and parameters: {'loss': 'modified_huber', 'penalty': 'l2', 'alpha': 0.00418430245998486, 'learning_rate': 'optimal', 'eta0': 0.010002310828202245, 'l1_ratio': 0.1171640409589162, 'tol': 0.005433634840699919, 'average': False}. Best is trial 1 with value: 0.8883723073986147.
+2026-05-21 20:22:51,260 - INFO - Trial 7 finished with value: 0.8652647522065522 and parameters: {'loss': 'modified_huber', 'penalty': 'l2', 'alpha': 0.09743776982049956, 'learning_rate': 'optimal', 'eta0': 0.01384225107810767, 'l1_ratio': 0.763658448143036, 'tol': 6.263697058639023e-05, 'average': True}. Best is trial 1 with value: 0.8883723073986147.
+2026-05-21 20:23:01,972 - INFO - Trial 3 finished with value: 0.586869771521117 and parameters: {'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 0.00042765939413857474, 'learning_rate': 'optimal', 'eta0': 0.011015113230221453, 'l1_ratio': 0.6832505384258609, 'tol': 0.003402132483674499, 'average': True}. Best is trial 1 with value: 0.8883723073986147.
+2026-05-21 20:23:03,774 - INFO - Trial 11 finished with value: 0.7486957662666135 and parameters: {'loss': 'modified_huber', 'penalty': 'l1', 'alpha': 1.562209677859605e-05, 'learning_rate': 'optimal', 'eta0': 0.011911558723147446, 'l1_ratio': 0.08634420694541256, 'tol': 0.00038265954830928636, 'average': False}. Best is trial 1 with value: 0.8883723073986147.
+2026-05-21 20:23:08,806 - INFO - Trial 2 pruned. 
+2026-05-21 20:23:09,700 - INFO - Trial 4 pruned. 
+2026-05-21 20:23:10,594 - INFO - Trial 5 pruned. 
+2026-05-21 20:23:14,991 - INFO - Trial 10 finished with value: 0.8907376276561576 and parameters: {'loss': 'log_loss', 'penalty': 'l1', 'alpha': 0.00021004605535389248, 'learning_rate': 'optimal', 'eta0': 0.002295476261086772, 'l1_ratio': 0.6737723712901356, 'tol': 0.0003219774549869588, 'average': False}. Best is trial 10 with value: 0.8907376276561576.
+2026-05-21 20:23:17,116 - INFO - Trial 9 pruned. 
+2026-05-21 20:23:19,157 - INFO - Trial 13 pruned. 
+2026-05-21 20:23:20,384 - INFO - Trial 6 pruned. 
+2026-05-21 20:23:20,398 - INFO - Trial 14 pruned. 
+2026-05-21 20:23:28,992 - INFO - Trial 12 pruned. 
+2026-05-21 20:23:39,303 - INFO - Trial 18 pruned. 
+2026-05-21 20:23:40,264 - INFO - Trial 20 pruned. 
+2026-05-21 20:23:41,866 - INFO - Trial 8 finished with value: 0.887416881307708 and parameters: {'loss': 'modified_huber', 'penalty': 'l2', 'alpha': 7.7943683919109e-07, 'learning_rate': 'adaptive', 'eta0': 0.04415095180611397, 'l1_ratio': 0.5801422682837696, 'tol': 0.0006555378461079159, 'average': False}. Best is trial 10 with value: 0.8907376276561576.
+2026-05-21 20:23:49,176 - INFO - Trial 19 pruned. 
+2026-05-21 20:23:53,754 - INFO - Trial 22 pruned. 
+2026-05-21 20:23:55,261 - INFO - Trial 21 pruned. 
+2026-05-21 20:24:01,202 - INFO - Trial 16 pruned. 
+2026-05-21 20:24:01,215 - INFO - Trial 23 pruned. 
+2026-05-21 20:24:05,419 - INFO - Trial 25 pruned. 
+2026-05-21 20:24:10,020 - INFO - Trial 26 pruned. 
+2026-05-21 20:24:15,133 - INFO - Trial 17 pruned. 
+2026-05-21 20:24:15,134 - INFO - Trial 24 finished with value: 0.8341646191099958 and parameters: {'loss': 'log_loss', 'penalty': 'l1', 'alpha': 1.1340783845387363e-06, 'learning_rate': 'optimal', 'eta0': 0.07258802927559226, 'l1_ratio': 0.9307827641260649, 'tol': 2.6026800041672848e-05, 'average': False}. Best is trial 10 with value: 0.8907376276561576.
+2026-05-21 20:24:21,149 - INFO - Trial 27 finished with value: 0.8829276540600212 and parameters: {'loss': 'log_loss', 'penalty': 'l1', 'alpha': 0.001894473920816714, 'learning_rate': 'optimal', 'eta0': 0.05701145744716382, 'l1_ratio': 0.952827246231081, 'tol': 0.00016878083176121393, 'average': False}. Best is trial 10 with value: 0.8907376276561576.
+2026-05-21 20:24:24,695 - INFO - Trial 28 finished with value: 0.8852233952111398 and parameters: {'loss': 'log_loss', 'penalty': 'l1', 'alpha': 0.0014402467509490552, 'learning_rate': 'optimal', 'eta0': 0.08599646085985178, 'l1_ratio': 0.9511096965198163, 'tol': 1.2359269723504214e-05, 'average': False}. Best is trial 10 with value: 0.8907376276561576.
+2026-05-21 20:24:27,330 - INFO - Trial 29 finished with value: 0.8810832503009614 and parameters: {'loss': 'log_loss', 'penalty': 'l1', 'alpha': 0.00249411296613364, 'learning_rate': 'optimal', 'eta0': 0.043992500006374204, 'l1_ratio': 0.9798196987076575, 'tol': 1.48774381398881e-05, 'average': False}. Best is trial 10 with value: 0.8907376276561576.
+2026-05-21 20:24:37,685 - INFO - Trial 15 finished with value: 0.8919499448533651 and parameters: {'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 1.5522236764405038e-06, 'learning_rate': 'adaptive', 'eta0': 0.007808056597325227, 'l1_ratio': 0.31802365720481196, 'tol': 1.6372126883524787e-05, 'average': False}. Best is trial 15 with value: 0.8919499448533651.
+2026-05-21 20:24:37,687 - INFO - Best AUC: 0.8919499448533651 | Best params: {'loss': 'modified_huber', 'penalty': 'elasticnet', 'alpha': 1.5522236764405038e-06, 'learning_rate': 'adaptive', 'eta0': 0.007808056597325227, 'l1_ratio': 0.31802365720481196, 'tol': 1.6372126883524787e-05, 'average': False}
+2026-05-21 20:24:37,687 - INFO - ----- Saving Pipeline -----
+2026-05-21 20:25:08,302 - INFO - ----- Fine Tuning -----
+2026-05-21 20:25:08,302 - INFO - A new study created in memory with name: no-name-004df182-311e-40ac-a254-2d8db3a29188
