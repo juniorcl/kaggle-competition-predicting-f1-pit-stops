@@ -1,1 +1,1 @@
-# prediction-f1-pit-stops-kaggle-competition
+# Kaggle Competition: Prediction F1 Pit Stops
