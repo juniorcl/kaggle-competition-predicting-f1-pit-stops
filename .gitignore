@@ -224,6 +224,7 @@ __marimo__/
 
 # data
 data/raw/*.csv
+data/submission/*.csv
 data/processed/*.parquet
 
 # catboost
